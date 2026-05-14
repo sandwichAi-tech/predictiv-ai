@@ -11,7 +11,7 @@ const BBLCReportContent = () => {
           <span className="text-muted-foreground">|</span>
           <span className="font-mono text-primary font-bold">FWB: 7IT</span>
           <span className="text-muted-foreground">|</span>
-          <span className="text-primary font-semibold">SPECULATIVE BUY</span>
+          <span className="text-primary font-semibold">INSTITUTIONAL COVERAGE</span>
         </div>
       </div>
 
@@ -26,12 +26,11 @@ const BBLCReportContent = () => {
           on the Frankfurt Stock Exchange (7IT). IR is provided by AGORACOM.
         </p>
         <p className="document-text">
-          We initiate coverage with a <strong className="text-primary">SPECULATIVE BUY</strong> and a 12-month
-          target range of <strong>C$0.40 – C$1.20</strong> against a current price of C$0.13 and a market cap
-          of ~C$15.98M (118.3M shares O/S). The thesis rests on the Shift/Arcasia Holdings joint venture
-          unlocking near-term deployment across South Asian and Middle Eastern logistics corridors, +651% YoY
-          revenue growth off a small base, and a tight float that historically rerates quickly on catalyst flow.
-          <em className="text-muted-foreground"> Forward-looking estimate. Not investment advice. Subject to market risk and material change.</em>
+          The Company trades at a current price of C$0.13 with a market cap of ~C$15.98M (118.3M shares O/S).
+          Key drivers under analysis include the Shift/Arcasia Holdings joint venture unlocking near-term
+          deployment across South Asian and Middle Eastern logistics corridors, +651% YoY revenue growth off
+          a small base, and a tight float.
+          <em className="text-muted-foreground"> Research and analysis only. Not investment advice. Subject to market risk and material change.</em>
         </p>
       </section>
 
@@ -123,18 +122,17 @@ const BBLCReportContent = () => {
         </ul>
       </section>
 
-      {/* Recommendation */}
+      {/* Summary */}
       <section className="document-section">
-        <h2 className="document-heading">Recommendation</h2>
+        <h2 className="document-heading">Summary</h2>
         <p className="document-text">
-          We rate PAI a <strong className="text-primary">SPECULATIVE BUY</strong> with a 12-month target range
-          of <strong>C$0.40 – C$1.20</strong>. Six commercial vertical AI products, a 51% JV embedded inside
-          a real operating logistics network, +651% revenue growth, and a dual-listed structure (CSE + Frankfurt)
-          create asymmetric upside at current levels.
+          Predictiv AI (CSE: PAI · FWB: 7IT) operates six commercial vertical AI products, a 51% JV embedded
+          inside a real operating logistics network, +651% revenue growth, and a dual-listed structure
+          (CSE + Frankfurt). This research is provided for informational purposes only.
         </p>
         <p className="document-text text-muted-foreground italic">
-          This rating is suitable only for risk-tolerant investors who can absorb the complete loss of capital.
-          Forward-looking statements are subject to material change and are not a guarantee of future performance.
+          This report contains no price target, rating, or recommendation. Forward-looking statements are
+          subject to material change and are not a guarantee of future performance. Not investment advice.
         </p>
       </section>
     </div>

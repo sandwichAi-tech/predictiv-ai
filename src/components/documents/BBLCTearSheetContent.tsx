@@ -10,9 +10,9 @@ const BBLCTearSheetContent = () => {
         </div>
         <div className="text-right">
           <div className="inline-block bg-primary px-4 py-2 rounded">
-            <span className="font-bold text-primary-foreground">SPECULATIVE BUY</span>
+            <span className="font-bold text-primary-foreground">INSTITUTIONAL COVERAGE</span>
           </div>
-          <p className="text-sm text-muted-foreground mt-2">12-Mo Target: C$0.40 – C$1.20</p>
+          <p className="text-sm text-muted-foreground mt-2">Research & Analysis Only</p>
         </div>
       </div>
 

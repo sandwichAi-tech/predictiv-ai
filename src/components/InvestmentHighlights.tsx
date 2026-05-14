@@ -51,7 +51,7 @@ const InvestmentHighlights = () => {
           Investment Highlights
         </h2>
         <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-          Key value drivers supporting the speculative buy thesis
+          Key value drivers under institutional review
         </p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">

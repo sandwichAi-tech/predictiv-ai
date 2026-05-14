@@ -1,4 +1,4 @@
-import { TrendingUp, Activity } from "lucide-react";
+import { Activity } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 interface HeroProps {
@@ -7,12 +7,6 @@ interface HeroProps {
 }
 
 const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
-  const targetLow = 0.40;
-  const targetHigh = 1.20;
-  
-  const upsideLow = currentPrice ? Math.round(((targetLow - currentPrice) / currentPrice) * 100) : 208;
-  const upsideHigh = currentPrice ? Math.round(((targetHigh - currentPrice) / currentPrice) * 100) : 823;
-  
   const displayPrice = priceLoading ? '...' : currentPrice ? `C$${currentPrice.toFixed(3)}` : 'C$0.130';
 
   return (
@@ -82,27 +76,20 @@ const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
           </div>
         </div>
         
-        {/* Rating Badge */}
+        {/* Coverage Badge */}
         <div className="inline-block bg-primary px-8 py-3 rounded mb-4 glow-green">
           <span className="text-lg font-bold tracking-wide text-primary-foreground">
-            SPECULATIVE BUY
+            INSTITUTIONAL COVERAGE
           </span>
         </div>
-        
-        {/* Price Target */}
+
+        {/* Tagline */}
         <div className="text-xl md:text-2xl font-semibold mb-2 text-foreground">
-          12-Month Target: <span className="text-primary text-glow">C$0.40 (Base) – C$1.20 (Bull)</span>
+          Vertical AI · <span className="text-primary text-glow">Six Commercial Products</span> · Dual Listed
         </div>
         <p className="text-xs text-muted-foreground italic max-w-xl mx-auto mb-2">
-          Forward-looking estimate. Not investment advice. Subject to market risk and material change.
+          Research and analysis only. Not investment advice. Subject to material risk and change.
         </p>
-        
-        {/* Upside Display */}
-        <div className="flex items-center justify-center gap-2 text-base">
-          <TrendingUp className="w-5 h-5 text-primary" />
-          <span className="text-muted-foreground">Upside Potential:</span>
-          <span className="text-primary font-semibold font-mono">{upsideLow}% - {upsideHigh}%</span>
-        </div>
         
         {/* Shell Risk Removed Badge */}
         <div className="mt-6">
