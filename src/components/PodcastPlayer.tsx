@@ -22,7 +22,7 @@ const PodcastPlayer = () => {
         visitor_id: localStorage.getItem('_vid'),
         session_id: sessionStorage.getItem('_sid'),
         page_url: window.location.href,
-        event_data: { episode: 'Wall Street Deal Room - BBLC', ...extra },
+        event_data: { episode: 'Wall Street Deal Room - Predictiv AI', ...extra },
       });
     } catch (e) {
       console.error('podcast track error', e);
@@ -133,8 +133,8 @@ const PodcastPlayer = () => {
 
   const handleShare = async () => {
     const shareData = {
-      title: "Wall Street Deal Room Deep Dive - BBLC",
-      text: "Listen to the exclusive deep dive on Blockchain Loyalty Corp with Jeff Coleman & Jill Stein.",
+      title: "Wall Street Deal Room Deep Dive - Predictiv AI",
+      text: "Listen to the exclusive deep dive on Predictiv AI (CSE: PAI) with Jeff Coleman & Jill Stein.",
       url: window.location.href + "#podcast",
     };
 
@@ -201,7 +201,7 @@ const PodcastPlayer = () => {
                   WALL STREET DEAL ROOM
                 </h3>
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                  Deep Dive: Blockchain Loyalty Corp
+                  Deep Dive: Predictiv AI & the 94% Crash
                 </h2>
                 
                 {/* Hosts */}
@@ -215,9 +215,9 @@ const PodcastPlayer = () => {
 
               {/* Description */}
               <p className="text-muted-foreground leading-relaxed">
-                An exclusive institutional-grade analysis of BBLC's revolutionary blockchain loyalty platform. 
-                Our analysts break down the technology, market opportunity, and investment thesis in this 
-                comprehensive deep dive episode.
+                An exclusive institutional-grade analysis of Predictiv AI (CSE: PAI / FWB: 7IT), the
+                Shift × Arcasia Holdings JV, and the setup behind the 94% drawdown. Our analysts
+                break down the AI platform, catalysts, and risk/reward in this comprehensive deep dive.
               </p>
 
               {/* Audio Progress Bar */}
@@ -294,7 +294,7 @@ const PodcastPlayer = () => {
 
               {/* Share Note */}
               <p className="text-xs text-muted-foreground/70 font-mono">
-                Share this episode with fellow investors interested in blockchain loyalty technology.
+                Share this episode with fellow investors tracking AI micro-caps and the Predictiv AI thesis.
               </p>
             </div>
           </div>
@@ -302,7 +302,7 @@ const PodcastPlayer = () => {
 
         {/* Hidden Audio Element */}
         <audio ref={audioRef} preload="metadata">
-          <source src="/audio/deep-dive-bblc.mp3" type="audio/mpeg" />
+          <source src="/audio/predictiv-ai-deep-dive.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
       </div>
