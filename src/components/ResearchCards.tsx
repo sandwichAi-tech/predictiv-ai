@@ -20,7 +20,7 @@ const researchMaterials: {
     id: "report" as const,
     icon: FileText,
     title: "Full Research Report",
-    description: "12-page institutional deep dive covering InfernoGrid, Koilink, valuation scenarios, and risk analysis",
+    description: "Institutional deep dive on Predictiv AI (CSE: PAI / FWB: 7IT) covering Shift, CloudRep, the Arcasia JV, valuation scenarios, and risk analysis",
   },
   {
     id: "tearsheet" as const,
@@ -133,7 +133,7 @@ const ResearchCards = () => {
       <DocumentViewer
         isOpen={activeDocument === "report"}
         onClose={() => setActiveDocument(null)}
-        title="BBLC Full Research Report"
+        title="Predictiv AI — Full Research Report"
         documentType="report"
       >
         <BBLCReportContent />
@@ -142,7 +142,7 @@ const ResearchCards = () => {
       <DocumentViewer
         isOpen={activeDocument === "tearsheet"}
         onClose={() => setActiveDocument(null)}
-        title="BBLC Executive Tear Sheet"
+        title="Predictiv AI — Executive Tear Sheet"
         documentType="tearsheet"
       >
         <BBLCTearSheetContent />
@@ -151,7 +151,7 @@ const ResearchCards = () => {
       <DocumentViewer
         isOpen={activeDocument === "pressrelease"}
         onClose={() => setActiveDocument(null)}
-        title="BBLC Press Release"
+        title="Predictiv AI — Press Release"
         documentType="pressrelease"
       >
         <BBLCPressReleaseContent />
@@ -160,7 +160,7 @@ const ResearchCards = () => {
       <DocumentViewer
         isOpen={activeDocument === "about"}
         onClose={() => setActiveDocument(null)}
-        title="About Blockchain Loyalty Corp."
+        title="About Predictiv AI Inc."
         documentType="about"
       >
         <BBLCAboutContent />

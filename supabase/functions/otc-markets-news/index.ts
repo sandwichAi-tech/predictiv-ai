@@ -13,28 +13,28 @@ interface NewsItem {
   source?: string;
 }
 
-// Fallback / featured BBLC press releases
+// Fallback / featured Predictiv AI press releases
 const fallbackNews: NewsItem[] = [
   {
-    title: "Blockchain Loyalty Corp. (BBLC) Announces Launch of Capistral - A Next-Generation Private Capital Platform Now Fully Operational",
+    title: "Predictiv AI's Shift Technologies Enters Strategic Joint Venture with Arcasia Holdings (Pvt) Ltd. to Deploy AI-Powered Logistics Platform Across Global First, Middle, and Last Mile Networks",
     source: "ACCESS Newswire",
-    pubDate: "2026-03-19",
-    link: "https://www.otcmarkets.com/stock/BBLC/news",
-    description: "PORTLAND, OR — Blockchain Loyalty Corp. (OTC: BBLC) today announced the official launch of Capistral, a fully developed and operational digital platform designed to connect private companies, investors, and shareholders through a streamlined capital engagement experience."
+    pubDate: "2026-04-28",
+    link: "https://www.predictiv.ai/news",
+    description: "TORONTO, ON — Predictiv AI Inc. (CSE: PAI)(FWB: 7IT) announced its subsidiary Shift Technologies has entered a 51/49 strategic joint venture with Arcasia Holdings, the family office of Sri Lankan cricket legend Aravinda De Silva, to deploy Shift's AI-powered logistics platform across South Asian and Middle Eastern operating networks."
   },
   {
-    title: "Blockchain Loyalty Corp. (OTC: BBLC) Provides Corporate Update On InfernoGrid AI Infrastructure Division And Koilink Fintech Platform",
+    title: "Predictiv AI Inc. Begins Trading on the Frankfurt Stock Exchange Under the Symbol 7IT",
     source: "ACCESS Newswire",
-    pubDate: "2025-12-03",
-    link: "https://www.otcmarkets.com/stock/BBLC/news",
-    description: "PORTLAND, OR — Blockchain Loyalty Corp. (OTC:BBLC) is pleased to provide a corporate update on its technology strategy, highlighting progress on its AI infrastructure division, InfernoGrid, and its fintech platform, Koilink Technologies Inc."
+    pubDate: "2026-02-12",
+    link: "https://www.predictiv.ai/news",
+    description: "TORONTO, ON — Predictiv AI Inc. (CSE: PAI) is pleased to announce that its common shares have commenced trading on the Frankfurt Stock Exchange under the trading symbol '7IT', dual-listing the Company alongside its existing CSE listing and opening access to European institutional investors."
   },
   {
-    title: "Blockchain Loyalty Corp. Unveils InfernoGrid, A Bold New AI Infrastructure Division Creating a Global Marketplace for GPU Power",
+    title: "Predictiv AI Inc. Lists on the Canadian Securities Exchange Under the Symbol PAI",
     source: "ACCESS Newswire",
-    pubDate: "2025-12-01",
-    link: "https://www.otcmarkets.com/stock/BBLC/news",
-    description: "PORTLAND, OR — Blockchain Loyalty Corp. (OTC:BBLC) announces the launch of InfernoGrid, a breakthrough AI Infrastructure Division designed to reshape how the world accesses GPU compute power. InfernoGrid introduces a first-of-its-kind global marketplace where nearly anyone can rent out unused GPU capacity, while AI developers gain instant access to the computing resources they urgently need."
+    pubDate: "2025-12-22",
+    link: "https://www.predictiv.ai/news",
+    description: "TORONTO, ON — Predictiv AI Inc. announced that its common shares have begun trading on the Canadian Securities Exchange under the symbol 'PAI'. The Company operates six vertical AI product lines spanning fleet telematics, voice/chat automation, and real estate intelligence."
   }
 ];
 
@@ -44,7 +44,13 @@ serve(async (req) => {
   }
 
   try {
-    const rssUrl = 'https://www.otcmarkets.com/stock/BBLC/news/rss';
+    // CSE does not provide a public RSS feed for issuers; use curated fallback list of Predictiv AI releases.
+    const rssUrl = '';
+    if (!rssUrl) {
+      return new Response(JSON.stringify({ news: fallbackNews }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
     const response = await fetch(rssUrl, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; NewsBot/1.0)',

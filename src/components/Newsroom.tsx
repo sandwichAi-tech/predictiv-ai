@@ -47,7 +47,7 @@ const Newsroom = () => {
           </span>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Newsroom</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm">
-            The latest corporate announcements, press releases, and updates from Blockchain Loyalty Corp.
+            The latest corporate announcements, press releases, and updates from Predictiv AI Inc. (CSE: PAI / FWB: 7IT).
           </p>
         </div>
 
@@ -107,7 +107,7 @@ const Newsroom = () => {
         )}
 
         <p className="text-center text-xs text-muted-foreground mt-8">
-          Official company announcements from Blockchain Loyalty Corp. For media inquiries, please use the contact page.
+          Official company announcements from Predictiv AI Inc. For media inquiries, please contact AGORACOM Investor Relations.
         </p>
       </div>
     </section>
