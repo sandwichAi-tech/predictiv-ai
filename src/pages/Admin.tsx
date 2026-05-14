@@ -863,7 +863,7 @@ export default function Admin() {
         <div className="w-full max-w-sm">
           <div className="bg-card rounded-xl border p-6">
             <h1 className="text-xl font-bold text-foreground mb-1 text-center">
-              BBLC IR Dashboard
+              Predictiv AI IR Dashboard
             </h1>
             <p className="text-sm text-muted-foreground text-center mb-6">
               Enter your email and password to go straight in
