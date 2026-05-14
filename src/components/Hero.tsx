@@ -33,27 +33,31 @@ const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
         
         {/* Company Name */}
         <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-3 text-foreground">
-          Blockchain Loyalty Corp.
+          Predictiv AI Inc.
         </h1>
         
         {/* Sector Badge */}
         <div className="flex items-center justify-center gap-2 mb-4">
           <span className="inline-flex items-center gap-1.5 bg-card border border-border px-3 py-1 rounded text-xs font-medium tracking-wide text-muted-foreground">
             <Activity className="w-3 h-3 text-primary" />
-            AI Compute Infrastructure · GPU Marketplace · Fintech
+            Vertical AI · Fleet Telematics · Voice/Chat Automation · Real Estate Intelligence
           </span>
         </div>
         
         {/* Ticker with Live Price */}
-        <div className="flex items-center justify-center gap-3 mb-6">
+        <div className="flex items-center justify-center gap-3 mb-6 flex-wrap">
           <div className="bg-card border border-border rounded px-4 py-2 flex items-center gap-3">
-            <span className="text-muted-foreground text-sm">OTC:</span>
-            <span className="font-mono font-bold text-lg text-foreground">BBLC</span>
+            <span className="text-muted-foreground text-sm">CSE:</span>
+            <span className="font-mono font-bold text-lg text-foreground">PAI</span>
             <div className="h-4 w-px bg-border"></div>
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
               <span className="font-mono text-lg text-primary font-bold">{displayPrice}</span>
             </div>
+          </div>
+          <div className="bg-card border border-border rounded px-4 py-2 flex items-center gap-3">
+            <span className="text-muted-foreground text-sm">FWB:</span>
+            <span className="font-mono font-bold text-lg text-foreground">7IT</span>
           </div>
         </div>
         
@@ -66,7 +70,7 @@ const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
         
         {/* Price Target */}
         <div className="text-xl md:text-2xl font-semibold mb-2 text-foreground">
-          6-Month Target: <span className="text-primary text-glow">$0.20 (Base) – $0.50 (Bull)</span>
+          12-Month Target: <span className="text-primary text-glow">C$0.40 (Base) – C$1.20 (Bull)</span>
         </div>
         <p className="text-xs text-muted-foreground italic max-w-xl mx-auto mb-2">
           Forward-looking estimate. Not investment advice. Subject to market risk and material change.
