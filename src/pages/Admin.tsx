@@ -400,6 +400,8 @@ export default function Admin() {
       reportShares: reportShareCount || 0,
       tearsheetViews: tearsheetViewCount || 0,
       tearsheetShares: tearsheetShareCount || 0,
+      podcastPlays: podcastPlayCount || 0,
+      podcastCompletes: podcastCompleteCount || 0,
     });
   };
 
