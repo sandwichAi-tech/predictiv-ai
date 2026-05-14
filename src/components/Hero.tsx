@@ -7,13 +7,13 @@ interface HeroProps {
 }
 
 const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
-  const targetLow = 0.20;
-  const targetHigh = 0.50;
+  const targetLow = 0.40;
+  const targetHigh = 1.20;
   
-  const upsideLow = currentPrice ? Math.round(((targetLow - currentPrice) / currentPrice) * 100) : 67;
-  const upsideHigh = currentPrice ? Math.round(((targetHigh - currentPrice) / currentPrice) * 100) : 289;
+  const upsideLow = currentPrice ? Math.round(((targetLow - currentPrice) / currentPrice) * 100) : 208;
+  const upsideHigh = currentPrice ? Math.round(((targetHigh - currentPrice) / currentPrice) * 100) : 823;
   
-  const displayPrice = priceLoading ? '...' : currentPrice ? `$${currentPrice.toFixed(3)}` : '$0.090';
+  const displayPrice = priceLoading ? '...' : currentPrice ? `C$${currentPrice.toFixed(3)}` : 'C$0.130';
 
   return (
     <section
