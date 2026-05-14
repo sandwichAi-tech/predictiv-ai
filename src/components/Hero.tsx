@@ -79,7 +79,7 @@ const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
         {/* Coverage Badge */}
         <div className="inline-block bg-primary px-8 py-3 rounded mb-4 glow-green">
           <span className="text-lg font-bold tracking-wide text-primary-foreground">
-            INSTITUTIONAL COVERAGE
+            BREAKOUT
           </span>
         </div>
 
