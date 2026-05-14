@@ -87,7 +87,7 @@ const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
         <div className="mt-6">
           <span className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-4 py-2 rounded text-sm text-primary">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
-            Shell Risk Removed · OTC Markets Validated (March 2025)
+            CSE Listed Dec 22, 2025 · Dual Listed Frankfurt (7IT) · IR by AGORACOM
           </span>
         </div>
       </div>
