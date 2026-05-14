@@ -6,8 +6,8 @@ const Footer = () => {
       <div className="max-w-4xl mx-auto">
         {/* Branding */}
         <div className="text-center mb-8">
-          <h3 className="text-lg font-bold text-foreground mb-1">Blockchain Loyalty Corp.</h3>
-          <p className="text-sm text-primary font-mono">OTC: BBLC</p>
+          <h3 className="text-lg font-bold text-foreground mb-1">Predictiv AI Inc.</h3>
+          <p className="text-sm text-primary font-mono">CSE: PAI · FWB: 7IT</p>
         </div>
         
         {/* Office Location */}
@@ -18,8 +18,8 @@ const Footer = () => {
               <span className="text-sm font-semibold text-foreground">Corporate Headquarters</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              30 N Gould St, Suite R<br />
-              Sheridan, WY 82801, USA
+              20 Bay Street, 11th Floor<br />
+              Toronto, Ontario, Canada M5J 2N8
             </p>
           </div>
         </div>
@@ -32,19 +32,19 @@ const Footer = () => {
           <div className="grid md:grid-cols-2 gap-x-6 gap-y-2 text-xs">
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
               <span className="text-muted-foreground">Legal Name</span>
-              <span className="text-foreground text-right">Blockchain Loyalty Corp.</span>
+              <span className="text-foreground text-right">Predictiv AI Inc.</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
-              <span className="text-muted-foreground">Former Name</span>
-              <span className="text-foreground text-right">Belle Bonica Luxe Corp.</span>
+              <span className="text-muted-foreground">Tickers</span>
+              <span className="text-foreground text-right">CSE: PAI · FWB: 7IT</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
-              <span className="text-muted-foreground">State of Incorporation</span>
-              <span className="text-foreground text-right">Delaware, USA</span>
+              <span className="text-muted-foreground">Country of Incorporation</span>
+              <span className="text-foreground text-right">Canada</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
-              <span className="text-muted-foreground">Year Incorporated</span>
-              <span className="text-foreground text-right">2004</span>
+              <span className="text-muted-foreground">CSE Listing</span>
+              <span className="text-foreground text-right">December 2025</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
               <span className="text-muted-foreground">Fiscal Year End</span>
@@ -52,35 +52,35 @@ const Footer = () => {
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
               <span className="text-muted-foreground">Reporting Standard</span>
-              <span className="text-foreground text-right">Alternative Reporting</span>
+              <span className="text-foreground text-right">CSE Continuous Disclosure</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
-              <span className="text-muted-foreground">Audited Financials</span>
-              <span className="text-foreground text-right">Unaudited</span>
+              <span className="text-muted-foreground">Sector</span>
+              <span className="text-foreground text-right">Vertical AI · SaaS</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
-              <span className="text-muted-foreground">Employees</span>
-              <span className="text-foreground text-right">1 (as of Dec 2025)</span>
+              <span className="text-muted-foreground">Subsidiaries</span>
+              <span className="text-foreground text-right">Shift, CloudRep, Housestack +3</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
-              <span className="text-muted-foreground">SIC Code</span>
-              <span className="text-foreground text-right">7371 — Custom Computer Programming</span>
+              <span className="text-muted-foreground">Investor Relations</span>
+              <span className="text-primary text-right font-semibold">AGORACOM</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
-              <span className="text-muted-foreground">Shell Risk Status</span>
-              <span className="text-primary text-right font-semibold">REMOVED (March 2025)</span>
+              <span className="text-muted-foreground">CEO</span>
+              <span className="text-foreground text-right">Suman Pushparajah</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
               <span className="text-muted-foreground">Phone</span>
-              <span className="text-foreground text-right">1.800.868.6118 / +1 514.434.2640</span>
+              <span className="text-foreground text-right">416-388-8886</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
               <span className="text-muted-foreground">Email</span>
-              <a href="mailto:info@bblc.io" className="text-primary text-right hover:underline">info@bblc.io</a>
+              <a href="mailto:info@predictiv.ai" className="text-primary text-right hover:underline">info@predictiv.ai</a>
             </div>
             <div className="flex justify-between gap-2 md:col-span-2">
               <span className="text-muted-foreground">Website</span>
-              <a href="https://bblc.io" target="_blank" rel="noopener noreferrer" className="text-primary text-right hover:underline">bblc.io</a>
+              <a href="https://www.predictiv.ai" target="_blank" rel="noopener noreferrer" className="text-primary text-right hover:underline">www.predictiv.ai</a>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@ const Footer = () => {
             Institutional Research · May 2026
           </p>
           <p className="text-muted-foreground/60 text-xs mb-2">
-            © 2026 Blockchain Loyalty Corp. All rights reserved.
+            © 2026 Predictiv AI Inc. All rights reserved.
           </p>
           <p className="text-muted-foreground/40 text-xs mb-3">
             Investment involves substantial risk including total loss of principal. This is not investment advice.
