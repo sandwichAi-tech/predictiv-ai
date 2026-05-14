@@ -39,6 +39,7 @@ interface BreakdownItem {
 interface DashboardStats {
   liveVisitors: number;
   totalVisitors: number;
+  totalHits: number;
   newVisitors: number;
   returningVisitors: number;
   totalRevisits: number;
