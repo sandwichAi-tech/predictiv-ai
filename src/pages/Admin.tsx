@@ -1345,7 +1345,7 @@ export default function Admin() {
             </h2>
             <div className="space-y-4">
               <Textarea
-                placeholder="Enter your investor alert message... (e.g., 'BBLC ALERT: New PR out — InfernoGrid milestone. Visit bblc.lovable.app for details.')"
+                placeholder="Enter your investor alert message... (e.g., 'PAI ALERT: New PR out — Shift × Arcasia JV milestone. Visit predictiv-ai.lovable.app for details.')"
                 value={smsMessage}
                 onChange={(e) => setSmsMessage(e.target.value)}
                 className="min-h-[100px]"
