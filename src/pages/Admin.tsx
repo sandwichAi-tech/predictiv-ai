@@ -387,7 +387,8 @@ export default function Admin() {
 
     setStats({
       liveVisitors: liveCount || 0,
-      totalVisitors: visitorCount || 0,
+      totalVisitors: Number(breakdown?.total_visitors) || 0,
+      totalHits: visitorCount || 0,
       newVisitors: Number(breakdown?.new_visitors) || 0,
       returningVisitors: Number(breakdown?.returning_visitors) || 0,
       totalRevisits: Number(breakdown?.total_revisits) || 0,
