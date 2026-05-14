@@ -1,4 +1,4 @@
-import { TrendingUp, Activity } from "lucide-react";
+import { Activity } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 interface HeroProps {
@@ -7,12 +7,6 @@ interface HeroProps {
 }
 
 const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
-  const targetLow = 0.40;
-  const targetHigh = 1.20;
-  
-  const upsideLow = currentPrice ? Math.round(((targetLow - currentPrice) / currentPrice) * 100) : 208;
-  const upsideHigh = currentPrice ? Math.round(((targetHigh - currentPrice) / currentPrice) * 100) : 823;
-  
   const displayPrice = priceLoading ? '...' : currentPrice ? `C$${currentPrice.toFixed(3)}` : 'C$0.130';
 
   return (
