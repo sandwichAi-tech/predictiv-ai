@@ -1115,8 +1115,6 @@ export default function Admin() {
               <StatCard label="Podcast Plays (clicked listen)" value={stats.podcastPlays} icon={Headphones} />
               <StatCard label="Podcast Completed" value={stats.podcastCompletes} icon={Headphones} />
             </div>
-              <StatCard label="Total Repeat Visit-Days" value={stats.totalRevisits} icon={Activity} />
-            </div>
           </>
         )}
 
