@@ -11,7 +11,7 @@ const BBLCReportContent = () => {
           <span className="text-muted-foreground">|</span>
           <span className="font-mono text-primary font-bold">FWB: 7IT</span>
           <span className="text-muted-foreground">|</span>
-          <span className="text-primary font-semibold">SPECULATIVE BUY</span>
+          <span className="text-primary font-semibold">INSTITUTIONAL COVERAGE</span>
         </div>
       </div>
 
@@ -26,12 +26,11 @@ const BBLCReportContent = () => {
           on the Frankfurt Stock Exchange (7IT). IR is provided by AGORACOM.
         </p>
         <p className="document-text">
-          We initiate coverage with a <strong className="text-primary">SPECULATIVE BUY</strong> and a 12-month
-          target range of <strong>C$0.40 – C$1.20</strong> against a current price of C$0.13 and a market cap
-          of ~C$15.98M (118.3M shares O/S). The thesis rests on the Shift/Arcasia Holdings joint venture
-          unlocking near-term deployment across South Asian and Middle Eastern logistics corridors, +651% YoY
-          revenue growth off a small base, and a tight float that historically rerates quickly on catalyst flow.
-          <em className="text-muted-foreground"> Forward-looking estimate. Not investment advice. Subject to market risk and material change.</em>
+          The Company trades at a current price of C$0.13 with a market cap of ~C$15.98M (118.3M shares O/S).
+          Key drivers under analysis include the Shift/Arcasia Holdings joint venture unlocking near-term
+          deployment across South Asian and Middle Eastern logistics corridors, +651% YoY revenue growth off
+          a small base, and a tight float.
+          <em className="text-muted-foreground"> Research and analysis only. Not investment advice. Subject to market risk and material change.</em>
         </p>
       </section>
 
