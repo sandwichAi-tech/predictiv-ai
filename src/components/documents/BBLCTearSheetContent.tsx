@@ -10,7 +10,7 @@ const BBLCTearSheetContent = () => {
         </div>
         <div className="text-right">
           <div className="inline-block bg-primary px-4 py-2 rounded">
-            <span className="font-bold text-primary-foreground">INSTITUTIONAL COVERAGE</span>
+            <span className="font-bold text-primary-foreground">BREAKOUT</span>
           </div>
           <p className="text-sm text-muted-foreground mt-2">Research & Analysis Only</p>
         </div>
