@@ -16,14 +16,7 @@ const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
   const displayPrice = priceLoading ? '...' : currentPrice ? `C$${currentPrice.toFixed(3)}` : 'C$0.130';
 
   return (
-    <section
-      className="gradient-hero text-foreground py-12 md:py-20 px-5 relative overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(hsl(var(--background) / 0.75), hsl(var(--background) / 0.85)), url(${heroBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
+    <section className="gradient-hero text-foreground py-12 md:py-20 px-5 relative overflow-hidden">
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Badge */}
 
