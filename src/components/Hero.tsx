@@ -1,5 +1,5 @@
 import { TrendingUp, Activity } from "lucide-react";
-import heroBg from "@/assets/hero-bg.png";
+import heroBg from "@/assets/hero-bg.jpg";
 
 interface HeroProps {
   currentPrice?: number;
