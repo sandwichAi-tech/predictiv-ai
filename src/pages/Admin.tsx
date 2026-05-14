@@ -39,6 +39,7 @@ interface BreakdownItem {
 interface DashboardStats {
   liveVisitors: number;
   totalVisitors: number;
+  totalHits: number;
   newVisitors: number;
   returningVisitors: number;
   totalRevisits: number;
@@ -386,7 +387,8 @@ export default function Admin() {
 
     setStats({
       liveVisitors: liveCount || 0,
-      totalVisitors: visitorCount || 0,
+      totalVisitors: Number(breakdown?.total_visitors) || 0,
+      totalHits: visitorCount || 0,
       newVisitors: Number(breakdown?.new_visitors) || 0,
       returningVisitors: Number(breakdown?.returning_visitors) || 0,
       totalRevisits: Number(breakdown?.total_revisits) || 0,
@@ -1100,9 +1102,10 @@ export default function Admin() {
         {/* Main Stats Grid */}
         {stats && (
           <>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
               <StatCard label="Unique Visitors" value={stats.totalVisitors} icon={Users} />
-              <StatCard label="All Events" value={stats.totalPageviews} icon={Eye} />
+              <StatCard label="Total Hits (non-unique)" value={stats.totalHits} icon={Eye} />
+              <StatCard label="All Events" value={stats.totalPageviews} icon={Activity} />
               <StatCard label="Subscribers" value={stats.totalSubscribers} icon={Mail} />
               <StatCard label="SMS Opted-In" value={stats.smsSubscribers} icon={MessageSquare} />
             </div>
