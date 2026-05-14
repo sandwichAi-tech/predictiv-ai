@@ -626,7 +626,7 @@ export default function Admin() {
       id: e.id,
       kind: 'podcast' as const,
       label: e.event_type === 'podcast_complete' ? 'Finished podcast' : 'Played podcast',
-      detail: 'Wall Street Deal Room — BBLC',
+      detail: 'Wall Street Deal Room — Predictiv AI',
       who: labelFor(e.visitor_id, null),
       visitor_id: e.visitor_id,
       country: e.country,
