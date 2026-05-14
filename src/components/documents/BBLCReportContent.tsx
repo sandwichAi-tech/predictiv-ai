@@ -4,10 +4,12 @@ const BBLCReportContent = () => {
       {/* Cover */}
       <div className="text-center pb-8 border-b border-border">
         <p className="text-sm text-primary font-mono mb-2">OMNIA CAPITAL PARTNERS LTD.</p>
-        <h1 className="text-3xl font-bold text-foreground mb-2">Blockchain Loyalty Corp.</h1>
+        <h1 className="text-3xl font-bold text-foreground mb-2">Predictiv AI Inc.</h1>
         <p className="text-lg text-muted-foreground mb-4">Institutional Deep Dive | May 2026</p>
-        <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-4 py-2 rounded">
-          <span className="font-mono text-primary font-bold">OTC: BBLC</span>
+        <div className="inline-flex flex-wrap items-center justify-center gap-2 bg-primary/10 border border-primary/30 px-4 py-2 rounded">
+          <span className="font-mono text-primary font-bold">CSE: PAI</span>
+          <span className="text-muted-foreground">|</span>
+          <span className="font-mono text-primary font-bold">FWB: 7IT</span>
           <span className="text-muted-foreground">|</span>
           <span className="text-primary font-semibold">SPECULATIVE BUY</span>
         </div>
@@ -17,10 +19,19 @@ const BBLCReportContent = () => {
       <section className="document-section">
         <h2 className="document-heading">Executive Summary</h2>
         <p className="document-text">
-          Blockchain Loyalty Corp. (OTC: BBLC) is a micro-cap technology company developing two transformative platforms: <strong>InfernoGrid</strong>, a GPU marketplace connecting AI developers with idle consumer GPUs, and <strong>Koilink</strong>, a fintech OTC trading platform.
+          Predictiv AI Inc. (CSE: PAI / FWB: 7IT) is a Canadian vertical AI company building production-grade
+          software across <strong>fleet telematics, voice/chat automation, and real estate intelligence</strong>.
+          The Company operates six commercial product lines — Shift, Shiftmatics, CloudRep, Housestack, Housefax,
+          and Weather Telematics — under one corporate umbrella, listed on the CSE December 22, 2025 and dual-listed
+          on the Frankfurt Stock Exchange (7IT). IR is provided by AGORACOM.
         </p>
         <p className="document-text">
-          We initiate coverage with a <strong className="text-primary">SPECULATIVE BUY</strong> rating with a Base Case target of <strong>$0.20</strong> and a Bull Case target of <strong>$0.50</strong> (Bear Case $0.03), against a current price of $0.09 and ~$9.95M market cap. The thesis rests on InfernoGrid's potential to capture a meaningful share of the rapidly expanding AI compute market. <em className="text-muted-foreground">Forward-looking estimate. Not investment advice. Subject to market risk and material change.</em>
+          We initiate coverage with a <strong className="text-primary">SPECULATIVE BUY</strong> and a 12-month
+          target range of <strong>C$0.40 – C$1.20</strong> against a current price of C$0.13 and a market cap
+          of ~C$15.98M (118.3M shares O/S). The thesis rests on the Shift/Arcasia Holdings joint venture
+          unlocking near-term deployment across South Asian and Middle Eastern logistics corridors, +651% YoY
+          revenue growth off a small base, and a tight float that historically rerates quickly on catalyst flow.
+          <em className="text-muted-foreground"> Forward-looking estimate. Not investment advice. Subject to market risk and material change.</em>
         </p>
       </section>
 
@@ -28,25 +39,35 @@ const BBLCReportContent = () => {
       <section className="document-section">
         <h2 className="document-heading">Investment Thesis</h2>
         <ul className="document-list">
-          <li><strong>InfernoGrid GPU Marketplace:</strong> Targeting a $21B+ market by 2030, monetizing idle consumer GPUs for AI compute workloads</li>
-          <li><strong>Massive Untapped Supply:</strong> 250M+ GPUs shipped annually, creating enormous underutilized compute capacity</li>
-          <li><strong>Koilink Fintech:</strong> $340B global fintech market opportunity with near-term revenue potential</li>
-          <li><strong>70% Insider Ownership:</strong> Strong management alignment with shareholders</li>
-          <li><strong>Shell Risk Removed:</strong> OTC Markets validated company status (March 2025)</li>
-          <li><strong>Asset-Light Model:</strong> Platform-based recurring revenue with high margins</li>
+          <li><strong>Shift × Arcasia Holdings JV (Apr 2026):</strong> 51/49 JV embeds Shift's AI-powered first/middle/last-mile platform inside an existing South Asian logistics ecosystem led by Aravinda De Silva — a direct path to deployment, not a sales pipeline.</li>
+          <li><strong>Six Vertical AI Products:</strong> Shift (logistics), Shiftmatics (fleet), CloudRep (voice/chat agents), Housestack &amp; Housefax (real estate intelligence), Weather Telematics — each addressable independently.</li>
+          <li><strong>Revenue Inflection:</strong> +651% revenue YoY (small base, ~US$88K TTM) signals product-market validation as commercial deployments begin.</li>
+          <li><strong>Dual-Listed Liquidity:</strong> CSE (PAI) + Frankfurt (7IT, WKN forthcoming) opens both North American retail and European institutional channels.</li>
+          <li><strong>Tight Float:</strong> 118.3M shares O/S with thin ADV — moves on volume; historical pattern shows sharp rerates on news.</li>
+          <li><strong>Post-Listing Reset:</strong> Price has reset 94% from 52-week high, removing seller exhaustion risk and creating an asymmetric entry.</li>
         </ul>
       </section>
 
       {/* Market Opportunity */}
       <section className="document-section">
         <h2 className="document-heading">Market Opportunity</h2>
-        <h3 className="document-subheading">The AI Compute Crunch</h3>
+        <h3 className="document-subheading">Vertical AI: The Next Software Cycle</h3>
         <p className="document-text">
-          The AI revolution has created unprecedented demand for GPU compute. Major cloud providers are struggling to meet demand, with waitlists stretching months. This supply-demand imbalance creates an opportunity for distributed compute solutions.
+          Horizontal foundation models commoditize quickly. Durable margin lives in vertical AI — purpose-built
+          software that owns a workflow end-to-end. Predictiv AI is squarely positioned in three of the highest-value
+          verticals: logistics ($10T+ global), fleet operations, and real estate intelligence.
         </p>
-        <h3 className="document-subheading">InfernoGrid's Approach</h3>
+        <h3 className="document-subheading">Shift: Port-to-Home Logistics OS</h3>
         <p className="document-text">
-          InfernoGrid differentiates through a consumer-friendly approach: simple host app installation, intelligent job pausing when hosts use their own GPUs, and real cash payouts (not crypto tokens). This positions BBLC to capture the vast pool of idle consumer GPUs.
+          Global logistics remains fragmented across first-mile (port/supplier), middle-mile (multi-leg transport,
+          the highest-value segment), and last-mile (e-commerce delivery). Shift unifies allocation, capacity
+          planning, transport management, route optimization, dispatch, proof-of-delivery and settlement under
+          one AI execution layer — with real-time visibility and predictive performance across the lifecycle.
+        </p>
+        <h3 className="document-subheading">CloudRep: Voice + Chat Automation</h3>
+        <p className="document-text">
+          AI agents for voice, SMS, and chat targeting fleet dispatch, customer service, and structured operational
+          workflows where labor scarcity and wage inflation make automation an immediate ROI play.
         </p>
       </section>
 
@@ -59,43 +80,46 @@ const BBLCReportContent = () => {
               <tr>
                 <th>Scenario</th>
                 <th>Assumptions</th>
-                <th>Target Price</th>
+                <th>Target Price (CAD)</th>
                 <th>Upside</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td className="font-semibold">Bear</td>
-                <td>Platform delays, limited adoption</td>
-                <td>$0.03</td>
-                <td className="text-muted-foreground">-67%</td>
+                <td>JV slips to definitive agreements; cash raise dilutes</td>
+                <td>C$0.08</td>
+                <td className="text-muted-foreground">-38%</td>
               </tr>
               <tr>
                 <td className="font-semibold">Base</td>
-                <td>Successful MVP, moderate traction</td>
-                <td>$0.20</td>
-                <td className="text-primary">+122%</td>
+                <td>JV closes; Shift deploys in 2-3 Arcasia network operators</td>
+                <td>C$0.40</td>
+                <td className="text-primary">+208%</td>
               </tr>
               <tr>
                 <td className="font-semibold">Bull</td>
-                <td>Strong adoption, partnership wins</td>
-                <td>$0.50</td>
-                <td className="text-primary">+456%</td>
+                <td>Multi-product traction + EU institutional flow on 7IT</td>
+                <td>C$1.20</td>
+                <td className="text-primary">+823%</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p className="document-text text-muted-foreground italic text-xs mt-2">
+          Forward-looking. Targets are scenarios, not guarantees. Subject to material change.
+        </p>
       </section>
 
       {/* Risks */}
       <section className="document-section">
         <h2 className="document-heading">Key Risks</h2>
         <ul className="document-list">
-          <li><strong>Execution Risk:</strong> Pre-revenue platforms may fail to achieve product-market fit</li>
-          <li><strong>Competition:</strong> Well-capitalized cloud providers and GPU marketplaces</li>
-          <li><strong>Capital Requirements:</strong> Additional financing likely needed; dilution risk</li>
-          <li><strong>Liquidity Risk:</strong> OTC Pink with limited trading volume</li>
-          <li><strong>Technology Risk:</strong> Rapid changes in AI/GPU computing</li>
+          <li><strong>Tiny Revenue Base:</strong> ~US$88K TTM vs. ~US$9M net loss — early-stage commercialization risk.</li>
+          <li><strong>Capital Raise Pressure:</strong> Dilution likely as the Company funds JV ramp and product scaling.</li>
+          <li><strong>JV Execution:</strong> Shift × Arcasia is currently a non-binding term sheet; definitive agreements and Sri Lanka entity formation pending.</li>
+          <li><strong>Liquidity:</strong> ~153K ADV — thin float cuts both ways.</li>
+          <li><strong>Competition:</strong> Logistics SaaS is contested by well-capitalized incumbents.</li>
         </ul>
       </section>
 
@@ -103,10 +127,14 @@ const BBLCReportContent = () => {
       <section className="document-section">
         <h2 className="document-heading">Recommendation</h2>
         <p className="document-text">
-          We rate BBLC a <strong className="text-primary">SPECULATIVE BUY</strong> with a Base Case 6-month target of $0.20 and a Bull Case of $0.50. The combination of InfernoGrid's large addressable market, Koilink's near-term revenue potential, gold mining optionality via Blue Crown, and 70% insider ownership creates an attractive risk/reward for investors comfortable with micro-cap volatility.
+          We rate PAI a <strong className="text-primary">SPECULATIVE BUY</strong> with a 12-month target range
+          of <strong>C$0.40 – C$1.20</strong>. Six commercial vertical AI products, a 51% JV embedded inside
+          a real operating logistics network, +651% revenue growth, and a dual-listed structure (CSE + Frankfurt)
+          create asymmetric upside at current levels.
         </p>
         <p className="document-text text-muted-foreground italic">
-          This rating is suitable only for risk-tolerant investors who can afford the complete loss of their investment.
+          This rating is suitable only for risk-tolerant investors who can absorb the complete loss of capital.
+          Forward-looking statements are subject to material change and are not a guarantee of future performance.
         </p>
       </section>
     </div>
