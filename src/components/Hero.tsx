@@ -17,6 +17,34 @@ const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
 
   return (
     <section className="gradient-hero text-foreground py-12 md:py-20 px-5 relative overflow-hidden">
+      {/* Animated background layers */}
+      <div
+        aria-hidden
+        className="absolute inset-0 hero-bg-drift opacity-80"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 hero-bg-pulse mix-blend-screen opacity-60"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'hue-rotate(20deg) blur(2px)',
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse at center, transparent 0%, hsl(var(--background) / 0.55) 60%, hsl(var(--background)) 100%)',
+        }}
+      />
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Badge */}
 
