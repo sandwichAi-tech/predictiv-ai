@@ -1111,6 +1111,12 @@ export default function Admin() {
               <StatCard label="Returning Visitors" value={stats.returningVisitors} icon={Repeat} />
               <StatCard label="Total Repeat Visit-Days" value={stats.totalRevisits} icon={Activity} />
             </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <StatCard label="Podcast Plays (clicked listen)" value={stats.podcastPlays} icon={Headphones} />
+              <StatCard label="Podcast Completed" value={stats.podcastCompletes} icon={Headphones} />
+            </div>
+              <StatCard label="Total Repeat Visit-Days" value={stats.totalRevisits} icon={Activity} />
+            </div>
           </>
         )}
 
