@@ -123,18 +123,17 @@ const BBLCReportContent = () => {
         </ul>
       </section>
 
-      {/* Recommendation */}
+      {/* Summary */}
       <section className="document-section">
-        <h2 className="document-heading">Recommendation</h2>
+        <h2 className="document-heading">Summary</h2>
         <p className="document-text">
-          We rate PAI a <strong className="text-primary">SPECULATIVE BUY</strong> with a 12-month target range
-          of <strong>C$0.40 – C$1.20</strong>. Six commercial vertical AI products, a 51% JV embedded inside
-          a real operating logistics network, +651% revenue growth, and a dual-listed structure (CSE + Frankfurt)
-          create asymmetric upside at current levels.
+          Predictiv AI (CSE: PAI · FWB: 7IT) operates six commercial vertical AI products, a 51% JV embedded
+          inside a real operating logistics network, +651% revenue growth, and a dual-listed structure
+          (CSE + Frankfurt). This research is provided for informational purposes only.
         </p>
         <p className="document-text text-muted-foreground italic">
-          This rating is suitable only for risk-tolerant investors who can absorb the complete loss of capital.
-          Forward-looking statements are subject to material change and are not a guarantee of future performance.
+          This report contains no price target, rating, or recommendation. Forward-looking statements are
+          subject to material change and are not a guarantee of future performance. Not investment advice.
         </p>
       </section>
     </div>
