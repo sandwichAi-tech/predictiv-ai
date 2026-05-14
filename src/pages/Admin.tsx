@@ -347,6 +347,8 @@ export default function Admin() {
       { count: reportShareCount },
       { count: tearsheetViewCount },
       { count: tearsheetShareCount },
+      { count: podcastPlayCount },
+      { count: podcastCompleteCount },
       { data: breakdownData },
     ] = await Promise.all([
       supabase.from('live_visitors').select('*', { count: 'exact', head: true })
@@ -373,6 +375,10 @@ export default function Admin() {
         .eq('document_type', 'tearsheet').eq('action', 'view').gte('created_at', since).lte('created_at', until),
       supabase.from('document_engagement').select('*', { count: 'exact', head: true })
         .eq('document_type', 'tearsheet').eq('action', 'share').gte('created_at', since).lte('created_at', until),
+      supabase.from('analytics_events').select('*', { count: 'exact', head: true })
+        .eq('event_type', 'podcast_play').gte('created_at', since).lte('created_at', until),
+      supabase.from('analytics_events').select('*', { count: 'exact', head: true })
+        .eq('event_type', 'podcast_complete').gte('created_at', since).lte('created_at', until),
       supabase.rpc('get_visitor_breakdown', { start_date: since, end_date: until }),
     ]);
 
