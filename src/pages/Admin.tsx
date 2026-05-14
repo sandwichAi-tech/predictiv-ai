@@ -52,6 +52,8 @@ interface DashboardStats {
   reportShares: number;
   tearsheetViews: number;
   tearsheetShares: number;
+  podcastPlays: number;
+  podcastCompletes: number;
 }
 
 interface LiveVisitor {
@@ -345,6 +347,8 @@ export default function Admin() {
       { count: reportShareCount },
       { count: tearsheetViewCount },
       { count: tearsheetShareCount },
+      { count: podcastPlayCount },
+      { count: podcastCompleteCount },
       { data: breakdownData },
     ] = await Promise.all([
       supabase.from('live_visitors').select('*', { count: 'exact', head: true })
@@ -371,6 +375,10 @@ export default function Admin() {
         .eq('document_type', 'tearsheet').eq('action', 'view').gte('created_at', since).lte('created_at', until),
       supabase.from('document_engagement').select('*', { count: 'exact', head: true })
         .eq('document_type', 'tearsheet').eq('action', 'share').gte('created_at', since).lte('created_at', until),
+      supabase.from('analytics_events').select('*', { count: 'exact', head: true })
+        .eq('event_type', 'podcast_play').gte('created_at', since).lte('created_at', until),
+      supabase.from('analytics_events').select('*', { count: 'exact', head: true })
+        .eq('event_type', 'podcast_complete').gte('created_at', since).lte('created_at', until),
       supabase.rpc('get_visitor_breakdown', { start_date: since, end_date: until }),
     ]);
 
@@ -392,6 +400,8 @@ export default function Admin() {
       reportShares: reportShareCount || 0,
       tearsheetViews: tearsheetViewCount || 0,
       tearsheetShares: tearsheetShareCount || 0,
+      podcastPlays: podcastPlayCount || 0,
+      podcastCompletes: podcastCompleteCount || 0,
     });
   };
 
@@ -1100,6 +1110,10 @@ export default function Admin() {
               <StatCard label="New Visitors (first time)" value={stats.newVisitors} icon={UserPlus} />
               <StatCard label="Returning Visitors" value={stats.returningVisitors} icon={Repeat} />
               <StatCard label="Total Repeat Visit-Days" value={stats.totalRevisits} icon={Activity} />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <StatCard label="Podcast Plays (clicked listen)" value={stats.podcastPlays} icon={Headphones} />
+              <StatCard label="Podcast Completed" value={stats.podcastCompletes} icon={Headphones} />
             </div>
           </>
         )}
