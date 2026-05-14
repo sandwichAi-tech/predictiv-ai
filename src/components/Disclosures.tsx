@@ -79,15 +79,15 @@ const Disclosures = () => {
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Compensation Disclosure</h4>
                 <p className="mb-4">
-                  Omnia Capital Partners Ltd. has been engaged and compensated by Blockchain Loyalty Corp. for investor relations and capital markets advisory services. This creates a material conflict of interest. Readers should consider this relationship when evaluating this research.
+                  Omnia Capital Partners Ltd. has been engaged and compensated by Predictiv AI Inc. for investor relations and capital markets advisory services. This creates a material conflict of interest. Readers should consider this relationship when evaluating this research.
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Ownership Disclosure</h4>
                 <p className="mb-4">
                   The Publisher, its affiliates, officers, directors, and/or employees may own securities of the Company discussed in this Report.
                 </p>
-                <h4 className="font-semibold text-foreground mb-2">Rating Definition</h4>
+                <h4 className="font-semibold text-foreground mb-2">No Recommendation</h4>
                 <p>
-                  <strong className="text-primary">SPECULATIVE BUY:</strong> Security expected to outperform over 12 months with above-average risk and volatility. Suitable only for risk-tolerant investors with appropriate position sizing who can afford total loss of investment.
+                  This research contains <strong className="text-primary">no price target, rating, or recommendation</strong> to buy, sell, or hold any security. Content is for informational and educational purposes only. Investing in junior listed issuers carries above-average risk and volatility, including the potential for total loss of capital.
                 </p>
               </TabsContent>
               
