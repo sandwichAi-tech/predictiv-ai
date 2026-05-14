@@ -1,0 +1,118 @@
+# Omnia Capital Partners - Institutional Equity Research
+# BioVaxys Technology Corp. Research Report
+# Last Updated: December 2026
+
+## QUICK FACTS
+- Company: BioVaxys Technology Corp.
+- Tickers: OTCQB: BVAXF | CSE: BIOV | Frankfurt: 5LB0 (WKN: A41C58)
+- Sector: Biotechnology / Immunotherapy / Cancer Vaccines
+- Headquarters: Vancouver, British Columbia, Canada
+- Research Provider: Omnia Capital Partners
+- Rating: SPECULATIVE BUY
+- 12-Month Price Target: $0.48 - $0.60 USD
+
+## COMPANY SUMMARY
+BioVaxys Technology Corp. is a clinical-stage biotechnology company focused on developing next-generation immunotherapies for cancer and infectious diseases. The company operates two proprietary technology platforms:
+
+1. DPX™ Lipid Nanoparticle Platform - A lipid-based delivery system that creates a depot effect for sustained antigen release, acquired from IMV Inc. for approximately $1 million (vs. $500M+ prior market valuation).
+
+2. HapTenix© Personalized Vaccine Platform - An autologous tumor vaccine approach using haptenization technology originally developed at Washington University School of Medicine.
+
+## KEY INVESTMENT THESIS
+1. Asymmetric Risk/Reward: Acquired DPX™ platform for ~$1M vs. $500M+ historical valuation
+2. Phase IIB Clinical Data: MVP-S in platinum-resistant ovarian cancer showed 21% ORR and 63% DCR
+3. Strategic Partnerships: Active collaborations with Merck KGaA and Zoetis
+4. Experienced Management: Leadership with Big Pharma and biotech executive experience
+5. Multiple Value Catalysts: Near-term clinical and partnership milestones expected
+
+## CLINICAL PIPELINE
+| Program | Indication | Stage | Expected Catalyst |
+|---------|-----------|-------|-------------------|
+| MVP-S (Survivin) | Ovarian Cancer | Phase IIB Complete | Partnership/Licensing 2026 |
+| MVP-S | Bladder Cancer | Phase I Ready | IND Filing 2026 |
+| DPX-COVID-19 | Infectious Disease | Phase I Complete | Partnership Discussions |
+| BVX-0918 | Solid Tumors | Preclinical | IND-Enabling 2026-2027 |
+| HapTenix | Personalized Cancer | Preclinical | Development 2026-2027 |
+
+## MVP-S PHASE IIB CLINICAL DATA (Ovarian Cancer)
+- Overall Response Rate (ORR): 21%
+- Disease Control Rate (DCR): 63%
+- Immune Response: 95% of patients developed survivin-specific T-cells
+- Safety Profile: Favorable; primarily Grade 1-2 injection site reactions
+- Combination: Studied with Merck KGaA's BAVENCIO® (avelumab)
+
+## STRATEGIC PARTNERSHIPS
+1. Merck KGaA: Clinical collaboration for MVP-S with BAVENCIO® checkpoint inhibitor
+2. Zoetis: Technology licensing for veterinary vaccine applications
+
+## VALUATION ANALYSIS
+| Scenario | Assumptions | Implied Value |
+|----------|-------------|---------------|
+| Conservative | Single indication, modest market share | $0.35 - $0.45 |
+| Base Case | 2-3 indications, partnership deals | $0.48 - $0.60 |
+| Optimistic | Multiple indications, major pharma deal | $0.75 - $1.00+ |
+
+## CAPITAL STRUCTURE
+- Shares Outstanding: ~85 million
+- Market Capitalization: ~$15 million USD (at current prices)
+- Cash Position: Sufficient for near-term operations
+- Recent Financing: Private placements completed in 2025
+
+## KEY RISKS
+1. Clinical Development Risk: Early-stage programs with uncertain outcomes
+2. Financing Risk: May require additional capital for clinical advancement
+3. Regulatory Risk: FDA/Health Canada approval not guaranteed
+4. Competition Risk: Large pharma competitors in immunotherapy space
+5. Liquidity Risk: OTC-traded with limited daily volume
+
+## MANAGEMENT TEAM
+- Experienced executives from major pharmaceutical and biotechnology companies
+- Track record in clinical development and corporate transactions
+- Strong scientific advisory board with oncology expertise
+
+## FREQUENTLY ASKED QUESTIONS
+
+Q: What is BioVaxys stock price target?
+A: Omnia Capital Partners has a 12-month price target range of $0.48 to $0.60 USD, representing 200-275%+ upside from current levels.
+
+Q: Is BVAXF a good biotech stock to buy?
+A: BVAXF is rated SPECULATIVE BUY based on asymmetric risk/reward from the DPX™ acquisition, promising Phase IIB clinical data, and multiple near-term catalysts. However, it carries significant risks typical of clinical-stage biotechs.
+
+Q: What clinical trials is BioVaxys running?
+A: BioVaxys has completed a Phase IIB trial of MVP-S in ovarian cancer and is preparing for Phase I trials in bladder cancer. Additional programs are in preclinical development.
+
+Q: What is the DPX immunotherapy platform?
+A: DPX™ is a lipid nanoparticle delivery platform that creates a sustained-release depot effect for vaccine antigens, potentially improving immune responses compared to traditional delivery methods.
+
+Q: How did BioVaxys acquire the DPX platform?
+A: BioVaxys acquired the DPX™ platform from IMV Inc. for approximately $1 million in 2024, representing a significant discount from IMV's prior $500M+ market valuation.
+
+Q: What is MVP-S and survivin?
+A: MVP-S is a therapeutic cancer vaccine targeting survivin, a protein overexpressed in many cancers. Survivin helps cancer cells avoid programmed cell death, making it an attractive immunotherapy target.
+
+Q: Does BioVaxys have pharma partnerships?
+A: Yes, BioVaxys has clinical collaboration with Merck KGaA (for MVP-S with BAVENCIO®) and a licensing agreement with Zoetis for veterinary applications.
+
+## KEYWORDS AND TOPICS
+- Biotech stocks, biotechnology investments, cancer vaccine stocks
+- Immunotherapy stocks, clinical trial investments, penny biotech
+- OTC biotech, OTCQB stocks, speculative biotech investments
+- Cancer treatment stocks, ovarian cancer stocks, vaccine development
+- DPX platform, lipid nanoparticle vaccines, mRNA delivery
+- Survivin vaccine, personalized cancer vaccines, tumor vaccines
+- Merck KGaA partnership, Zoetis licensing, pharma partnerships
+- Canadian biotech, Vancouver biotech, North American immunotherapy
+- Phase 2 clinical trial, Phase IIB data, clinical-stage biotech
+- BioVaxys, BVAXF, BIOV, 5LB0, IMV acquisition
+
+## RESEARCH DISCLAIMER
+This research is provided for informational purposes only and does not constitute investment advice. BioVaxys Technology Corp. is a clinical-stage company with significant risks. Investors should conduct their own due diligence and consult with financial advisors before making investment decisions.
+
+## CONTACT
+Research Provider: Omnia Capital Partners
+Email: ir@omniacap.ai
+Website: https://research.omniacapitalpartners.com
+Report Date: December 2026
+
+---
+END OF DOCUMENT

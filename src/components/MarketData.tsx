@@ -1,0 +1,350 @@
+import { useEffect, useRef, useState } from 'react';
+import { ExternalLink, Newspaper } from 'lucide-react';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { supabase } from '@/integrations/supabase/client';
+
+declare global {
+  interface Window {
+    TradingView: any;
+  }
+}
+
+interface NewsItem {
+  title: string;
+  link: string;
+  pubDate: string;
+  description: string;
+  source?: string;
+}
+
+interface QuoteData {
+  [key: string]: {
+    price?: number;
+    volume?: number;
+  } | null;
+}
+
+interface MarketDataProps {
+  quotes?: QuoteData;
+  quotesLoading?: boolean;
+}
+
+const formatVolume = (volume: number): string => {
+  if (volume >= 1000000) {
+    return (volume / 1000000).toFixed(1) + 'M';
+  } else if (volume >= 1000) {
+    return (volume / 1000).toFixed(1) + 'K';
+  }
+  return volume.toString();
+};
+
+const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => {
+  const chartContainerRef = useRef<HTMLDivElement>(null);
+  const chartWidgetRef = useRef<any>(null);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://s3.tradingview.com/tv.js';
+    script.async = true;
+    script.onload = () => {
+      if (chartContainerRef.current && window.TradingView) {
+        chartContainerRef.current.innerHTML = '';
+        
+        chartWidgetRef.current = new window.TradingView.widget({
+          autosize: true,
+          symbol: "OTC:BBLC",
+          interval: "D",
+          timezone: "America/New_York",
+          theme: "dark",
+          style: "1",
+          locale: "en",
+          toolbar_bg: "#0a0a0a",
+          enable_publishing: false,
+          hide_top_toolbar: false,
+          hide_legend: false,
+          save_image: false,
+          container_id: "tradingview_chart",
+          studies: ["Volume@tv-basicstudies"],
+          hide_side_toolbar: true,
+          show_popup_button: false,
+          withdateranges: false,
+          details: false,
+          hotlist: false,
+          calendar: false,
+          allow_symbol_change: false,
+        });
+      }
+    };
+    
+    if (window.TradingView) {
+      script.onload(new Event('load'));
+    } else {
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
+  return (
+    <section className="py-12 md:py-16 transition-colors duration-300 bg-terminal-dark">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* Section Header */}
+        <div className="flex items-center justify-center mb-8">
+          <div className="text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 text-foreground">Real-Time Market Data</h2>
+            <p className="text-muted-foreground">Live quotes from OTC Markets</p>
+          </div>
+        </div>
+
+        {/* Single Exchange Quote Chip */}
+        <div className="max-w-md mx-auto mb-8">
+          <QuoteChip
+            flag="🇺🇸"
+            exchange="OTC Pink"
+            symbol="BBLC"
+            widgetSymbol="OTC:BBLC"
+            volume={quotes['BBLC']?.volume}
+            volumeLoading={quotesLoading}
+            exchangeUrl="https://www.otcmarkets.com/stock/BBLC/overview"
+          />
+        </div>
+
+        {/* Chart + News Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Main Chart */}
+          <div className="lg:col-span-2 rounded-lg shadow-sm border overflow-hidden bg-card border-border">
+            <div className="p-4 border-b border-border">
+              <h3 className="font-semibold text-foreground">BBLC Price Chart</h3>
+            </div>
+            <div
+              id="tradingview_chart"
+              ref={chartContainerRef}
+              className="h-[450px]"
+            />
+          </div>
+
+          {/* News Feed */}
+          <div className="rounded-lg shadow-sm border overflow-hidden bg-card border-border">
+            <div className="p-4 border-b border-border">
+              <h3 className="font-semibold text-foreground">Latest News</h3>
+            </div>
+            <div className="h-[450px]">
+              <OTCNewsTimeline />
+            </div>
+          </div>
+        </div>
+
+        {/* Disclaimer */}
+        <p className="text-center text-xs mt-6 text-muted-foreground/50">
+          Quotes delayed 15-20 minutes. Data provided by TradingView. For informational purposes only.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+interface QuoteChipProps {
+  flag: string;
+  exchange: string;
+  symbol: string;
+  widgetSymbol: string;
+  volume?: number;
+  volumeLoading?: boolean;
+  exchangeUrl: string;
+}
+
+const QuoteChip = ({ flag, exchange, symbol, widgetSymbol, volume, volumeLoading, exchangeUrl }: QuoteChipProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+      symbol: widgetSymbol,
+      width: "100%",
+      height: "100%",
+      locale: "en",
+      dateRange: "1D",
+      colorTheme: "dark",
+      isTransparent: true,
+      autosize: true,
+      largeChartUrl: "",
+      noTimeScale: false
+    });
+
+    const widgetContainer = document.createElement('div');
+    widgetContainer.className = 'tradingview-widget-container__widget';
+    
+    containerRef.current.innerHTML = '';
+    containerRef.current.appendChild(widgetContainer);
+    containerRef.current.appendChild(script);
+
+    return () => {
+      if (containerRef.current) {
+        containerRef.current.innerHTML = '';
+      }
+    };
+  }, [widgetSymbol]);
+
+  return (
+    <a 
+      href={exchangeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="quote-chip rounded-lg border shadow-sm transition-all hover:shadow-md flex flex-col cursor-pointer bg-card border-border hover:border-primary/50"
+    >
+      {/* Header */}
+      <div className="p-3 border-b flex items-center gap-2 border-border">
+        <span className="text-lg">{flag}</span>
+        <span className="text-sm font-medium text-muted-foreground">{exchange}</span>
+        <span className="text-sm font-bold ml-auto font-mono text-primary">{symbol}</span>
+        <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
+      </div>
+      {/* TradingView Widget */}
+      <div 
+        ref={containerRef}
+        className="tradingview-widget-container h-[80px] overflow-hidden pointer-events-none"
+      />
+      {/* Volume Display */}
+      <div className="px-3 py-2 border-t border-border bg-muted/50">
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-muted-foreground">Volume</span>
+          {volumeLoading ? (
+            <span className="text-xs text-muted-foreground">...</span>
+          ) : volume !== undefined && volume > 0 ? (
+            <span className="text-xs font-semibold font-mono text-foreground">
+              {formatVolume(volume)}
+            </span>
+          ) : (
+            <span className="text-xs text-muted-foreground">--</span>
+          )}
+        </div>
+      </div>
+    </a>
+  );
+};
+
+const OTCNewsTimeline = () => {
+  const [news, setNews] = useState<NewsItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        setLoading(true);
+        const { data, error } = await supabase.functions.invoke('otc-markets-news');
+        
+        if (error) {
+          console.error('Error fetching news:', error);
+          setError('Unable to load news');
+          return;
+        }
+        
+        if (data?.news && Array.isArray(data.news)) {
+          setNews(data.news.slice(0, 3));
+        } else {
+          setNews([]);
+        }
+      } catch (err) {
+        console.error('Error:', err);
+        setError('Unable to load news');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
+  const formatDate = (dateStr: string) => {
+    try {
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric',
+        year: 'numeric'
+      });
+    } catch {
+      return dateStr;
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full text-muted-foreground">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
+          <p className="text-sm">Loading news...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || news.length === 0) {
+    return (
+      <div className="flex items-center justify-center h-full text-muted-foreground">
+        <div className="text-center p-4">
+          <Newspaper className="h-8 w-8 mx-auto mb-2 opacity-50" />
+          <p className="text-sm">No recent news available</p>
+          <a 
+            href="https://www.otcmarkets.com/stock/BBLC/news" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-xs mt-2 inline-flex items-center gap-1 hover:underline text-primary"
+          >
+            View on OTC Markets <ExternalLink className="h-3 w-3" />
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <ScrollArea className="h-full">
+      <div className="p-3 space-y-3">
+        {news.map((item, index) => (
+          <a
+            key={index}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block p-3 rounded-lg transition-colors bg-muted/50 hover:bg-muted"
+          >
+            <h4 className="text-sm font-medium leading-tight mb-1 line-clamp-2 text-foreground">
+              {item.title}
+            </h4>
+            <div className="flex items-center gap-2 mt-1">
+              {item.source && (
+                <span className="text-xs px-1.5 py-0.5 rounded bg-card text-muted-foreground">
+                  {item.source}
+                </span>
+              )}
+              <span className="text-xs text-muted-foreground">
+                {formatDate(item.pubDate)}
+              </span>
+            </div>
+          </a>
+        ))}
+        
+        <a 
+          href="https://www.otcmarkets.com/stock/BBLC/news" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block text-center text-xs py-2 hover:underline text-primary"
+        >
+          View all news on OTC Markets →
+        </a>
+      </div>
+    </ScrollArea>
+  );
+};
+
+export default MarketData;
