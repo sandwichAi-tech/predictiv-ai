@@ -26,7 +26,7 @@ const researchMaterials: {
     id: "tearsheet" as const,
     icon: BarChart3,
     title: "Executive Tear Sheet",
-    description: "One-page summary with key metrics, price targets, catalysts, and investment thesis",
+    description: "One-page summary with key metrics, catalysts, and investment thesis",
   },
   {
     id: "pressrelease" as const,
