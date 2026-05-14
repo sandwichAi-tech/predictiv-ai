@@ -52,6 +52,8 @@ interface DashboardStats {
   reportShares: number;
   tearsheetViews: number;
   tearsheetShares: number;
+  podcastPlays: number;
+  podcastCompletes: number;
 }
 
 interface LiveVisitor {
