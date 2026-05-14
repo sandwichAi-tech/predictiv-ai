@@ -96,20 +96,29 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
         <div className="flex items-center justify-center mb-8">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-2 text-foreground">Real-Time Market Data</h2>
-            <p className="text-muted-foreground">Live quotes from OTC Markets</p>
+            <p className="text-muted-foreground">Live quotes from CSE & Frankfurt</p>
           </div>
         </div>
 
-        {/* Single Exchange Quote Chip */}
-        <div className="max-w-md mx-auto mb-8">
+        {/* Exchange Quote Chips */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-8">
           <QuoteChip
-            flag="🇺🇸"
-            exchange="OTC Pink"
-            symbol="BBLC"
-            widgetSymbol="OTC:BBLC"
-            volume={quotes['BBLC']?.volume}
+            flag="🇨🇦"
+            exchange="CSE"
+            symbol="PAI"
+            widgetSymbol="CSE:PAI"
+            volume={quotes['PAI']?.volume}
             volumeLoading={quotesLoading}
-            exchangeUrl="https://www.otcmarkets.com/stock/BBLC/overview"
+            exchangeUrl="https://www.thecse.com/en/listings/technology/predictiv-ai-inc"
+          />
+          <QuoteChip
+            flag="🇩🇪"
+            exchange="Frankfurt"
+            symbol="7IT"
+            widgetSymbol="FWB:7IT"
+            volume={quotes['7IT']?.volume}
+            volumeLoading={quotesLoading}
+            exchangeUrl="https://www.boerse-frankfurt.de/equity/7IT"
           />
         </div>
 
@@ -118,7 +127,7 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
           {/* Main Chart */}
           <div className="lg:col-span-2 rounded-lg shadow-sm border overflow-hidden bg-card border-border">
             <div className="p-4 border-b border-border">
-              <h3 className="font-semibold text-foreground">BBLC Price Chart</h3>
+              <h3 className="font-semibold text-foreground">PAI Price Chart</h3>
             </div>
             <div
               id="tradingview_chart"
@@ -295,12 +304,12 @@ const OTCNewsTimeline = () => {
           <Newspaper className="h-8 w-8 mx-auto mb-2 opacity-50" />
           <p className="text-sm">No recent news available</p>
           <a 
-            href="https://www.otcmarkets.com/stock/BBLC/news" 
+            href="https://www.predictiv.ai/news" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-xs mt-2 inline-flex items-center gap-1 hover:underline text-primary"
           >
-            View on OTC Markets <ExternalLink className="h-3 w-3" />
+            View on Predictiv AI <ExternalLink className="h-3 w-3" />
           </a>
         </div>
       </div>
@@ -335,12 +344,12 @@ const OTCNewsTimeline = () => {
         ))}
         
         <a 
-          href="https://www.otcmarkets.com/stock/BBLC/news" 
+          href="https://www.predictiv.ai/news" 
           target="_blank" 
           rel="noopener noreferrer"
           className="block text-center text-xs py-2 hover:underline text-primary"
         >
-          View all news on OTC Markets →
+          View all news on Predictiv AI →
         </a>
       </div>
     </ScrollArea>
