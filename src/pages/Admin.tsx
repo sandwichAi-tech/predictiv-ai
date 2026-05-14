@@ -626,7 +626,7 @@ export default function Admin() {
       id: e.id,
       kind: 'podcast' as const,
       label: e.event_type === 'podcast_complete' ? 'Finished podcast' : 'Played podcast',
-      detail: 'Wall Street Deal Room — BBLC',
+      detail: 'Wall Street Deal Room — Predictiv AI',
       who: labelFor(e.visitor_id, null),
       visitor_id: e.visitor_id,
       country: e.country,
@@ -863,7 +863,7 @@ export default function Admin() {
         <div className="w-full max-w-sm">
           <div className="bg-card rounded-xl border p-6">
             <h1 className="text-xl font-bold text-foreground mb-1 text-center">
-              BBLC IR Dashboard
+              Predictiv AI IR Dashboard
             </h1>
             <p className="text-sm text-muted-foreground text-center mb-6">
               Enter your email and password to go straight in
@@ -919,8 +919,8 @@ export default function Admin() {
       <header className="bg-primary text-primary-foreground px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold">BBLC IR Command Center</h1>
-            <p className="text-primary-foreground/70 text-sm">Blockchain Loyalty Corp. (OTC: BBLC) · Real-time investor traffic & engagement</p>
+            <h1 className="text-2xl font-bold">Predictiv AI IR Command Center</h1>
+            <p className="text-primary-foreground/70 text-sm">Predictiv AI Inc. (CSE: PAI · FWB: 7IT) · Real-time investor traffic & engagement</p>
           </div>
           <div className="flex items-center gap-2 flex-wrap">
             {/* Quick presets */}
@@ -1345,7 +1345,7 @@ export default function Admin() {
             </h2>
             <div className="space-y-4">
               <Textarea
-                placeholder="Enter your investor alert message... (e.g., 'BBLC ALERT: New PR out — InfernoGrid milestone. Visit bblc.lovable.app for details.')"
+                placeholder="Enter your investor alert message... (e.g., 'PAI ALERT: New PR out — Shift × Arcasia JV milestone. Visit predictiv-ai.lovable.app for details.')"
                 value={smsMessage}
                 onChange={(e) => setSmsMessage(e.target.value)}
                 className="min-h-[100px]"
