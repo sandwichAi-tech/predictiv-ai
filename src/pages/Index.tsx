@@ -17,7 +17,7 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 
 const Index = () => {
   const { quotes, loading } = useStockQuotes();
-  const otcPrice = quotes['BBLC']?.price;
+  const otcPrice = quotes['PAI']?.price;
   
   useAnalytics();
 

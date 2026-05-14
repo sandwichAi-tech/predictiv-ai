@@ -15,9 +15,8 @@ interface QuoteData {
 
 // Yahoo Finance symbols mapping
 const symbolMap: Record<string, string> = {
-  'BVAXF': 'BVAXF',      // OTC Markets
-  'BIOV.CN': 'BIOV.CN',  // Canadian NEO
-  '5LB0.F': '5LB0.F'     // Frankfurt
+  'PAI': 'PAI.CN',     // CSE
+  '7IT': '7IT.F',      // Frankfurt
 };
 
 async function fetchYahooQuote(symbol: string): Promise<QuoteData | null> {
