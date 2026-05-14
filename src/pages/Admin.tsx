@@ -1102,9 +1102,10 @@ export default function Admin() {
         {/* Main Stats Grid */}
         {stats && (
           <>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
               <StatCard label="Unique Visitors" value={stats.totalVisitors} icon={Users} />
-              <StatCard label="All Events" value={stats.totalPageviews} icon={Eye} />
+              <StatCard label="Total Hits (non-unique)" value={stats.totalHits} icon={Eye} />
+              <StatCard label="All Events" value={stats.totalPageviews} icon={Activity} />
               <StatCard label="Subscribers" value={stats.totalSubscribers} icon={Mail} />
               <StatCard label="SMS Opted-In" value={stats.smsSubscribers} icon={MessageSquare} />
             </div>
