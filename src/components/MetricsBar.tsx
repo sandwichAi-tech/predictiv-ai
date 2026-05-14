@@ -1,9 +1,9 @@
 const metrics = [
-  { value: "$0.09", label: "Current Price" },
-  { value: "~$9.95M", label: "Market Cap" },
-  { value: "120.6M", label: "Shares Out" },
-  { value: "70%", label: "Insider Own" },
-  { value: "4", label: "Divisions" },
+  { value: "C$0.13", label: "Current Price" },
+  { value: "~C$15.98M", label: "Market Cap" },
+  { value: "118.3M", label: "Shares Out" },
+  { value: "+651%", label: "Rev YoY" },
+  { value: "6", label: "Product Lines" },
 ];
 
 const MetricsBar = () => {

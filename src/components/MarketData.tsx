@@ -52,7 +52,7 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
         
         chartWidgetRef.current = new window.TradingView.widget({
           autosize: true,
-          symbol: "OTC:BBLC",
+          symbol: "CSE:PAI",
           interval: "D",
           timezone: "America/New_York",
           theme: "dark",
