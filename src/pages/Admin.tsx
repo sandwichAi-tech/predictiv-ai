@@ -919,8 +919,8 @@ export default function Admin() {
       <header className="bg-primary text-primary-foreground px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold">BBLC IR Command Center</h1>
-            <p className="text-primary-foreground/70 text-sm">Blockchain Loyalty Corp. (OTC: BBLC) · Real-time investor traffic & engagement</p>
+            <h1 className="text-2xl font-bold">Predictiv AI IR Command Center</h1>
+            <p className="text-primary-foreground/70 text-sm">Predictiv AI Inc. (CSE: PAI · FWB: 7IT) · Real-time investor traffic & engagement</p>
           </div>
           <div className="flex items-center gap-2 flex-wrap">
             {/* Quick presets */}
