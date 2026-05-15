@@ -616,7 +616,7 @@ export default function Admin() {
       report: 'Full Research Report',
       tearsheet: 'Executive Tear Sheet',
       pressrelease: 'Press Release (Research)',
-      press_release: 'Press Release (BioVaxys)',
+      press_release: 'Press Release (Predictiv AI)',
       about: 'About the Company',
     };
 

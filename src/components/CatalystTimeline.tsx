@@ -1,31 +1,31 @@
-import { Calendar, Rocket, DollarSign, TrendingUp, Building2 } from "lucide-react";
+import { Calendar, Handshake, Truck, Globe, TrendingUp } from "lucide-react";
 
 const catalysts = [
   {
-    period: "Q1 2026",
-    title: "InfernoGrid MVP Completion",
-    description: "Core platform development finalized with beta testing launch",
-    icon: Rocket,
-    status: "upcoming",
-  },
-  {
     period: "Q2 2026",
-    title: "Koilink OTC Launch",
-    description: "Fintech platform goes live with initial revenue generation",
-    icon: DollarSign,
+    title: "Shift × Arcasia Definitive Agreements",
+    description: "Definitive JV agreements, Sri Lanka entity formation, shareholders' and licensing agreements between Shift and the JV",
+    icon: Handshake,
     status: "upcoming",
   },
   {
     period: "H2 2026",
-    title: "InfernoGrid Marketplace Launch",
-    description: "Full public launch with enterprise features and host onboarding",
-    icon: Building2,
+    title: "Initial JV Deployments",
+    description: "First Shift platform deployments across Arcasia Holdings' logistics network operators",
+    icon: Truck,
     status: "upcoming",
   },
   {
-    period: "2027+",
-    title: "Revenue Generation & Uplisting",
-    description: "Meaningful revenue milestones and potential exchange uplisting",
+    period: "2026",
+    title: "Frankfurt (7IT) Institutional Outreach",
+    description: "European institutional investor outreach via AGORACOM following the dual listing",
+    icon: Globe,
+    status: "upcoming",
+  },
+  {
+    period: "2026 – 2027",
+    title: "CloudRep Customer Wins & Multi-Product Scaling",
+    description: "Voice/chat customer wins and multi-product revenue scaling across Shift, Shiftmatics, CloudRep, Housestack, Housefax and Weather Telematics",
     icon: TrendingUp,
     status: "future",
   },
@@ -48,16 +48,13 @@ const CatalystTimeline = () => {
         </div>
 
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px"></div>
-          
+
           <div className="space-y-8">
             {catalysts.map((catalyst, index) => (
               <div key={index} className={`relative flex items-start gap-6 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                {/* Timeline dot */}
                 <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full border-4 border-background -translate-x-1.5 md:-translate-x-1.5 mt-6 glow-green"></div>
-                
-                {/* Content card */}
+
                 <div className={`ml-10 md:ml-0 md:w-[calc(50%-2rem)] ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
                   <div className="catalyst-card">
                     <div className="flex items-center gap-3 mb-3">
@@ -70,8 +67,7 @@ const CatalystTimeline = () => {
                     <p className="text-sm text-muted-foreground">{catalyst.description}</p>
                   </div>
                 </div>
-                
-                {/* Spacer for alternating layout */}
+
                 <div className="hidden md:block md:w-[calc(50%-2rem)]"></div>
               </div>
             ))}
