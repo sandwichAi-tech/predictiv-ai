@@ -34,7 +34,7 @@ const DocumentViewer = ({ isOpen, onClose, title, documentType, children }: Docu
   const handleShare = async () => {
     const shareData = {
       title: `Predictiv AI Research: ${title}`,
-      text: `Institutional equity research on Blockchain Loyalty Corp - ${title}`,
+      text: `Institutional research on Predictiv AI Inc. - ${title}`,
       url: window.location.href,
     };
 
