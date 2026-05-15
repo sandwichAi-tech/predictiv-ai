@@ -15,6 +15,7 @@ import { DateRange } from 'react-day-picker';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, BarChart, Bar, Cell } from 'recharts';
 import { Globe } from 'lucide-react';
+import { SocialWhisper } from '@/components/admin/SocialWhisper';
 
 interface TrendData {
   date: string;
@@ -1051,6 +1052,11 @@ export default function Admin() {
       </header>
 
       <main className="max-w-7xl mx-auto px-6 py-8">
+        {/* Social Whisper */}
+        <div className="mb-6">
+          <SocialWhisper />
+        </div>
+
         {/* Live Visitors Alert */}
         <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4 mb-4 flex items-center gap-4">
           <div className="relative">
