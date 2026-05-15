@@ -33,7 +33,7 @@ const Disclosures = () => {
               <TabsContent value="general" className="text-muted-foreground text-sm leading-relaxed m-0">
                 <h3 className="font-semibold text-foreground mb-3">Important Information and Disclaimer</h3>
                 <p className="mb-4">
-                  This research report (the "Report") has been prepared by Omnia Capital Partners Ltd. (the "Publisher") for informational purposes only. This Report is not intended to be, and should not be construed as, an offer to sell or a solicitation of an offer to buy any securities of Blockchain Loyalty Corp. (the "Company," "BBLC") or any other securities discussed herein.
+                  This research material (the "Report") has been prepared by Omnia Capital Partners Ltd. (the "Publisher") for informational purposes only. This Report is not intended to be, and should not be construed as, an offer to sell or a solicitation of an offer to buy any securities of Predictiv AI Inc. (the "Company," "Predictiv AI") or any other securities discussed herein.
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">No Investment Advice</h4>
                 <p className="mb-4">
@@ -52,20 +52,20 @@ const Disclosures = () => {
               <TabsContent value="risks" className="text-muted-foreground text-sm leading-relaxed m-0">
                 <h3 className="font-semibold text-foreground mb-3">Investment Risk Warning</h3>
                 <p className="mb-4">
-                  Investing in micro-cap technology companies involves an extremely high degree of risk and is suitable only for sophisticated investors who can afford the complete loss of their investment. BBLC is a penny stock with limited trading volume.
+                  Investing in junior listed issuers involves an extremely high degree of risk and is suitable only for sophisticated investors who can afford the complete loss of their investment. Predictiv AI (CSE: PAI · FWB: 7IT) is a small-cap issuer with thin trading volume.
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Specific Risk Factors:</h4>
                 <ul className="list-disc list-inside space-y-2 mb-4">
-                  <li><strong>Execution Risk:</strong> InfernoGrid and Koilink platforms are pre-revenue and may not achieve market acceptance</li>
-                  <li><strong>Competition Risk:</strong> Well-capitalized cloud providers (AWS, GCP, Azure) and GPU marketplaces with greater resources</li>
-                  <li><strong>Capital Requirements:</strong> Substantial additional financing likely needed; dilution risk is high</li>
-                  <li><strong>Technology Risk:</strong> Rapid changes in AI/GPU computing could obsolete platform advantages</li>
-                  <li><strong>Liquidity Risk:</strong> OTC Pink securities have limited trading volume; bid-ask spreads may be wide</li>
+                  <li><strong>Early Revenue Base:</strong> ~US$88K TTM revenue against ~US$9M net loss — early-stage commercialization risk</li>
+                  <li><strong>JV Execution Risk:</strong> Shift × Arcasia is currently a non-binding term sheet; definitive agreements and Sri Lanka entity formation are pending</li>
+                  <li><strong>Competition Risk:</strong> Logistics SaaS, fleet telematics and contact-center AI are contested by well-capitalized incumbents</li>
+                  <li><strong>Capital Requirements:</strong> Substantial additional financing likely needed; dilution risk is material</li>
+                  <li><strong>Liquidity Risk:</strong> Thin float and low average daily volume — bid-ask spreads may be wide</li>
                   <li><strong>Key Person Risk:</strong> Dependence on a small management team</li>
-                  <li><strong>Regulatory Risk:</strong> Fintech operations subject to evolving regulations</li>
+                  <li><strong>Regulatory Risk:</strong> CSE-listed issuer subject to continuous disclosure and evolving multi-jurisdictional regulation</li>
                   <li><strong>Market Risk:</strong> Stock price volatility regardless of operating performance</li>
                   <li><strong>Governance Risk:</strong> Small board with limited independent oversight</li>
-                  <li><strong>Pre-Revenue Status:</strong> History of operating losses with no guarantee of future profitability</li>
+                  <li><strong>Operating Losses:</strong> History of operating losses with no guarantee of future profitability</li>
                 </ul>
                 <p className="font-semibold text-destructive">
                   Past performance is not indicative of future results. All investments involve risk and may result in partial or total loss.

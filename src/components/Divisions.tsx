@@ -1,39 +1,53 @@
-import { Cpu, Network, Tv, Mountain, ArrowRight } from "lucide-react";
+import { Truck, Gauge, Headphones, Building2, FileSearch, CloudRain, ArrowRight } from "lucide-react";
 
 const divisions = [
   {
-    icon: Cpu,
-    tags: "GPU Compute • Marketplace • AI Infrastructure",
-    name: "InfernoGrid",
-    status: "Flagship · MVP In Build",
+    icon: Truck,
+    tags: "Logistics • First/Middle/Last-Mile • AI Execution",
+    name: "Shift Technologies",
+    status: "Flagship · Arcasia JV (Apr 2026)",
     description:
-      "Global GPU-sharing marketplace connecting idle GPU capacity with AI compute demand. Targeting the $21B+ GPU-as-a-Service market by 2030 (26–36% CAGR).",
-    url: "https://infernogrid.com",
+      "AI-powered logistics platform spanning first-mile, middle-mile and last-mile execution. Subject of the 51/49 joint venture with Arcasia Holdings — embedded directly inside an existing South Asian logistics ecosystem.",
   },
   {
-    icon: Network,
-    tags: "Fintech • Capital Markets • Deal-Flow",
-    name: "Koilink Technologies",
-    status: "19.9% Subsidiary · OTC Listing Pending",
+    icon: Gauge,
+    tags: "Fleet • Telematics • Predictive Ops",
+    name: "Shiftmatics",
+    status: "Commercial · Active",
     description:
-      "Real-time, geo-social fintech platform connecting brokers, accredited investors, and growth-stage issuers. Front-end complete; pursuing OTC listing in a $340B+ fintech market.",
-    url: "https://koilinkinc.com",
+      "Fleet management software with predictive performance, dispatch and operational analytics — purpose-built for multi-operator transport networks.",
   },
   {
-    icon: Tv,
-    tags: "Streaming • Media • BIPOC Content",
-    name: "For Us TV Productions",
-    status: "Portfolio Company · Active",
+    icon: Headphones,
+    tags: "Voice • Chat • SMS Automation",
+    name: "CloudRep",
+    status: "Commercial · Customer Wins",
     description:
-      "Subscription streaming service for BIPOC filmmakers — films, series, and documentaries distributed across Roku, Apple TV, Amazon TV, and mobile to 300M+ potential viewers.",
+      "AI-based voice, chat and SMS agents for fleet dispatch, customer service and structured operational workflows where labor scarcity makes automation an immediate ROI.",
   },
   {
-    icon: Mountain,
-    tags: "Gold • Rare Earths • Mining Optionality",
-    name: "Blue Crown Group",
-    status: "Partnership · California Motherlode",
+    icon: Building2,
+    tags: "Real Estate • Workflow • Intelligence",
+    name: "Housestack",
+    status: "Commercial · Active",
     description:
-      "Mining lease in California's Eastern Pocket Belt with $55M+ historical gold production. Up to 15 gold-bearing properties targeted within 6 months — gold, telluride, and rare earths.",
+      "Real estate intelligence and workflow tooling for agents, brokerages and operators — structured data and AI-driven productivity.",
+  },
+  {
+    icon: FileSearch,
+    tags: "Property History • Risk • Diligence",
+    name: "Housefax",
+    status: "Commercial · Active",
+    description:
+      "Property history and risk intelligence — structured reports and data for residential real estate diligence and underwriting.",
+  },
+  {
+    icon: CloudRain,
+    tags: "Weather • Road Intelligence • Routing",
+    name: "Weather Telematics",
+    status: "Commercial · Active",
+    description:
+      "Hyper-local road and weather intelligence for fleet routing, safety and risk optimization — feeding Shift and third-party telematics platforms.",
   },
 ];
 
@@ -43,15 +57,15 @@ const Divisions = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <span className="inline-block text-primary font-mono text-xs tracking-widest uppercase mb-2">
-            Portfolio
+            Product Lines
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Our Divisions</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Six Vertical AI Products</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
-            BBLC operates through focused technology and resource divisions, each designed to build real products and create long-term shareholder value.
+            Predictiv AI operates six commercial product lines across fleet telematics, voice/chat automation and real estate intelligence — production-grade software, one corporate umbrella.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {divisions.map((d) => (
             <div
               key={d.name}
@@ -70,18 +84,19 @@ const Divisions = () => {
               <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                 {d.description}
               </p>
-              {d.url && (
-                <a
-                  href={d.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:gap-2 transition-all"
-                >
-                  Visit site <ArrowRight className="w-4 h-4" />
-                </a>
-              )}
             </div>
           ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <a
+            href="https://www.predictiv.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:gap-2 transition-all"
+          >
+            Visit predictiv.ai <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

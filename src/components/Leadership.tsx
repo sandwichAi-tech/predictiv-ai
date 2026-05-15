@@ -1,31 +1,25 @@
-import { User, Briefcase, Shield } from "lucide-react";
+import { User, Briefcase } from "lucide-react";
 
 const team = [
   {
-    name: "Joel DeBellefeuille",
-    role: "Chief Executive Officer",
-    description: "Chief Strategist driving InfernoGrid and Koilink development",
+    name: "Suman Pushparajah",
+    role: "Chief Executive Officer & Director",
+    description: "Leading product strategy across Shift, Shiftmatics and CloudRep, and driving the Shift × Arcasia JV rollout",
     icon: User,
   },
   {
-    name: "Svetlana Chernienko",
-    role: "Operations",
-    description: "Overseeing day-to-day operations and execution",
+    name: "Khurram Qureshi",
+    role: "Finance & Capital Markets",
+    description: "Capital strategy, public-markets stewardship and dual-listed (CSE/FWB) reporting oversight",
     icon: Briefcase,
-  },
-  {
-    name: "Zbigniew Lambo",
-    role: "Independent Director",
-    description: "Board oversight and corporate governance",
-    icon: Shield,
   },
 ];
 
 const shareStructure = [
-  { label: "Shares Outstanding", value: "120.6M" },
-  { label: "Insider Ownership", value: "~70%" },
-  { label: "Public Float", value: "~30%" },
-  { label: "Market Cap", value: "~$9.95M" },
+  { label: "Shares Outstanding", value: "118.3M" },
+  { label: "Market Cap", value: "~C$15.98M" },
+  { label: "Listings", value: "CSE · FWB" },
+  { label: "CSE Listing", value: "Dec 2025" },
 ];
 
 const Leadership = () => {
@@ -36,11 +30,11 @@ const Leadership = () => {
           Leadership & Governance
         </h2>
         <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-          Experienced team with significant insider ownership alignment
+          Experienced team executing across six vertical AI product lines
         </p>
         
         {/* Leadership Cards */}
-        <div className="grid md:grid-cols-3 gap-5 mb-10">
+        <div className="grid md:grid-cols-2 gap-5 mb-10 max-w-2xl mx-auto">
           {team.map((member, index) => (
             <div key={index} className="leadership-card">
               <div className="w-12 h-12 bg-primary/10 border border-primary/30 rounded-full flex items-center justify-center mb-4 mx-auto">
@@ -69,7 +63,7 @@ const Leadership = () => {
         {/* Alignment Note */}
         <div className="mt-6 bg-primary/5 border border-primary/20 rounded-lg p-4 text-center">
           <p className="text-sm text-muted-foreground">
-            <span className="text-primary font-semibold">70% Insider Ownership</span> — Management interests are strongly aligned with shareholders
+            <span className="text-primary font-semibold">Dual Listed</span> — CSE: PAI · FWB: 7IT · Investor Relations by AGORACOM
           </p>
         </div>
       </div>
