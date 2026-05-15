@@ -1,45 +1,45 @@
-import { Cpu, Globe, DollarSign, Users, Mountain, Shield, TrendingUp, Layers } from "lucide-react";
+import { Cpu, Globe, Layers, Users, Truck, Building2, TrendingUp, Network } from "lucide-react";
 
 const highlights = [
   {
+    icon: Layers,
+    title: "Six Commercial Vertical AI Products",
+    description: "Shift, Shiftmatics, CloudRep, Housestack, Housefax, and Weather Telematics — production-grade software across logistics, fleet, voice/chat and real estate",
+  },
+  {
+    icon: Network,
+    title: "Shift × Arcasia Holdings JV",
+    description: "51/49 joint venture (Apr 2026) embeds Shift's AI logistics platform inside an existing South Asian operating ecosystem led by Aravinda De Silva",
+  },
+  {
+    icon: Truck,
+    title: "Port-to-Home Logistics OS",
+    description: "Shift unifies first-mile, middle-mile and last-mile under one AI execution layer — allocation, routing, dispatch, settlement and visibility",
+  },
+  {
     icon: Cpu,
-    title: "InfernoGrid GPU Marketplace",
-    description: "$21B+ addressable market by 2030 (26–36% CAGR) — monetizing idle GPUs for AI compute with real cash payouts",
+    title: "CloudRep Voice & Chat Automation",
+    description: "AI-based agents for voice, SMS and chat — built for fleet dispatch, customer service and structured operational workflows",
   },
   {
-    icon: Globe,
-    title: "250M+ GPUs Shipped Annually",
-    description: "Massive untapped supply across gaming PCs, workstations, university labs, and mining rigs",
-  },
-  {
-    icon: DollarSign,
-    title: "Koilink Fintech Platform",
-    description: "$340B global fintech market — front-end complete, OTC listing paperwork submitted",
-  },
-  {
-    icon: Users,
-    title: "70% Insider Ownership",
-    description: "~77.4M shares held by insiders — strong management alignment with shareholders",
-  },
-  {
-    icon: Mountain,
-    title: "Gold Mining Optionality",
-    description: "Blue Crown lease in California Motherlode with $55M+ historical production at $20/oz gold",
-  },
-  {
-    icon: Shield,
-    title: "Shell Risk Removed",
-    description: "OTC Markets validated operational status (March 2025) — regulatory clarity achieved",
+    icon: Building2,
+    title: "Real Estate Intelligence",
+    description: "Housestack and Housefax deliver workflow tooling and property history/risk intelligence for agents, brokerages and operators",
   },
   {
     icon: TrendingUp,
-    title: "Near 52-Week High",
-    description: "Stock at $0.09 — at 52-week high with strong momentum off $0.007 low",
+    title: "+651% Revenue YoY",
+    description: "Early commercial inflection off a small base (~US$88K TTM) as multi-product deployments begin",
   },
   {
-    icon: Layers,
-    title: "Asset-Light Model",
-    description: "Platform-based revenue with transaction fees and minimal capex post-launch",
+    icon: Globe,
+    title: "Dual Listed CSE + Frankfurt",
+    description: "CSE: PAI listed Dec 22, 2025 · FWB: 7IT — opens both North American retail and European institutional channels",
+  },
+  {
+    icon: Users,
+    title: "IR by AGORACOM",
+    description: "Capital markets storytelling and investor outreach managed by a leading small-cap IR firm",
   },
 ];
 
