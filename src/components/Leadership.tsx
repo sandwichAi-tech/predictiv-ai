@@ -1,4 +1,4 @@
-import sumanImg from "@/assets/suman-pushparajah.png";
+import sumanImg from "@/assets/suman-pushparajah-matched.png";
 import sanaImg from "@/assets/sana-srithas.png";
 
 const team = [
