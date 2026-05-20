@@ -16,6 +16,7 @@ interface QuoteData {
 // Yahoo Finance symbols mapping
 const symbolMap: Record<string, string> = {
   'PAI': 'PAI.CN',     // CSE
+  'PCIVF': 'PCIVF',    // OTCID
   '7IT': '7IT.F',      // Frankfurt
 };
 
