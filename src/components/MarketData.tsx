@@ -101,7 +101,7 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
         </div>
 
         {/* Exchange Quote Chips */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
           <QuoteChip
             flag="🇨🇦"
             exchange="CSE"
@@ -110,6 +110,15 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
             volume={quotes['PAI']?.volume}
             volumeLoading={quotesLoading}
             exchangeUrl="https://www.thecse.com/en/listings/technology/predictiv-ai-inc"
+          />
+          <QuoteChip
+            flag="🇺🇸"
+            exchange="OTCID"
+            symbol="PCIVF"
+            widgetSymbol="OTC:PCIVF"
+            volume={quotes['PCIVF']?.volume}
+            volumeLoading={quotesLoading}
+            exchangeUrl="https://www.otcmarkets.com/stock/PCIVF/overview"
           />
           <QuoteChip
             flag="🇩🇪"
