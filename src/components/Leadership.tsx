@@ -1,17 +1,18 @@
-import { User, Briefcase } from "lucide-react";
+import sumanImg from "@/assets/suman-pushparajah.png";
+import sanaImg from "@/assets/sana-srithas.png";
 
 const team = [
   {
     name: "Suman Pushparajah",
     role: "Chief Executive Officer & Director",
-    description: "Leading product strategy across Shift, Shiftmatics and CloudRep, and driving the Shift × Arcasia JV rollout",
-    icon: User,
+    description: "Seasoned public-company executive with 15+ years building and scaling tech ventures. Leads strategy across Shift, Shiftmatics and CloudRep, and drives the Shift × Arcasia JV rollout.",
+    image: sumanImg,
   },
   {
-    name: "Khurram Qureshi",
-    role: "Finance & Capital Markets",
-    description: "Capital strategy, public-markets stewardship and dual-listed (CSE/FWB) reporting oversight",
-    icon: Briefcase,
+    name: "Sana Srithas",
+    role: "Chief Operating Officer & Director",
+    description: "Co-Founder of Shift and HouseStack. Former Chief of Staff to a Member of Parliament and Director of Operations at a TSX Venture-listed company, leading operations across Canada.",
+    image: sanaImg,
   },
 ];
 
@@ -37,8 +38,13 @@ const Leadership = () => {
         <div className="grid md:grid-cols-2 gap-5 mb-10 max-w-2xl mx-auto">
           {team.map((member, index) => (
             <div key={index} className="leadership-card">
-              <div className="w-12 h-12 bg-primary/10 border border-primary/30 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <member.icon className="w-6 h-6 text-primary" />
+              <div className="w-20 h-20 rounded-full overflow-hidden mb-4 mx-auto ring-2 ring-primary/40 ring-offset-2 ring-offset-card">
+                <img
+                  src={member.image}
+                  alt={`${member.name} — ${member.role}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
               <h3 className="font-semibold text-foreground text-center mb-1">{member.name}</h3>
               <p className="text-sm text-primary text-center mb-2">{member.role}</p>
