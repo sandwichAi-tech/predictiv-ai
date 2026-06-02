@@ -38,6 +38,13 @@ export default {
           dark: "hsl(var(--green-dark))",
           glow: "hsl(var(--green-glow))",
         },
+        gold: {
+          DEFAULT: "hsl(var(--accent-gold))",
+        },
+        ticker: {
+          green: "hsl(var(--ticker-green))",
+          red: "hsl(var(--ticker-red))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

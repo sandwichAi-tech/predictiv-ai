@@ -40,42 +40,51 @@ const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
         }}
       />
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        {/* Badge */}
+        {/* Eyebrow */}
+        <p className="font-mono text-[11px] md:text-xs uppercase tracking-[0.25em] mb-5" style={{ color: 'hsl(var(--accent-gold))' }}>
+          Predictiv AI Inc. · CSE: PAI · OTCID: PCIVF · FWB: 7IT
+        </p>
 
-        <span className="inline-block bg-primary/20 border border-primary/40 px-4 py-1.5 rounded text-xs font-semibold tracking-wider uppercase mb-4 text-primary">
-          Institutional Equity Research
-        </span>
-        
         {/* Company Name */}
         <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-3 text-foreground">
-          Predictiv AI Inc.
+          Vertical AI · <span className="text-primary">Six Commercial Products</span> · Dual Listed
         </h1>
-        
-        {/* Sector Badge */}
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <span className="inline-flex items-center gap-1.5 bg-card border border-border px-3 py-1 rounded text-xs font-medium tracking-wide text-muted-foreground">
-            <Activity className="w-3 h-3 text-primary" />
+
+        {/* Ticker Symbol */}
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <span
+            className="font-display-serif font-bold text-4xl md:text-5xl"
+            style={{ color: 'hsl(var(--ticker-green))' }}
+          >
+            $PAI
+          </span>
+        </div>
+
+        {/* Sector Subhead */}
+        <div className="flex items-center justify-center gap-2 mb-6">
+          <span className="font-mono text-[11px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            <Activity className="inline w-3 h-3 mr-1.5 text-primary" />
             Vertical AI · Fleet Telematics · Voice/Chat Automation · Real Estate Intelligence
           </span>
         </div>
-        
-        {/* Ticker with Live Price */}
+
+        {/* Live Price Tape */}
         <div className="flex items-center justify-center gap-3 mb-6 flex-wrap">
           <div className="bg-card border border-border rounded px-4 py-2 flex items-center gap-3">
-            <span className="text-muted-foreground text-sm">CSE:</span>
-            <span className="font-mono font-bold text-lg text-foreground">PAI</span>
-            <div className="h-4 w-px bg-border"></div>
+            <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">CSE</span>
+            <span className="font-mono font-bold text-sm text-foreground">PAI</span>
+            <div className="h-4 w-px" style={{ background: 'hsl(var(--accent-gold))' }}></div>
             <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-              <span className="font-mono text-lg text-primary font-bold">{displayPrice}</span>
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'hsl(var(--ticker-green))' }}></span>
+              <span className="font-display-serif text-lg text-foreground font-bold">{displayPrice}</span>
             </div>
           </div>
           <div className="bg-card border border-border rounded px-4 py-2 flex items-center gap-3">
-            <span className="text-muted-foreground text-sm">FWB:</span>
-            <span className="font-mono font-bold text-lg text-foreground">7IT</span>
+            <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">FWB</span>
+            <span className="font-mono font-bold text-sm text-foreground">7IT</span>
           </div>
         </div>
-        
+
         {/* Coverage Badge */}
         <div className="inline-block bg-primary px-8 py-3 rounded mb-4 glow-green">
           <span className="text-lg font-bold tracking-wide text-primary-foreground">
@@ -83,15 +92,11 @@ const Hero = ({ currentPrice, priceLoading }: HeroProps) => {
           </span>
         </div>
 
-        {/* Tagline */}
-        <div className="text-xl md:text-2xl font-semibold mb-2 text-foreground">
-          Vertical AI · <span className="text-primary text-glow">Six Commercial Products</span> · Dual Listed
-        </div>
         <p className="text-xs text-muted-foreground italic max-w-xl mx-auto mb-2">
           Research and analysis only. Not investment advice. Subject to material risk and change.
         </p>
-        
-        {/* Shell Risk Removed Badge */}
+
+        {/* Listing strip */}
         <div className="mt-6">
           <span className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-4 py-2 rounded text-sm text-primary">
             <span className="w-2 h-2 bg-primary rounded-full"></span>

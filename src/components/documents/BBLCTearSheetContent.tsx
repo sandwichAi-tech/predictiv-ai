@@ -17,22 +17,18 @@ const BBLCTearSheetContent = () => {
       </div>
 
       {/* Key Metrics Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-b border-border">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-6 border-b border-border">
         <div className="text-center">
-          <div className="text-xl font-bold text-primary font-mono">C$0.13</div>
-          <div className="text-xs text-muted-foreground">Current Price</div>
+          <div className="text-xl font-display-serif font-bold text-primary">C$0.13</div>
+          <div className="text-xs text-muted-foreground uppercase tracking-wider font-mono">Current Price</div>
         </div>
         <div className="text-center">
-          <div className="text-xl font-bold text-foreground font-mono">~C$15.98M</div>
-          <div className="text-xs text-muted-foreground">Market Cap</div>
+          <div className="text-xl font-display-serif font-bold text-foreground">~C$15.98M</div>
+          <div className="text-xs text-muted-foreground uppercase tracking-wider font-mono">Market Cap</div>
         </div>
         <div className="text-center">
-          <div className="text-xl font-bold text-foreground font-mono">118.3M</div>
-          <div className="text-xs text-muted-foreground">Shares Out</div>
-        </div>
-        <div className="text-center">
-          <div className="text-xl font-bold text-primary font-mono">+651%</div>
-          <div className="text-xs text-muted-foreground">Revenue YoY</div>
+          <div className="text-xl font-mono font-bold text-foreground">118.3M</div>
+          <div className="text-xs text-muted-foreground uppercase tracking-wider font-mono">Shares Out</div>
         </div>
       </div>
 

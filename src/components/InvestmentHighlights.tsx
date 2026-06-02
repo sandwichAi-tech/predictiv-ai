@@ -1,4 +1,4 @@
-import { Cpu, Globe, Layers, Users, Truck, Building2, TrendingUp, Network } from "lucide-react";
+import { Cpu, Globe, Layers, Users, Truck, Building2, Network } from "lucide-react";
 
 const highlights = [
   {
@@ -25,11 +25,6 @@ const highlights = [
     icon: Building2,
     title: "Real Estate Intelligence",
     description: "Housestack and Housefax deliver workflow tooling and property history/risk intelligence for agents, brokerages and operators",
-  },
-  {
-    icon: TrendingUp,
-    title: "+651% Revenue YoY",
-    description: "Early commercial inflection off a small base (~US$88K TTM) as multi-product deployments begin",
   },
   {
     icon: Globe,

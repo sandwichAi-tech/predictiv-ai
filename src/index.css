@@ -6,65 +6,71 @@
 
 @layer base {
   :root {
-    /* Predictiv AI Brand Theme - Deep Navy & Cyan/Blue */
-    --terminal-black: 220 55% 5%;
-    --terminal-dark: 220 50% 8%;
-    --terminal-gray: 220 35% 14%;
-    --terminal-border: 220 30% 22%;
-    
-    /* Brand accents - Blue/Cyan (mapped from old "green" tokens) */
-    --green: 195 95% 55%;
-    --green-light: 190 90% 65%;
-    --green-dark: 210 90% 50%;
-    --green-glow: 190 100% 60%;
-    
+    /* Predictiv AI Brand Theme - Terminal Navy + Warm Orange + Ticker Green */
+    --terminal-black: 222 43% 5%;        /* #0A0E18 */
+    --terminal-dark: 217 51% 12%;        /* #0F1A2E */
+    --terminal-gray: 220 47% 9%;         /* #0C1322 */
+    --terminal-border: 217 34% 18%;      /* #1E2A3D */
+
+    /* Brand accents - legacy "green" tokens now map to warm orange (primary accent) */
+    --green: 33 90% 48%;                 /* #E8820C accent-orange */
+    --green-light: 33 95% 56%;
+    --green-dark: 27 85% 42%;
+    --green-glow: 33 100% 55%;
+
+    /* New brand tokens */
+    --accent-orange: 33 90% 48%;         /* #E8820C */
+    --accent-gold: 48 88% 38%;           /* #B8960C */
+    --ticker-green: 142 71% 45%;         /* #22C55E */
+    --ticker-red: 0 84% 60%;             /* #EF4444 */
+
     /* Semantic Colors */
-    --background: 220 55% 5%;
-    --foreground: 210 40% 98%;
-    
-    --card: 220 45% 9%;
-    --card-foreground: 210 40% 98%;
-    
-    --popover: 220 45% 9%;
-    --popover-foreground: 210 40% 98%;
-    
-    --primary: 210 100% 55%;
-    --primary-foreground: 220 55% 5%;
-    
-    --secondary: 220 35% 14%;
-    --secondary-foreground: 210 40% 98%;
-    
-    --muted: 220 35% 12%;
-    --muted-foreground: 215 25% 70%;
-    
-    --accent: 190 95% 55%;
-    --accent-foreground: 220 55% 5%;
-    
-    --destructive: 0 72% 51%;
+    --background: 222 43% 7%;            /* #0A0E18 base */
+    --foreground: 220 11% 96%;           /* #F4F5F7 */
+
+    --card: 220 47% 9%;                  /* #0C1322 */
+    --card-foreground: 220 11% 96%;
+
+    --popover: 220 47% 9%;
+    --popover-foreground: 220 11% 96%;
+
+    --primary: 33 90% 48%;
+    --primary-foreground: 222 43% 5%;
+
+    --secondary: 217 34% 14%;
+    --secondary-foreground: 220 11% 96%;
+
+    --muted: 217 34% 12%;
+    --muted-foreground: 216 10% 64%;     /* #8A93A0 */
+
+    --accent: 33 90% 48%;
+    --accent-foreground: 222 43% 5%;
+
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    
-    --border: 220 30% 22%;
-    --input: 220 30% 22%;
-    --ring: 195 95% 55%;
-    
+
+    --border: 217 34% 18%;
+    --input: 217 34% 18%;
+    --ring: 33 90% 48%;
+
     --radius: 0.5rem;
-    
+
     /* Custom tokens */
-    --hero-gradient: radial-gradient(ellipse at top, hsl(220 60% 12%) 0%, hsl(220 55% 5%) 60%, hsl(220 60% 3%) 100%);
-    --card-shadow: 0 4px 24px -4px hsla(210, 100%, 55%, 0.12);
-    --card-shadow-hover: 0 12px 32px -8px hsla(195, 95%, 55%, 0.25);
-    --metrics-shadow: 0 8px 32px -8px hsla(210, 100%, 55%, 0.18);
-    --glow-green: 0 0 24px hsla(195, 95%, 55%, 0.35);
-    
+    --hero-gradient: radial-gradient(ellipse at top, hsl(217 51% 12%) 0%, hsl(222 43% 7%) 60%, hsl(222 50% 4%) 100%);
+    --card-shadow: 0 4px 24px -4px hsla(33, 90%, 48%, 0.12);
+    --card-shadow-hover: 0 12px 32px -8px hsla(33, 90%, 48%, 0.28);
+    --metrics-shadow: 0 8px 32px -8px hsla(33, 90%, 48%, 0.20);
+    --glow-green: 0 0 24px hsla(33, 90%, 48%, 0.40);
+
     /* Sidebar */
-    --sidebar-background: 220 45% 9%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 210 100% 55%;
-    --sidebar-primary-foreground: 220 55% 5%;
-    --sidebar-accent: 220 35% 14%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 220 30% 22%;
-    --sidebar-ring: 195 95% 55%;
+    --sidebar-background: 220 47% 9%;
+    --sidebar-foreground: 220 11% 96%;
+    --sidebar-primary: 33 90% 48%;
+    --sidebar-primary-foreground: 222 43% 5%;
+    --sidebar-accent: 217 34% 14%;
+    --sidebar-accent-foreground: 220 11% 96%;
+    --sidebar-border: 217 34% 18%;
+    --sidebar-ring: 33 90% 48%;
   }
 
   .dark {
@@ -115,9 +121,14 @@
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
-  
+
+  .font-display-serif {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+  }
+
   .text-glow {
-    text-shadow: 0 0 10px hsla(142, 76%, 45%, 0.5);
+    text-shadow: 0 0 10px hsla(33, 90%, 48%, 0.55);
   }
 
   @keyframes hero-drift {
