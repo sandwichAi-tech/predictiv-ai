@@ -56,9 +56,9 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
           interval: "D",
           timezone: "America/New_York",
           theme: "dark",
-          style: "2",
+          style: "1",
           locale: "en",
-          toolbar_bg: "#000000",
+          toolbar_bg: "#0a0a0a",
           enable_publishing: false,
           hide_top_toolbar: false,
           hide_legend: false,
@@ -72,34 +72,6 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
           hotlist: false,
           calendar: false,
           allow_symbol_change: false,
-          backgroundColor: "#000000",
-          gridColor: "rgba(217,165,50,0.06)",
-          overrides: {
-            "paneProperties.background": "#000000",
-            "paneProperties.backgroundType": "solid",
-            "paneProperties.vertGridProperties.color": "rgba(217,165,50,0.06)",
-            "paneProperties.horzGridProperties.color": "rgba(217,165,50,0.06)",
-            "scalesProperties.textColor": "#d9a532",
-            "scalesProperties.lineColor": "rgba(217,165,50,0.2)",
-            "mainSeriesProperties.style": 2,
-            "mainSeriesProperties.lineStyle.color": "#e8b84a",
-            "mainSeriesProperties.lineStyle.linewidth": 2,
-            "mainSeriesProperties.areaStyle.color1": "rgba(232,184,74,0.25)",
-            "mainSeriesProperties.areaStyle.color2": "rgba(232,184,74,0.02)",
-            "mainSeriesProperties.areaStyle.linecolor": "#e8b84a",
-            "mainSeriesProperties.candleStyle.upColor": "#e8b84a",
-            "mainSeriesProperties.candleStyle.downColor": "#c44d3a",
-            "mainSeriesProperties.candleStyle.borderUpColor": "#e8b84a",
-            "mainSeriesProperties.candleStyle.borderDownColor": "#c44d3a",
-            "mainSeriesProperties.candleStyle.wickUpColor": "#e8b84a",
-            "mainSeriesProperties.candleStyle.wickDownColor": "#c44d3a",
-          },
-          studies_overrides: {
-            "volume.volume.color.0": "#c44d3a",
-            "volume.volume.color.1": "#3a9d8f",
-            "volume.volume.transparency": 40,
-          },
-          loading_screen: { backgroundColor: "#000000", foregroundColor: "#e8b84a" },
         });
       }
     };
@@ -162,17 +134,16 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
         {/* Chart + News Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main Chart */}
-          <div className="lg:col-span-2 rounded-lg shadow-sm border overflow-hidden bg-black border-border">
-            <div className="p-4 border-b border-border bg-black">
+          <div className="lg:col-span-2 rounded-lg shadow-sm border overflow-hidden bg-card border-border">
+            <div className="p-4 border-b border-border">
               <h3 className="font-semibold text-foreground">PAI Price Chart</h3>
             </div>
             <div
               id="tradingview_chart"
               ref={chartContainerRef}
-              className="h-[450px] bg-black"
+              className="h-[450px]"
             />
           </div>
-
 
           {/* News Feed */}
           <div className="rounded-lg shadow-sm border overflow-hidden bg-card border-border">
