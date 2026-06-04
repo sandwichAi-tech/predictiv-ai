@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_messages: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          user_email: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          user_email: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          user_email?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       analytics_events: {
         Row: {
           city: string | null
@@ -29,6 +53,7 @@ export type Database = {
           referrer: string | null
           region: string | null
           session_id: string | null
+          subscriber_id: string | null
           user_agent: string | null
           utm_campaign: string | null
           utm_medium: string | null
@@ -49,6 +74,7 @@ export type Database = {
           referrer?: string | null
           region?: string | null
           session_id?: string | null
+          subscriber_id?: string | null
           user_agent?: string | null
           utm_campaign?: string | null
           utm_medium?: string | null
@@ -69,6 +95,7 @@ export type Database = {
           referrer?: string | null
           region?: string | null
           session_id?: string | null
+          subscriber_id?: string | null
           user_agent?: string | null
           utm_campaign?: string | null
           utm_medium?: string | null
@@ -225,6 +252,7 @@ export type Database = {
           referrer: string | null
           region: string | null
           session_id: string
+          subscriber_id: string | null
           utm_source: string | null
           visitor_id: string | null
         }
@@ -240,6 +268,7 @@ export type Database = {
           referrer?: string | null
           region?: string | null
           session_id: string
+          subscriber_id?: string | null
           utm_source?: string | null
           visitor_id?: string | null
         }
@@ -255,6 +284,7 @@ export type Database = {
           referrer?: string | null
           region?: string | null
           session_id?: string
+          subscriber_id?: string | null
           utm_source?: string | null
           visitor_id?: string | null
         }
@@ -453,6 +483,38 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_admin_analytics_summary: {
+        Args: { end_date: string; live_since: string; start_date: string }
+        Returns: {
+          emails_clicked: number
+          emails_opened: number
+          emails_sent: number
+          live_visitors: number
+          new_visitors: number
+          podcast_completes: number
+          podcast_plays: number
+          report_shares: number
+          report_views: number
+          returning_visitors: number
+          sms_subscribers: number
+          tearsheet_shares: number
+          tearsheet_views: number
+          total_hits: number
+          total_pageviews: number
+          total_revisits: number
+          total_subscribers: number
+          total_visitors: number
+        }[]
+      }
+      get_country_breakdown: {
+        Args: { end_date: string; max_rows?: number; start_date: string }
+        Returns: {
+          country: string
+          country_code: string
+          total_visitors: number
+          visitors: number
+        }[]
+      }
       get_daily_analytics: {
         Args: { end_date: string; start_date: string }
         Returns: {
@@ -480,6 +542,14 @@ export type Database = {
           total_events: number
           visit_days: number
           visitor_id: string
+        }[]
+      }
+      get_traffic_breakdowns: {
+        Args: { end_date: string; max_rows?: number; start_date: string }
+        Returns: {
+          dimension: string
+          label: string
+          visitors: number
         }[]
       }
       get_visitor_breakdown: {
