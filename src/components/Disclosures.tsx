@@ -77,9 +77,13 @@ const Disclosures = () => {
                 <p className="mb-4">
                   The research analyst(s) hereby certify that all views expressed in this Report accurately reflect the analyst's personal views about the subject company and its securities. No part of analyst compensation was, is, or will be related to the specific recommendations expressed herein.
                 </p>
-                <h4 className="font-semibold text-foreground mb-2">Compensation Disclosure</h4>
+                <h4 className="font-semibold text-foreground mb-2">Section 17(b) Compensation Disclosure</h4>
                 <p className="mb-4">
-                  Omnia Capital Partners Ltd. has been engaged and compensated by Predictiv AI Inc. for investor relations and capital markets advisory services. This creates a material conflict of interest. Readers should consider this relationship when evaluating this research.
+                  In accordance with Section 17(b) of the U.S. Securities Act of 1933, the Publisher discloses that <strong className="text-foreground">Omnia Capital Partners USA LLC has been paid US$1,500 by Predictiv AI Inc. as consideration for the creation, hosting and distribution of this landing page and related digital marketing materials.</strong> This compensation creates a material conflict of interest. Readers should consider this relationship when evaluating any content on this site.
+                </p>
+                <h4 className="font-semibold text-foreground mb-2">Additional Compensation Disclosure</h4>
+                <p className="mb-4">
+                  Omnia Capital Partners Ltd. has also been engaged and compensated by Predictiv AI Inc. for investor relations and capital markets advisory services. This further reinforces that the Publisher is not independent of the issuer.
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Ownership Disclosure</h4>
                 <p className="mb-4">
