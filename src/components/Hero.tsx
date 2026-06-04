@@ -76,13 +76,21 @@ const Hero = ({ quote, priceLoading }: HeroProps) => {
             <span className="h-px w-8 bg-hot/60" />
           </div>
 
-          <h1 className="text-balance text-center text-4xl sm:text-5xl md:text-[4.5rem] leading-[0.95] font-semibold mb-4 tracking-tight">
-            Empowering Smarter{" "}
+          <h1 className="text-balance text-center text-4xl sm:text-5xl md:text-[4.5rem] leading-[0.95] font-semibold mb-3 tracking-tight">
+            Predictive AI.
             <br className="hidden md:block" />
-            Decisions with Advanced{" "}
+            Real Markets.{" "}
             <br className="hidden md:block" />
-            <span className="text-hot">AI Solutions</span>
+            <span className="text-hot">Real Edge.</span>
           </h1>
+
+          <p className="text-center text-foreground/70 text-base sm:text-lg md:text-xl font-medium max-w-2xl mx-auto mb-3">
+            AI Solutions Built for Your Industry
+          </p>
+
+          <p className="text-center text-foreground/50 font-mono text-xs sm:text-sm tracking-[0.12em] uppercase mb-6 max-w-2xl mx-auto">
+            Integrated platforms. Purpose-built for impact.
+          </p>
 
           <div className="text-center mb-8">
             <span className="inline-block font-mono font-bold text-5xl sm:text-6xl md:text-7xl tracking-tight text-[hsl(140_85%_55%)] drop-shadow-[0_0_25px_hsl(140_85%_45%/0.55)]">
@@ -90,8 +98,8 @@ const Hero = ({ quote, priceLoading }: HeroProps) => {
             </span>
           </div>
 
-          <p className="text-center text-foreground/60 font-mono text-xs sm:text-sm tracking-[0.15em] uppercase mb-10 max-w-2xl mx-auto">
-            Three vertical-AI products · One triple-listed company · A logistics JV embedded in South Asia
+          <p className="text-center text-foreground/40 font-mono text-[11px] sm:text-xs tracking-[0.15em] uppercase mb-10 max-w-2xl mx-auto">
+            CSE · OTC · Frankfurt · Triple-listed AI company
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 mb-10 max-w-3xl mx-auto">
