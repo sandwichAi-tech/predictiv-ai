@@ -56,9 +56,9 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
           interval: "D",
           timezone: "America/New_York",
           theme: "dark",
-          style: "1",
+          style: "2",
           locale: "en",
-          toolbar_bg: "#0a0a0a",
+          toolbar_bg: "#000000",
           enable_publishing: false,
           hide_top_toolbar: false,
           hide_legend: false,
@@ -72,6 +72,27 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
           hotlist: false,
           calendar: false,
           allow_symbol_change: false,
+          backgroundColor: "#000000",
+          gridColor: "rgba(234, 179, 8, 0.06)",
+          overrides: {
+            "paneProperties.background": "#000000",
+            "paneProperties.backgroundType": "solid",
+            "paneProperties.vertGridProperties.color": "rgba(234, 179, 8, 0.06)",
+            "paneProperties.horzGridProperties.color": "rgba(234, 179, 8, 0.06)",
+            "scalesProperties.textColor": "#eab308",
+            "scalesProperties.backgroundColor": "#000000",
+            "mainSeriesProperties.lineStyle.color": "#eab308",
+            "mainSeriesProperties.lineStyle.linewidth": 2,
+            "mainSeriesProperties.areaStyle.color1": "rgba(234, 179, 8, 0.4)",
+            "mainSeriesProperties.areaStyle.color2": "rgba(234, 179, 8, 0.0)",
+            "mainSeriesProperties.areaStyle.linecolor": "#eab308",
+            "mainSeriesProperties.areaStyle.linewidth": 2,
+          },
+          studies_overrides: {
+            "volume.volume.color.0": "rgba(234, 179, 8, 0.35)",
+            "volume.volume.color.1": "rgba(234, 179, 8, 0.65)",
+            "volume.volume.transparency": 40,
+          },
         });
       }
     };
@@ -191,10 +212,15 @@ const QuoteChip = ({ flag, exchange, symbol, widgetSymbol, volume, volumeLoading
       locale: "en",
       dateRange: "1D",
       colorTheme: "dark",
-      isTransparent: true,
+      isTransparent: false,
       autosize: true,
       largeChartUrl: "",
-      noTimeScale: false
+      noTimeScale: false,
+      chartOnly: true,
+      backgroundColor: "rgba(0, 0, 0, 1)",
+      lineColor: "#eab308",
+      topColor: "rgba(234, 179, 8, 0.3)",
+      bottomColor: "rgba(234, 179, 8, 0)",
     });
 
     const widgetContainer = document.createElement('div');
