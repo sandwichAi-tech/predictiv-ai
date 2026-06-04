@@ -98,13 +98,28 @@ const Footer = () => {
           </div>
         </div>
         
+        {/* Section 17(b) Compensation Disclosure */}
+        <div className="bg-primary/5 border border-primary/30 rounded-lg p-4 mb-6">
+          <p className="text-[11px] font-semibold text-primary tracking-wider uppercase mb-2">
+            Section 17(b) Compensation Disclosure
+          </p>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            In accordance with Section 17(b) of the U.S. Securities Act of 1933,
+            <strong className="text-foreground"> Omnia Capital Partners USA LLC has been paid US$1,500 by Predictiv AI Inc.</strong> as
+            consideration for the creation, hosting, and distribution of this landing page and related digital marketing
+            materials. This compensation creates a material conflict of interest. Content on this site is promotional in
+            nature, is not independent research, and should not be construed as investment advice or a recommendation to
+            buy, sell, or hold any security.
+          </p>
+        </div>
+
         {/* Divider */}
         <div className="h-px w-full bg-border mb-6"></div>
-        
+
         {/* Bottom Text */}
         <div className="text-center">
           <p className="text-muted-foreground text-sm mb-2">
-            Institutional Research · May 2026
+            Institutional Coverage · May 2026
           </p>
           <p className="text-muted-foreground/60 text-xs mb-2">
             © 2026 Predictiv AI Inc. All rights reserved.
