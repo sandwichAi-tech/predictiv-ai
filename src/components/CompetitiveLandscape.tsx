@@ -128,7 +128,7 @@ const CompetitiveLandscape = () => {
             </div>
             <div className="flex items-start gap-2">
               <span className="text-primary">✓</span>
-              <span className="text-muted-foreground"><strong className="text-foreground">Dual-Listed Liquidity</strong> — CSE (PAI) + Frankfurt (7IT) with IR by AGORACOM</span>
+              <span className="text-muted-foreground"><strong className="text-foreground">Dual-Listed Liquidity</strong> — CSE (PAI) + Frankfurt (7IT) with IR by Omnia Capital Partners</span>
             </div>
           </div>
         </div>

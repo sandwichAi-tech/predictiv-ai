@@ -64,7 +64,7 @@ const Footer = () => {
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
               <span className="text-muted-foreground">Investor Relations</span>
-              <span className="text-primary text-right font-semibold">AGORACOM</span>
+              <span className="text-primary text-right font-semibold">Omnia Capital Partners</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
               <span className="text-muted-foreground">CEO</span>
