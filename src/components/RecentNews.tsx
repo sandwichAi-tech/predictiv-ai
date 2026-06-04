@@ -63,14 +63,14 @@ const releases: Release[] = [
 
 const trackPRView = async (prId: string) => {
   try {
-    await supabase.from("analytics_events").insert({
+    await supabase.from("analytics_events").insert([{
       event_type: "press_release_view",
       visitor_id: getVisitorId(),
       session_id: getSessionId(),
       subscriber_id: getSubscriberId(),
       page_url: window.location.href,
       event_data: { press_release_id: prId },
-    });
+    }]);
   } catch (e) {
     console.error("PR track error", e);
   }
