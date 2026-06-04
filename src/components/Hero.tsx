@@ -76,19 +76,13 @@ const Hero = ({ quote, priceLoading }: HeroProps) => {
             <span className="h-px w-8 bg-hot/60" />
           </div>
 
-          <div className="text-center mb-3 font-mono text-[11px] tracking-[0.32em] uppercase text-hot/90">
-            Our Platform Family
-          </div>
-
-          <h1 className="text-balance text-center text-4xl sm:text-5xl md:text-[4.75rem] leading-[0.95] font-semibold mb-5 tracking-tight">
-            AI Solutions{" "}
+          <h1 className="text-balance text-center text-4xl sm:text-5xl md:text-[4.5rem] leading-[0.95] font-semibold mb-4 tracking-tight">
+            Empowering Smarter{" "}
             <br className="hidden md:block" />
-            Built for <span className="text-hot">Your Industry</span>
+            Decisions with Advanced{" "}
+            <br className="hidden md:block" />
+            <span className="text-hot">AI Solutions</span>
           </h1>
-
-          <p className="text-center text-foreground/70 text-lg sm:text-xl md:text-2xl font-serif italic mb-8 max-w-2xl mx-auto leading-snug">
-            Integrated platforms. Purpose-built for impact.
-          </p>
 
           <div className="text-center mb-8">
             <span className="inline-block font-mono font-bold text-5xl sm:text-6xl md:text-7xl tracking-tight text-[hsl(140_85%_55%)] drop-shadow-[0_0_25px_hsl(140_85%_45%/0.55)]">

@@ -3,6 +3,12 @@ import { ExternalLink, Newspaper } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { supabase } from '@/integrations/supabase/client';
 
+declare global {
+  interface Window {
+    TradingView: any;
+  }
+}
+
 interface NewsItem {
   title: string;
   link: string;
@@ -15,9 +21,6 @@ interface QuoteData {
   [key: string]: {
     price?: number;
     volume?: number;
-    change?: number;
-    changePercent?: number;
-    currency?: string;
   } | null;
 }
 
@@ -27,79 +30,133 @@ interface MarketDataProps {
 }
 
 const formatVolume = (volume: number): string => {
-  if (volume >= 1_000_000) return (volume / 1_000_000).toFixed(2) + 'M';
-  if (volume >= 1_000) return (volume / 1_000).toFixed(1) + 'K';
+  if (volume >= 1000000) {
+    return (volume / 1000000).toFixed(1) + 'M';
+  } else if (volume >= 1000) {
+    return (volume / 1000).toFixed(1) + 'K';
+  }
   return volume.toString();
 };
 
-const LISTINGS = [
-  {
-    flag: '🇨🇦',
-    badge: 'PAI',
-    name: 'Predictiv AI Inc.',
-    exchange: 'CSE',
-    widgetSymbol: 'CSE:PAI',
-    quoteKey: 'PAI',
-    currency: 'C$',
-    exchangeUrl: 'https://www.thecse.com/en/listings/technology/predictiv-ai-inc',
-  },
-  {
-    flag: '🇺🇸',
-    badge: 'PCIVF',
-    name: 'Predictiv AI Inc.',
-    exchange: 'OTCID',
-    widgetSymbol: 'OTC:PCIVF',
-    quoteKey: 'PCIVF',
-    currency: '$',
-    exchangeUrl: 'https://www.otcmarkets.com/stock/PCIVF/overview',
-  },
-  {
-    flag: '🇩🇪',
-    badge: '7IT',
-    name: 'Predictiv AI Inc.',
-    exchange: 'FWB',
-    widgetSymbol: 'FWB:7IT',
-    quoteKey: '7IT',
-    currency: '€',
-    exchangeUrl: 'https://www.boerse-frankfurt.de/equity/7IT',
-  },
-];
-
 const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => {
+  const chartContainerRef = useRef<HTMLDivElement>(null);
+  const chartWidgetRef = useRef<any>(null);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://s3.tradingview.com/tv.js';
+    script.async = true;
+    script.onload = () => {
+      if (chartContainerRef.current && window.TradingView) {
+        chartContainerRef.current.innerHTML = '';
+        
+        chartWidgetRef.current = new window.TradingView.widget({
+          autosize: true,
+          symbol: "CSE:PAI",
+          interval: "D",
+          timezone: "America/New_York",
+          theme: "dark",
+          style: "1",
+          locale: "en",
+          toolbar_bg: "#0a0a0a",
+          enable_publishing: false,
+          hide_top_toolbar: false,
+          hide_legend: false,
+          save_image: false,
+          container_id: "tradingview_chart",
+          studies: ["Volume@tv-basicstudies"],
+          hide_side_toolbar: true,
+          show_popup_button: false,
+          withdateranges: false,
+          details: false,
+          hotlist: false,
+          calendar: false,
+          allow_symbol_change: false,
+        });
+      }
+    };
+    
+    if (window.TradingView) {
+      script.onload(new Event('load'));
+    } else {
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
-    <section className="py-12 md:py-16 bg-terminal-dark">
+    <section className="py-12 md:py-16 transition-colors duration-300 bg-terminal-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-8">
-          <div className="font-mono text-[11px] tracking-[0.28em] uppercase text-hot mb-2">
-            Live Market Data
+        {/* Section Header */}
+        <div className="flex items-center justify-center mb-8">
+          <div className="text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 text-foreground">Real-Time Market Data</h2>
+            <p className="text-muted-foreground">Live quotes from CSE & Frankfurt</p>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-            $PAI · Triple-Listed Real-Time Quotes
-          </h2>
-          <p className="text-muted-foreground text-sm mt-2">Live charts from CSE · OTCID · Frankfurt</p>
         </div>
 
-        <div className="space-y-6">
-          {LISTINGS.map((l) => (
-            <ListingChartCard
-              key={l.widgetSymbol}
-              {...l}
-              quote={quotes[l.quoteKey]}
-              quotesLoading={quotesLoading}
+        {/* Exchange Quote Chips */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
+          <QuoteChip
+            flag="🇨🇦"
+            exchange="CSE"
+            symbol="PAI"
+            widgetSymbol="CSE:PAI"
+            volume={quotes['PAI']?.volume}
+            volumeLoading={quotesLoading}
+            exchangeUrl="https://www.thecse.com/en/listings/technology/predictiv-ai-inc"
+          />
+          <QuoteChip
+            flag="🇺🇸"
+            exchange="OTCID"
+            symbol="PCIVF"
+            widgetSymbol="OTC:PCIVF"
+            volume={quotes['PCIVF']?.volume}
+            volumeLoading={quotesLoading}
+            exchangeUrl="https://www.otcmarkets.com/stock/PCIVF/overview"
+          />
+          <QuoteChip
+            flag="🇩🇪"
+            exchange="Frankfurt"
+            symbol="7IT"
+            widgetSymbol="FWB:7IT"
+            volume={quotes['7IT']?.volume}
+            volumeLoading={quotesLoading}
+            exchangeUrl="https://www.boerse-frankfurt.de/equity/7IT"
+          />
+        </div>
+
+        {/* Chart + News Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Main Chart */}
+          <div className="lg:col-span-2 rounded-lg shadow-sm border overflow-hidden bg-card border-border">
+            <div className="p-4 border-b border-border">
+              <h3 className="font-semibold text-foreground">PAI Price Chart</h3>
+            </div>
+            <div
+              id="tradingview_chart"
+              ref={chartContainerRef}
+              className="h-[450px]"
             />
-          ))}
+          </div>
+
+          {/* News Feed */}
+          <div className="rounded-lg shadow-sm border overflow-hidden bg-card border-border">
+            <div className="p-4 border-b border-border">
+              <h3 className="font-semibold text-foreground">Latest News</h3>
+            </div>
+            <div className="h-[450px]">
+              <OTCNewsTimeline />
+            </div>
+          </div>
         </div>
 
-        <div className="mt-8 rounded-lg border border-border bg-card overflow-hidden">
-          <div className="p-4 border-b border-border flex items-center gap-2">
-            <Newspaper className="h-4 w-4 text-primary" />
-            <h3 className="font-semibold text-foreground">Latest News</h3>
-          </div>
-          <div className="h-[320px]">
-            <OTCNewsTimeline />
-          </div>
-        </div>
-
+        {/* Disclaimer */}
         <p className="text-center text-xs mt-6 text-muted-foreground/50">
           Quotes delayed 15-20 minutes. Data provided by TradingView. For informational purposes only.
         </p>
@@ -108,169 +165,87 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
   );
 };
 
-const TIMEFRAMES = [
-  { label: '1D', interval: '5', range: '1D' },
-  { label: '1M', interval: '60', range: '1M' },
-  { label: '3M', interval: 'D', range: '3M' },
-  { label: '1Y', interval: 'D', range: '12M' },
-];
-
-interface ListingChartCardProps {
+interface QuoteChipProps {
   flag: string;
-  badge: string;
-  name: string;
   exchange: string;
+  symbol: string;
   widgetSymbol: string;
-  currency: string;
+  volume?: number;
+  volumeLoading?: boolean;
   exchangeUrl: string;
-  quote?: QuoteData[string];
-  quotesLoading?: boolean;
 }
 
-const ListingChartCard = ({
-  flag, badge, name, exchange, widgetSymbol, currency, exchangeUrl, quote, quotesLoading,
-}: ListingChartCardProps) => {
-  const [tf, setTf] = useState(TIMEFRAMES[2]); // default 3M
+const QuoteChip = ({ flag, exchange, symbol, widgetSymbol, volume, volumeLoading, exchangeUrl }: QuoteChipProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const widgetIdRef = useRef(`tv_${badge}_${Math.random().toString(36).slice(2, 8)}`);
 
   useEffect(() => {
     if (!containerRef.current) return;
-    const container = containerRef.current;
-    container.innerHTML = '';
-
-    const widgetDiv = document.createElement('div');
-    widgetDiv.id = widgetIdRef.current;
-    widgetDiv.style.height = '100%';
-    widgetDiv.style.width = '100%';
-    container.appendChild(widgetDiv);
 
     const script = document.createElement('script');
-    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';
     script.async = true;
     script.innerHTML = JSON.stringify({
-      autosize: true,
       symbol: widgetSymbol,
-      interval: tf.interval,
-      range: tf.range,
-      timezone: 'America/New_York',
-      theme: 'dark',
-      style: '2', // line
-      locale: 'en',
-      toolbar_bg: 'rgba(0,0,0,0)',
-      backgroundColor: 'rgba(0,0,0,0)',
-      gridColor: 'rgba(255,255,255,0.04)',
-      enable_publishing: false,
-      hide_top_toolbar: true,
-      hide_legend: false,
-      hide_side_toolbar: true,
-      allow_symbol_change: false,
-      save_image: false,
-      withdateranges: false,
-      details: false,
-      hotlist: false,
-      calendar: false,
-      studies: ['Volume@tv-basicstudies'],
-      container_id: widgetIdRef.current,
+      width: "100%",
+      height: "100%",
+      locale: "en",
+      dateRange: "1D",
+      colorTheme: "dark",
+      isTransparent: true,
+      autosize: true,
+      largeChartUrl: "",
+      noTimeScale: false
     });
-    container.appendChild(script);
 
-    return () => { container.innerHTML = ''; };
-  }, [widgetSymbol, tf]);
+    const widgetContainer = document.createElement('div');
+    widgetContainer.className = 'tradingview-widget-container__widget';
+    
+    containerRef.current.innerHTML = '';
+    containerRef.current.appendChild(widgetContainer);
+    containerRef.current.appendChild(script);
 
-  const price = quote?.price;
-  const change = quote?.change ?? 0;
-  const changePct = quote?.changePercent ?? 0;
-  const volume = quote?.volume;
-  const positive = change >= 0;
-  const changeColor = positive ? 'text-[hsl(140_85%_55%)]' : 'text-hot';
-  const changeBg = positive ? 'bg-[hsl(140_85%_55%)]/10' : 'bg-hot/10';
-  const sign = positive ? '+' : '';
+    return () => {
+      if (containerRef.current) {
+        containerRef.current.innerHTML = '';
+      }
+    };
+  }, [widgetSymbol]);
 
   return (
-    <div className="rounded-lg border border-border bg-card overflow-hidden shadow-sm">
+    <a 
+      href={exchangeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="quote-chip rounded-lg border shadow-sm transition-all hover:shadow-md flex flex-col cursor-pointer bg-card border-border hover:border-primary/50"
+    >
       {/* Header */}
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-3 px-4 sm:px-5 py-3 border-b border-border bg-muted/30">
-        <div className="flex items-center gap-3">
-          <span className="font-mono text-[11px] tracking-[0.18em] uppercase px-2 py-1 rounded border border-primary/40 text-primary bg-primary/5">
-            {badge}
-          </span>
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold text-foreground">
-              {flag} {name}
+      <div className="p-3 border-b flex items-center gap-2 border-border">
+        <span className="text-lg">{flag}</span>
+        <span className="text-sm font-medium text-muted-foreground">{exchange}</span>
+        <span className="text-sm font-bold ml-auto font-mono text-primary">{symbol}</span>
+        <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
+      </div>
+      {/* TradingView Widget */}
+      <div 
+        ref={containerRef}
+        className="tradingview-widget-container h-[80px] overflow-hidden pointer-events-none"
+      />
+      {/* Volume Display */}
+      <div className="px-3 py-2 border-t border-border bg-muted/50">
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-muted-foreground">Volume</span>
+          {volumeLoading ? (
+            <span className="text-xs text-muted-foreground">...</span>
+          ) : volume !== undefined && volume > 0 ? (
+            <span className="text-xs font-semibold font-mono text-foreground">
+              {formatVolume(volume)}
             </span>
-            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-              {exchange} · {widgetSymbol}
-            </span>
-          </div>
-        </div>
-
-        <div className="flex items-baseline gap-2">
-          {quotesLoading ? (
-            <span className="text-2xl font-mono text-muted-foreground">—</span>
-          ) : price && price > 0 ? (
-            <>
-              <span className="text-2xl sm:text-3xl font-bold font-mono text-foreground tabular-nums">
-                {currency}{price.toFixed(price < 1 ? 3 : 2)}
-              </span>
-              <span className={`font-mono text-xs sm:text-sm px-2 py-0.5 rounded ${changeBg} ${changeColor} tabular-nums`}>
-                {sign}{change.toFixed(3)} ({sign}{changePct.toFixed(2)}%)
-              </span>
-            </>
           ) : (
-            <span className="text-2xl font-mono text-muted-foreground">—</span>
+            <span className="text-xs text-muted-foreground">--</span>
           )}
         </div>
-
-        <div className="flex flex-col items-end leading-tight ml-auto">
-          <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground">Volume</span>
-          <span className="font-mono text-sm font-semibold text-foreground tabular-nums">
-            {volume && volume > 0 ? formatVolume(volume) : '—'}
-          </span>
-        </div>
-
-        <div className="flex items-center gap-1 rounded border border-border bg-background/40 p-0.5">
-          {TIMEFRAMES.map((t) => (
-            <button
-              key={t.label}
-              onClick={() => setTf(t)}
-              className={`px-2.5 py-1 text-[11px] font-mono tracking-wider rounded transition-colors ${
-                tf.label === t.label
-                  ? 'bg-primary/20 text-primary'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
-
-        <a
-          href={exchangeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-primary transition-colors"
-          aria-label={`Open ${badge} on ${exchange}`}
-        >
-          <ExternalLink className="h-4 w-4" />
-        </a>
       </div>
-
-      {/* Chart */}
-      <div className="relative h-[400px] sm:h-[440px] bg-background">
-        <div ref={containerRef} className="absolute inset-0" />
-      </div>
-
-      {/* Footer */}
-      <div className="flex items-center justify-between px-4 py-2 border-t border-border bg-muted/20">
-        <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-muted-foreground">
-          Data: TradingView · Quotes may be delayed
-        </span>
-        <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-muted-foreground/70">
-          Not financial advice
-        </span>
-      </div>
-    </div>
+    </a>
   );
 };
 
@@ -284,28 +259,49 @@ const OTCNewsTimeline = () => {
       try {
         setLoading(true);
         const { data, error } = await supabase.functions.invoke('otc-markets-news');
-        if (error) { setError('Unable to load news'); return; }
-        if (data?.news && Array.isArray(data.news)) setNews(data.news.slice(0, 5));
-        else setNews([]);
-      } catch {
+        
+        if (error) {
+          console.error('Error fetching news:', error);
+          setError('Unable to load news');
+          return;
+        }
+        
+        if (data?.news && Array.isArray(data.news)) {
+          setNews(data.news.slice(0, 3));
+        } else {
+          setNews([]);
+        }
+      } catch (err) {
+        console.error('Error:', err);
         setError('Unable to load news');
       } finally {
         setLoading(false);
       }
     };
+
     fetchNews();
   }, []);
 
   const formatDate = (dateStr: string) => {
     try {
-      return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    } catch { return dateStr; }
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric',
+        year: 'numeric'
+      });
+    } catch {
+      return dateStr;
+    }
   };
 
   if (loading) {
     return (
       <div className="flex items-center justify-center h-full text-muted-foreground">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
+          <p className="text-sm">Loading news...</p>
+        </div>
       </div>
     );
   }
@@ -316,8 +312,12 @@ const OTCNewsTimeline = () => {
         <div className="text-center p-4">
           <Newspaper className="h-8 w-8 mx-auto mb-2 opacity-50" />
           <p className="text-sm">No recent news available</p>
-          <a href="https://www.predictiv.ai/news" target="_blank" rel="noopener noreferrer"
-             className="text-xs mt-2 inline-flex items-center gap-1 hover:underline text-primary">
+          <a 
+            href="https://www.predictiv.ai/news" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-xs mt-2 inline-flex items-center gap-1 hover:underline text-primary"
+          >
             View on Predictiv AI <ExternalLink className="h-3 w-3" />
           </a>
         </div>
@@ -327,19 +327,39 @@ const OTCNewsTimeline = () => {
 
   return (
     <ScrollArea className="h-full">
-      <div className="p-3 space-y-2">
+      <div className="p-3 space-y-3">
         {news.map((item, index) => (
-          <a key={index} href={item.link} target="_blank" rel="noopener noreferrer"
-             className="block p-3 rounded-lg transition-colors bg-muted/40 hover:bg-muted">
-            <h4 className="text-sm font-medium leading-tight mb-1 line-clamp-2 text-foreground">{item.title}</h4>
+          <a
+            key={index}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block p-3 rounded-lg transition-colors bg-muted/50 hover:bg-muted"
+          >
+            <h4 className="text-sm font-medium leading-tight mb-1 line-clamp-2 text-foreground">
+              {item.title}
+            </h4>
             <div className="flex items-center gap-2 mt-1">
               {item.source && (
-                <span className="text-xs px-1.5 py-0.5 rounded bg-card text-muted-foreground">{item.source}</span>
+                <span className="text-xs px-1.5 py-0.5 rounded bg-card text-muted-foreground">
+                  {item.source}
+                </span>
               )}
-              <span className="text-xs text-muted-foreground">{formatDate(item.pubDate)}</span>
+              <span className="text-xs text-muted-foreground">
+                {formatDate(item.pubDate)}
+              </span>
             </div>
           </a>
         ))}
+        
+        <a 
+          href="https://www.predictiv.ai/news" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block text-center text-xs py-2 hover:underline text-primary"
+        >
+          View all news on Predictiv AI →
+        </a>
       </div>
     </ScrollArea>
   );
