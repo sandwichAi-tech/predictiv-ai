@@ -29,9 +29,8 @@ export function useReturnVisitor() {
           event_type: "return_visit",
           visitor_id: vid,
           session_id: getSessionId(),
-          subscriber_id: getSubscriberId(),
           page_url: window.location.href,
-          event_data: { cookie: "_pai_vid" },
+          event_data: { cookie: "_pai_vid", subscriber_id: getSubscriberId() },
         }])
         .then(() => {}, (e) => console.error("return_visit insert", e));
     }

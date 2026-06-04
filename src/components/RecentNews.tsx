@@ -67,9 +67,8 @@ const trackPRView = async (prId: string) => {
       event_type: "press_release_view",
       visitor_id: getVisitorId(),
       session_id: getSessionId(),
-      subscriber_id: getSubscriberId(),
       page_url: window.location.href,
-      event_data: { press_release_id: prId },
+      event_data: { press_release_id: prId, subscriber_id: getSubscriberId() },
     }]);
   } catch (e) {
     console.error("PR track error", e);
