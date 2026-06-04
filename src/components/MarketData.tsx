@@ -162,16 +162,17 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
         {/* Chart + News Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main Chart */}
-          <div className="lg:col-span-2 rounded-lg shadow-sm border overflow-hidden bg-card border-border">
-            <div className="p-4 border-b border-border">
+          <div className="lg:col-span-2 rounded-lg shadow-sm border overflow-hidden bg-black border-border">
+            <div className="p-4 border-b border-border bg-black">
               <h3 className="font-semibold text-foreground">PAI Price Chart</h3>
             </div>
             <div
               id="tradingview_chart"
               ref={chartContainerRef}
-              className="h-[450px]"
+              className="h-[450px] bg-black"
             />
           </div>
+
 
           {/* News Feed */}
           <div className="rounded-lg shadow-sm border overflow-hidden bg-card border-border">
