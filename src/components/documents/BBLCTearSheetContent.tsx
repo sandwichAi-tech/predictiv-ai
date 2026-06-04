@@ -40,7 +40,7 @@ const BBLCTearSheetContent = () => {
           fleet telematics (Shiftmatics, Weather Telematics), voice/chat automation (CloudRep) and real estate
           intelligence (Housestack, Housefax). The April 2026 Shift × Arcasia Holdings 51/49 JV embeds the
           AI logistics platform directly inside a South Asian operating ecosystem led by Aravinda De Silva —
-          a deployment pathway, not a sales pipeline. Dual-listed CSE + Frankfurt with IR by AGORACOM.
+          a deployment pathway, not a sales pipeline. Dual-listed CSE + Frankfurt with IR by Omnia Capital Partners.
         </p>
       </section>
 
@@ -51,7 +51,7 @@ const BBLCTearSheetContent = () => {
           <ul className="text-sm text-muted-foreground space-y-1">
             <li>• Q2 2026: Shift × Arcasia definitive agreements + Sri Lanka entity</li>
             <li>• H2 2026: Initial JV deployments across Arcasia logistics network</li>
-            <li>• 2026: Frankfurt (7IT) institutional outreach via AGORACOM</li>
+            <li>• 2026: Frankfurt (7IT) institutional outreach via Omnia Capital Partners</li>
             <li>• Ongoing: CloudRep voice/chat customer wins</li>
             <li>• 2027: Multi-product revenue scaling</li>
           </ul>

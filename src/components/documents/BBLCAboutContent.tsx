@@ -1,3 +1,6 @@
+import sumanPhoto from "@/assets/leadership-sp.jpg";
+import khurramPhoto from "@/assets/leadership-kq.jpg";
+
 const BBLCAboutContent = () => {
   return (
     <div className="document-content">
@@ -104,8 +107,8 @@ const BBLCAboutContent = () => {
         <h2 className="text-lg font-bold text-foreground mb-4">Leadership Team</h2>
         <div className="space-y-4">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center shrink-0">
-              <span className="font-bold text-muted-foreground">SP</span>
+            <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-border bg-muted">
+              <img src={sumanPhoto} alt="Suman Pushparajah" width={48} height={48} loading="lazy" className="w-full h-full object-cover" />
             </div>
             <div>
               <h3 className="font-bold text-foreground">Suman Pushparajah</h3>
@@ -116,8 +119,8 @@ const BBLCAboutContent = () => {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center shrink-0">
-              <span className="font-bold text-muted-foreground">KQ</span>
+            <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-border bg-muted">
+              <img src={khurramPhoto} alt="Khurram Qureshi" width={48} height={48} loading="lazy" className="w-full h-full object-cover" />
             </div>
             <div>
               <h3 className="font-bold text-foreground">Khurram Qureshi</h3>
@@ -165,7 +168,7 @@ const BBLCAboutContent = () => {
           <div>
             <p className="text-muted-foreground"><span className="text-foreground font-medium">Industry:</span> Vertical AI / SaaS</p>
             <p className="text-muted-foreground"><span className="text-foreground font-medium">Sectors:</span> Fleet · Voice/Chat · Real Estate</p>
-            <p className="text-muted-foreground"><span className="text-foreground font-medium">Investor Relations:</span> AGORACOM</p>
+            <p className="text-muted-foreground"><span className="text-foreground font-medium">Investor Relations:</span> Omnia Capital Partners</p>
           </div>
         </div>
       </section>

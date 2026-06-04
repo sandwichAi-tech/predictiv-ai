@@ -23,7 +23,7 @@ const BBLCReportContent = () => {
           software across <strong>fleet telematics, voice/chat automation, and real estate intelligence</strong>.
           The Company operates six commercial product lines — Shift, Shiftmatics, CloudRep, Housestack, Housefax,
           and Weather Telematics — under one corporate umbrella, listed on the CSE December 22, 2025 and dual-listed
-          on the Frankfurt Stock Exchange (7IT). IR is provided by AGORACOM.
+          on the Frankfurt Stock Exchange (7IT). IR is provided by Omnia Capital Partners.
         </p>
         <p className="document-text">
           The Company trades at a current price of C$0.13 with a market cap of ~C$15.98M (118.3M shares O/S).
