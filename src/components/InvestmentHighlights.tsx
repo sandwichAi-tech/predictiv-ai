@@ -46,7 +46,7 @@ const InvestmentHighlights = () => {
           Investment Highlights
         </h2>
         <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-          Key value drivers under institutional review
+          Key items the Company has highlighted in its public disclosure
         </p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">

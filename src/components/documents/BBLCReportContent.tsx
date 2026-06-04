@@ -11,7 +11,7 @@ const BBLCReportContent = () => {
           <span className="text-muted-foreground">|</span>
           <span className="font-mono text-primary font-bold">FWB: 7IT</span>
           <span className="text-muted-foreground">|</span>
-          <span className="text-primary font-semibold">BREAKOUT</span>
+          <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Issuer-Paid Profile</span>
         </div>
       </div>
 

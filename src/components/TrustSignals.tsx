@@ -1,8 +1,8 @@
 import { Check } from "lucide-react";
 
 const signals = [
-  "Independent Research",
-  "SEC-Compliant Disclosure",
+  "Issuer-Paid Communication",
+  "Section 17(b) Disclosed",
   "No Investment Advice",
   "Full Risk Disclosure",
 ];

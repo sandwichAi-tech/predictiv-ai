@@ -36,7 +36,7 @@ const Index = () => {
           <NewsletterSignup
             source="hero_primary"
             eyebrow="Above the Fold"
-            headline="Institutional coverage on PAI, delivered."
+            headline="Updates on PAI, delivered."
             subhead="One email. Material news, the full research report PDF, and dated catalyst updates."
           />
         </div>

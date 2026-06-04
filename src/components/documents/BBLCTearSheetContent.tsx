@@ -9,10 +9,10 @@ const BBLCTearSheetContent = () => {
           <p className="text-muted-foreground">CSE: PAI · FWB: 7IT | Vertical AI · Fleet · Voice/Chat · Real Estate</p>
         </div>
         <div className="text-right">
-          <div className="inline-block bg-primary px-4 py-2 rounded">
-            <span className="font-bold text-primary-foreground">BREAKOUT</span>
+          <div className="inline-block bg-card border border-border px-4 py-2 rounded">
+            <span className="font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground">Research Profile</span>
           </div>
-          <p className="text-sm text-muted-foreground mt-2">Research & Analysis Only</p>
+          <p className="text-xs text-muted-foreground mt-2">Issuer-Paid · Research & Analysis Only</p>
         </div>
       </div>
 
