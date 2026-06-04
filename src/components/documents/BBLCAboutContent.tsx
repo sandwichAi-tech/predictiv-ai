@@ -1,5 +1,5 @@
-import sumanPhoto from "@/assets/leadership-sp.jpg";
-import khurramPhoto from "@/assets/leadership-kq.jpg";
+import sumanPhoto from "@/assets/suman-pushparajah-matched.png";
+import sanaPhoto from "@/assets/sana-srithas.png";
 
 const BBLCAboutContent = () => {
   return (
@@ -120,13 +120,13 @@ const BBLCAboutContent = () => {
           </div>
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-border bg-muted">
-              <img src={khurramPhoto} alt="Khurram Qureshi" width={48} height={48} loading="lazy" className="w-full h-full object-cover" />
+              <img src={sanaPhoto} alt="Sana Srithas" width={48} height={48} loading="lazy" className="w-full h-full object-cover" />
             </div>
             <div>
-              <h3 className="font-bold text-foreground">Khurram Qureshi</h3>
-              <p className="text-xs text-primary mb-1">Finance &amp; Capital Markets</p>
+              <h3 className="font-bold text-foreground">Sana Srithas</h3>
+              <p className="text-xs text-primary mb-1">Chief Operating Officer &amp; Director</p>
               <p className="text-sm text-muted-foreground">
-                Capital strategy, public-markets stewardship, and dual-listed (CSE/FWB) reporting oversight.
+                Co-Founder of Shift and HouseStack. Former Chief of Staff to a Member of Parliament and Director of Operations at a TSX Venture-listed company, leading operations across Canada.
               </p>
             </div>
           </div>
