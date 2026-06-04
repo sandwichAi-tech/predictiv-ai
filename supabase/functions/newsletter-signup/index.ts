@@ -74,15 +74,20 @@ serve(async (req: Request): Promise<Response> => {
     }
 
     // Parse request body
-    const body: SignupRequest = await req.json();
-    const { firstName, email, phone, smsOptedIn, source, utmSource, utmMedium, utmCampaign } = body;
+    const body: SignupRequest & { name?: string } = await req.json();
+    const { email, phone, smsOptedIn, source, utmSource, utmMedium, utmCampaign } = body;
+    const rawName = (body.firstName ?? body.name ?? "").trim();
 
-    if (!firstName?.trim() || !email?.trim()) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email?.trim() || !emailRegex.test(email.trim())) {
       return new Response(
-        JSON.stringify({ error: "validation", message: "Name and email are required" }),
+        JSON.stringify({ error: "validation", message: "A valid email is required" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
+
+    // Derive a fallback name from the email local-part when not provided
+    const firstName = rawName || (email.trim().split("@")[0] || "Investor");
 
     const subscriberId = crypto.randomUUID();
 
