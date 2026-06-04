@@ -5,6 +5,11 @@ export interface QuoteData {
   [key: string]: {
     price?: number;
     volume?: number;
+    change?: number;
+    changePercent?: number;
+    asOf?: number;
+    currency?: string;
+    exchange?: string;
   } | null;
 }
 
@@ -16,12 +21,10 @@ export const useStockQuotes = () => {
     const fetchQuotes = async () => {
       try {
         const { data, error } = await supabase.functions.invoke('stock-quote-data');
-        
         if (error) {
           console.error('Error fetching quote data:', error);
           return;
         }
-        
         if (data?.quotes) {
           setQuotes(data.quotes);
         }
@@ -33,8 +36,7 @@ export const useStockQuotes = () => {
     };
 
     fetchQuotes();
-    // Refresh every 5 minutes
-    const interval = setInterval(fetchQuotes, 5 * 60 * 1000);
+    const interval = setInterval(fetchQuotes, 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 

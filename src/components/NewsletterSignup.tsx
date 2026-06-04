@@ -1,36 +1,57 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Lock, CheckCircle, Shield } from "lucide-react";
+import { Lock, CheckCircle, Shield, FileText, Newspaper } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { validateEmail } from "@/lib/emailValidation";
+import { getSessionId, getVisitorId } from "@/lib/visitorIdentity";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
-const NewsletterSignup = () => {
-  const [firstName, setFirstName] = useState("");
+type CTAVariant = "report" | "news" | "coverage";
+
+interface NewsletterSignupProps {
+  ctaVariant?: CTAVariant;
+  compact?: boolean;
+  source?: string;
+  eyebrow?: string;
+  headline?: string;
+  subhead?: string;
+}
+
+const CTA_COPY: Record<CTAVariant, string> = {
+  report: "Send Me the Full Research Report",
+  news: "Track PAI · Get Material News First",
+  coverage: "Access Institutional Coverage on PAI",
+};
+
+const NewsletterSignup = ({
+  ctaVariant,
+  compact = false,
+  source = "landing_page",
+  eyebrow = "Conversion",
+  headline = "Institutional coverage on PAI, delivered.",
+  subhead = "One email. Material news, the full research report PDF, and catalyst updates as the Arcasia JV develops.",
+}: NewsletterSignupProps) => {
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [smsOptedIn, setSmsOptedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState("");
+  const [variant, setVariant] = useState<CTAVariant>("report");
   const { toast } = useToast();
 
-  const formatPhone = (value: string) => {
-    const digits = value.replace(/\D/g, '');
-    if (digits.length <= 3) return digits;
-    if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
-    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
-  };
+  useEffect(() => {
+    if (ctaVariant) {
+      setVariant(ctaVariant);
+      return;
+    }
+    const vid = localStorage.getItem("_vid") || "";
+    const seed = Array.from(vid).reduce((a, c) => a + c.charCodeAt(0), 0);
+    const variants: CTAVariant[] = ["report", "news", "coverage"];
+    setVariant(variants[seed % 3]);
+  }, [ctaVariant]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!firstName.trim() || !email.trim()) {
-      toast({
-        title: "Missing information",
-        description: "Please enter your name and email address.",
-        variant: "destructive",
-      });
-      return;
-    }
 
     const emailValidation = validateEmail(email);
     if (!emailValidation.valid) {
@@ -43,32 +64,27 @@ const NewsletterSignup = () => {
     }
 
     setIsLoading(true);
-    
+
     try {
       const urlParams = new URLSearchParams(window.location.search);
       const utmSource = urlParams.get("utm_source");
       const utmMedium = urlParams.get("utm_medium");
       const utmCampaign = urlParams.get("utm_campaign");
 
-      const phoneDigits = phone.replace(/\D/g, '');
-      const formattedPhone = phoneDigits ? `+1${phoneDigits}` : null;
-
       const { data, error } = await supabase.functions.invoke("newsletter-signup", {
         body: {
-          firstName: firstName.trim(),
           email: email.trim().toLowerCase(),
-          phone: formattedPhone,
-          smsOptedIn: smsOptedIn && !!formattedPhone,
-          source: "landing_page",
+          visitorId: getVisitorId(),
+          sessionId: getSessionId(),
+          source,
+          ctaVariant: variant,
           utmSource,
           utmMedium,
           utmCampaign,
         },
       });
 
-      if (error) {
-        throw error;
-      }
+      if (error) throw error;
 
       if (data?.error === "rate_limited") {
         toast({
@@ -90,17 +106,17 @@ const NewsletterSignup = () => {
         return;
       }
 
-      if (data?.error) {
-        throw new Error(data.message || "Signup failed");
-      }
+      if (data?.error) throw new Error(data.message || "Signup failed");
 
       if (data?.subscriberId) {
-        localStorage.setItem('_sub_id', data.subscriberId);
+        localStorage.setItem("_sub_id", data.subscriberId);
       }
-      
+
+      setSubmittedEmail(email.trim().toLowerCase());
       setIsSuccess(true);
-    } catch (error: any) {
-      console.error("Signup error:", error);
+      setShowConfirm(true);
+    } catch (err: any) {
+      console.error("Signup error:", err);
       toast({
         title: "Something went wrong",
         description: "Please try again later.",
@@ -111,18 +127,20 @@ const NewsletterSignup = () => {
     }
   };
 
+  const sectionPad = compact ? "py-10 md:py-14" : "py-16 md:py-20";
+
   if (isSuccess) {
     return (
-      <section className="bg-card py-16 px-5 border-y border-border">
+      <section className={`bg-card text-foreground ${sectionPad} px-5 border-y border-border/30`}>
         <div className="max-w-xl mx-auto text-center">
-          <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 glow-green">
-            <CheckCircle className="w-8 h-8 text-primary-foreground" />
+          <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="w-7 h-7 text-accent-foreground" />
           </div>
-          <h2 className="text-2xl font-bold text-foreground mb-2">
-            You're on the List
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
+            You're on the list.
           </h2>
-          <p className="text-muted-foreground">
-            Watch your inbox for research updates and alerts.
+          <p className="text-foreground/70">
+            Research report and material-news alerts are on the way.
           </p>
         </div>
       </section>
@@ -130,146 +148,110 @@ const NewsletterSignup = () => {
   }
 
   return (
-    <section className="bg-card py-16 px-5 border-y border-border">
+    <section className={`bg-card text-foreground ${sectionPad} px-5 border-y border-border/30 relative`}>
       <div className="max-w-2xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Stay Updated
+        <div className="text-center mb-6">
+          <span className="font-mono text-[11px] tracking-[0.28em] uppercase text-accent block mb-3">
+            {eyebrow}
+          </span>
+          <h2 className="font-serif text-2xl md:text-4xl text-foreground mb-3 leading-tight">
+            {headline}
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Get research alerts, material news, and portfolio updates delivered directly.
+          <p className="text-foreground/70 text-base md:text-lg max-w-xl mx-auto">
+            {subhead}
           </p>
         </div>
 
-        {/* Form */}
-        <form 
-          onSubmit={handleSubmit} 
-          className="bg-background border border-border rounded-lg p-6 md:p-8"
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col sm:flex-row gap-3"
         >
-          {/* Row 1: Name + Email */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <div>
-              <label className="block text-muted-foreground text-sm font-medium mb-2">
-                First Name *
-              </label>
-              <input
-                type="text"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                placeholder="John"
-                required
-                className="w-full px-4 py-3 bg-card border border-border rounded focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder-muted-foreground"
-              />
-            </div>
-            <div>
-              <label className="block text-muted-foreground text-sm font-medium mb-2">
-                Email Address *
-              </label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="john@example.com"
-                required
-                className="w-full px-4 py-3 bg-card border border-border rounded focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder-muted-foreground"
-              />
-            </div>
-          </div>
-
-          {/* Row 2: Phone */}
-          <div className="mb-4">
-            <label className="block text-muted-foreground text-sm font-medium mb-2">
-              Mobile Number <span className="text-muted-foreground/50">(Optional - for SMS alerts)</span>
-            </label>
-            <div className="flex">
-              <span className="inline-flex items-center px-4 bg-card border border-r-0 border-border rounded-l text-muted-foreground font-medium">
-                +1
-              </span>
-              <input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(formatPhone(e.target.value))}
-                placeholder="(555) 123-4567"
-                maxLength={14}
-                className="flex-1 px-4 py-3 bg-card border border-border rounded-r focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground placeholder-muted-foreground"
-              />
-            </div>
-          </div>
-
-          {/* SMS Opt-in Checkbox */}
-          {phone && (
-            <div className="mb-6">
-              <label className="flex items-start gap-3 cursor-pointer group">
-                <div className="relative mt-0.5">
-                  <input
-                    type="checkbox"
-                    checked={smsOptedIn}
-                    onChange={(e) => setSmsOptedIn(e.target.checked)}
-                    className="sr-only"
-                  />
-                  <div className={`w-5 h-5 rounded border-2 transition-colors ${
-                    smsOptedIn 
-                      ? 'bg-primary border-primary' 
-                      : 'bg-card border-border group-hover:border-muted-foreground'
-                  }`}>
-                    {smsOptedIn && (
-                      <svg className="w-full h-full text-primary-foreground p-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    )}
-                  </div>
-                </div>
-                <span className="text-muted-foreground text-sm leading-tight">
-                  Yes, send me SMS alerts for breaking news and time-sensitive updates.
-                  <span className="text-muted-foreground/50"> Message & data rates may apply. Reply STOP to unsubscribe.</span>
-                </span>
-              </label>
-            </div>
-          )}
-
-          {/* Submit Button */}
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@firm.com"
+            required
+            aria-label="Email address"
+            className="flex-1 px-4 py-4 bg-secondary border border-border rounded focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent text-foreground placeholder:text-muted-foreground font-mono text-sm"
+          />
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-4 bg-primary hover:bg-green-light disabled:bg-muted text-primary-foreground font-bold rounded transition-colors text-lg glow-green"
+            className="px-6 py-4 bg-accent hover:bg-accent/90 disabled:opacity-60 text-accent-foreground font-semibold rounded transition-colors whitespace-nowrap uppercase tracking-wider text-sm"
           >
-            {isLoading ? (
-              <span className="flex items-center justify-center gap-2">
-                <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                </svg>
-                Subscribing...
-              </span>
-            ) : (
-              'Get Research Alerts'
-            )}
+            {isLoading ? "Sending…" : CTA_COPY[variant]}
           </button>
-
-          {/* Trust Signals */}
-          <div className="flex flex-wrap justify-center gap-4 mt-6 text-muted-foreground text-xs">
-            <span className="flex items-center gap-1">
-              <Lock className="w-4 h-4 text-primary" />
-              Secure & Encrypted
-            </span>
-            <span className="flex items-center gap-1">
-              <CheckCircle className="w-4 h-4 text-primary" />
-              No Spam, Ever
-            </span>
-            <span className="flex items-center gap-1">
-              <Shield className="w-4 h-4 text-primary" />
-              Unsubscribe Anytime
-            </span>
-          </div>
         </form>
 
-        {/* Regulatory Fine Print */}
-        <p className="text-center text-muted-foreground/40 text-xs mt-6 max-w-lg mx-auto">
-          By subscribing, you agree to receive research communications from Omnia Capital Partners Ltd. 
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-5 text-foreground/60 text-xs">
+          <span className="flex items-center gap-1.5">
+            <Lock className="w-3.5 h-3.5 text-accent" />
+            Email only · No phone required
+          </span>
+          <span className="flex items-center gap-1.5">
+            <CheckCircle className="w-3.5 h-3.5 text-accent" />
+            No spam, ever
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Shield className="w-3.5 h-3.5 text-accent" />
+            Unsubscribe anytime
+          </span>
+        </div>
+
+        <p className="text-center text-foreground/40 text-[11px] mt-5 max-w-lg mx-auto">
+          By subscribing you agree to receive research communications from Omnia Capital Partners Ltd.
           Your information will not be sold or shared with third parties.
         </p>
       </div>
+
+      <Dialog open={showConfirm} onOpenChange={setShowConfirm}>
+        <DialogContent className="max-w-md bg-card border border-accent/40">
+          <DialogHeader>
+            <div className="w-12 h-12 rounded-full bg-accent/15 border border-accent/40 flex items-center justify-center mb-3">
+              <CheckCircle className="w-6 h-6 text-accent" />
+            </div>
+            <DialogTitle className="font-serif text-2xl text-foreground leading-tight">
+              You're confirmed.
+            </DialogTitle>
+            <DialogDescription className="text-foreground/70 pt-1">
+              We've added <span className="font-mono text-accent">{submittedEmail}</span> to the PAI institutional coverage list.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="mt-2 space-y-3">
+            <div className="flex items-start gap-3 p-3 rounded border border-border bg-background/40">
+              <FileText className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+              <div>
+                <div className="font-mono text-[11px] tracking-[0.2em] uppercase text-foreground/60 mb-0.5">
+                  Research material
+                </div>
+                <div className="text-sm text-foreground/90">
+                  The full PAI research report PDF will arrive in your inbox shortly.
+                </div>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 rounded border border-border bg-background/40">
+              <Newspaper className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+              <div>
+                <div className="font-mono text-[11px] tracking-[0.2em] uppercase text-foreground/60 mb-0.5">
+                  Material news
+                </div>
+                <div className="text-sm text-foreground/90">
+                  You'll be alerted to every CSE / FWB filing and Arcasia JV catalyst as they happen.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            onClick={() => setShowConfirm(false)}
+            className="w-full mt-4 px-4 py-3 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded transition-colors uppercase tracking-wider text-sm"
+          >
+            Got it
+          </button>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
