@@ -64,7 +64,7 @@ const MarketData = ({ quotes = {}, quotesLoading = false }: MarketDataProps) => 
           hide_legend: false,
           save_image: false,
           container_id: "tradingview_chart",
-          studies: ["Volume@tv-basicstudies"],
+          studies: [],
           hide_side_toolbar: true,
           show_popup_button: false,
           withdateranges: false,
@@ -203,23 +203,36 @@ const QuoteChip = ({ flag, exchange, symbol, widgetSymbol, volume, volumeLoading
     if (!containerRef.current) return;
 
     const script = document.createElement('script');
-    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js';
     script.async = true;
     script.innerHTML = JSON.stringify({
-      symbol: widgetSymbol,
+      symbols: [[widgetSymbol]],
+      chartOnly: true,
       width: "100%",
       height: "100%",
       locale: "en",
-      dateRange: "1D",
       colorTheme: "dark",
-      isTransparent: false,
       autosize: true,
-      largeChartUrl: "",
-      noTimeScale: false,
-      chartOnly: true,
+      showVolume: false,
+      showMA: false,
+      hideDateRanges: true,
+      hideMarketStatus: true,
+      hideSymbolLogo: true,
+      scalePosition: "no",
+      scaleMode: "Normal",
+      fontFamily: "Inter, sans-serif",
+      fontSize: "10",
+      noTimeScale: true,
+      valuesTracking: "1",
+      changeMode: "price-and-percent",
+      chartType: "area",
+      lineWidth: 2,
+      lineType: 0,
+      dateRanges: ["12m|1D"],
       backgroundColor: "rgba(0, 0, 0, 1)",
+      gridLineColor: "rgba(234, 179, 8, 0.06)",
       lineColor: "#eab308",
-      topColor: "rgba(234, 179, 8, 0.3)",
+      topColor: "rgba(234, 179, 8, 0.35)",
       bottomColor: "rgba(234, 179, 8, 0)",
     });
 
