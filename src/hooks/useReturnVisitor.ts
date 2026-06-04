@@ -25,13 +25,14 @@ export function useReturnVisitor() {
     if (existingCookie && existingCookie === vid) {
       supabase
         .from("analytics_events")
-        .insert([{
+        .insert({
           event_type: "return_visit",
           visitor_id: vid,
           session_id: getSessionId(),
+          subscriber_id: getSubscriberId(),
           page_url: window.location.href,
-          event_data: { cookie: "_pai_vid", subscriber_id: getSubscriberId() },
-        }])
+          event_data: { cookie: "_pai_vid" },
+        })
         .then(() => {}, (e) => console.error("return_visit insert", e));
     }
 
