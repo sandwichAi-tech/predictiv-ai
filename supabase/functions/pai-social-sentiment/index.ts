@@ -62,7 +62,7 @@ function parseRssItems(xml: string, idPrefix: string, defaultPublisher?: string)
 
     const lower = (title + " " + desc).toLowerCase();
     if (BLOCKLIST.some((b) => lower.includes(b))) continue;
-    if (!/predictiv|cse:?pai|pcivf|cloudrep|shiftmatics/i.test(title + " " + desc)) continue;
+    if (!/predictiv|cse:?\s*pai|\$pai\b|\bpai\.cn\b|\b7it\b|pcivf|cloudrep|shiftmatics/i.test(title + " " + desc)) continue;
 
     posts.push({
       source: "news",
