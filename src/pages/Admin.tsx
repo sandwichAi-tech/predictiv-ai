@@ -297,7 +297,7 @@ export default function Admin() {
     if (!signInError) return;
 
     const { error: resetErr } = await supabase.functions.invoke('admin-reset-password', {
-      body: { email: normalizedEmail, gate: '+PAI' },
+      body: { email: normalizedEmail, gate: 'PAI' },
     });
     if (resetErr) { setAuthError(resetErr.message || 'Unable to reset admin password.'); return; }
 
