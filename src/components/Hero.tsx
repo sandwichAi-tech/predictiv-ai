@@ -70,7 +70,7 @@ const Hero = ({ quote, priceLoading }: HeroProps) => {
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="h-px w-8 bg-hot/60" />
-            <span className="font-mono text-[11px] tracking-[0.28em] uppercase text-hot">
+            <span className="font-mono text-[11px] tracking-[0.28em] uppercase text-hot text-center">
               Predictiv AI Inc. · CSE: PAI · OTCID: PCIVF · FWB: 7IT
             </span>
             <span className="h-px w-8 bg-hot/60" />
