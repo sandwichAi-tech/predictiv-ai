@@ -288,7 +288,7 @@ export default function Admin() {
     setAuthError('');
     const normalizedEmail = email.trim().toLowerCase();
     if (!normalizedEmail) { setAuthError('Please enter an email address.'); return; }
-    if (password !== '$pai') { setAuthError('Invalid password. Use $pai.'); return; }
+    if (password !== '+PAI') { setAuthError('Invalid password.'); return; }
     const derivedPassword = `pai-admin::${normalizedEmail}::v1-static-key`;
 
     const { error: signInError } = await supabase.auth.signInWithPassword({
@@ -297,7 +297,7 @@ export default function Admin() {
     if (!signInError) return;
 
     const { error: resetErr } = await supabase.functions.invoke('admin-reset-password', {
-      body: { email: normalizedEmail, gate: '$pai' },
+      body: { email: normalizedEmail, gate: '+PAI' },
     });
     if (resetErr) { setAuthError(resetErr.message || 'Unable to reset admin password.'); return; }
 
