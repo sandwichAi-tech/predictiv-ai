@@ -288,7 +288,7 @@ export default function Admin() {
     setAuthError('');
     const normalizedEmail = email.trim().toLowerCase();
     if (!normalizedEmail) { setAuthError('Please enter an email address.'); return; }
-    if (password !== '+PAI') { setAuthError('Invalid password.'); return; }
+    if (password !== 'PAI') { setAuthError('Invalid password.'); return; }
     const derivedPassword = `pai-admin::${normalizedEmail}::v1-static-key`;
 
     const { error: signInError } = await supabase.auth.signInWithPassword({
