@@ -62,7 +62,7 @@ function parseRssItems(xml: string, idPrefix: string, defaultPublisher?: string)
 
     const lower = (title + " " + desc).toLowerCase();
     if (BLOCKLIST.some((b) => lower.includes(b))) continue;
-    if (!/predictiv|cse:?pai|pcivf|cloudrep|shiftmatics/i.test(title + " " + desc)) continue;
+    if (!/predictiv|cse:?\s*pai|\$pai\b|\bpai\.cn\b|\b7it\b|pcivf|cloudrep|shiftmatics/i.test(title + " " + desc)) continue;
 
     posts.push({
       source: "news",
@@ -119,12 +119,12 @@ async function fetchGoogleNews(): Promise<Post[]> {
   if (yahooSearch) addAll(parseRssItems(yahooSearch, "yh-s", "Yahoo Finance"));
 
   const bing = await tryFetch(
-    `https://www.bing.com/news/search?q=${encodeURIComponent('"Predictiv AI" OR "CloudRep" OR "Shiftmatics" OR "PCIVF" OR "CSE:PAI"')}&format=rss`,
+    `https://www.bing.com/news/search?q=${encodeURIComponent('"Predictiv AI" OR "$PAI" OR "CloudRep" OR "Shiftmatics" OR "PCIVF" OR "CSE:PAI"')}&format=rss`,
     "Bing"
   );
   if (bing) addAll(parseRssItems(bing, "bn"));
 
-  const q = encodeURIComponent('"Predictiv AI" OR "CSE:PAI" OR "PCIVF" OR "CloudRep" OR "Shiftmatics"');
+  const q = encodeURIComponent('"Predictiv AI" OR "$PAI" OR "CSE:PAI" OR "PCIVF" OR "CloudRep" OR "Shiftmatics"');
   const gn = await tryFetch(
     `https://news.google.com/rss/search?q=${q}&hl=en-US&gl=US&ceid=US:en`,
     "Google"
