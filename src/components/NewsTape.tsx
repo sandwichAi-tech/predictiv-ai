@@ -39,13 +39,6 @@ const NewsTape = () => {
       onMouseLeave={() => setPaused(false)}
     >
       <div className="flex items-stretch min-h-[40px]">
-        <div className="shrink-0 flex items-center gap-2 px-3 bg-hot/15 border-r border-hot/40">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-hot ticker-blink" aria-hidden />
-          <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-hot font-semibold whitespace-nowrap">
-            News Wire
-          </span>
-        </div>
-
         <div className="relative flex-1 overflow-hidden">
           <a
             key={idx}
