@@ -103,12 +103,15 @@ const Footer = () => {
           <p className="text-[11px] font-semibold text-primary tracking-wider uppercase mb-2">
             Section 17(b) Compensation Disclosure
           </p>
-          <p className="text-xs text-muted-foreground leading-relaxed">
+          <p className="text-xs text-muted-foreground leading-relaxed mb-2">
             In accordance with Section 17(b) of the U.S. Securities Act of 1933,
             <strong className="text-foreground"> Predictiv AI Inc. (Investor Relations — Internal)</strong> has created and maintains
             this landing page and related digital marketing materials. Content on this site is promotional in
             nature, is not independent research, and should not be construed as investment advice or a recommendation to
             buy, sell, or hold any security.
+          </p>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            Omnia Capital Partners USA LLC was paid US$1,500 as a one-time fee for initial landing-page setup assistance. Omnia Capital Partners USA LLC is not engaged as a full-time investor relations provider.
           </p>
         </div>
 
