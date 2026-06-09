@@ -200,7 +200,7 @@ const NewsletterSignup = ({
         </div>
 
         <p className="text-center text-foreground/40 text-[11px] mt-5 max-w-lg mx-auto">
-          By subscribing you agree to receive research communications from Omnia Capital Partners Ltd.
+          By subscribing you agree to receive research communications from Predictiv AI Inc.
           Your information will not be sold or shared with third parties.
         </p>
       </div>

@@ -99,7 +99,7 @@ const DocumentViewer = ({ isOpen, onClose, title, documentType, children }: Docu
         {/* Footer */}
         <div className="px-4 sm:px-6 py-3 border-t border-border bg-muted/50 text-center flex-shrink-0 document-viewer-footer">
           <p className="text-[10px] sm:text-xs text-muted-foreground">
-            Prepared by Omnia Capital Partners Ltd. · For Informational Purposes Only
+            Prepared by Predictiv AI Inc. · For Informational Purposes Only
           </p>
         </div>
       </DialogContent>
