@@ -168,7 +168,7 @@ const BBLCAboutContent = () => {
           <div>
             <p className="text-muted-foreground"><span className="text-foreground font-medium">Industry:</span> Vertical AI / SaaS</p>
             <p className="text-muted-foreground"><span className="text-foreground font-medium">Sectors:</span> Fleet · Voice/Chat · Real Estate</p>
-            <p className="text-muted-foreground"><span className="text-foreground font-medium">Investor Relations:</span> Omnia Capital Partners</p>
+            <p className="text-muted-foreground"><span className="text-foreground font-medium">Investor Relations:</span> Internal</p>
           </div>
         </div>
       </section>

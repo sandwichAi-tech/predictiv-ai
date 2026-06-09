@@ -5,8 +5,8 @@
 - Tickers: CSE: PAI · FWB: 7IT
 - Sector: Vertical AI / SaaS
 - Headquarters: Toronto, Ontario, Canada
-- Investor Relations: Omnia Capital Partners
-- Publisher: Omnia Capital Partners Ltd.
+- Investor Relations: Internal
+- Publisher: Predictiv AI Inc.
 
 ## Business
 Predictiv AI is a Canadian vertical AI company building production-grade software across fleet telematics, voice/chat automation and real estate intelligence. The Company operates six commercial product lines: Shift Technologies (logistics), Shiftmatics (fleet), CloudRep (voice/chat/SMS agents), Housestack and Housefax (real estate), and Weather Telematics.
@@ -15,7 +15,7 @@ Predictiv AI is a Canadian vertical AI company building production-grade softwar
 A 51/49 joint venture between Predictiv AI's Shift Technologies and Arcasia Holdings (Pvt) Ltd, the family office led by Aravinda De Silva. The JV is designed to deploy Shift's AI-powered logistics platform directly inside Arcasia Holdings' South Asian operating ecosystem of logistics, e-commerce, distribution and infrastructure businesses.
 
 ## Compensation Disclosure (Section 17(b))
-Omnia Capital Partners USA LLC has been paid US$1,500 by Predictiv AI Inc. as consideration for the creation, hosting and distribution of this landing page and related digital marketing materials. The Publisher is not independent of the issuer.
+This landing page and related digital marketing materials are created and maintained internally by Predictiv AI Inc. (Investor Relations — Internal).
 
 ## Important
 This material is an issuer-paid communication for informational purposes only. It is not investment advice, and contains no price target, rating, or recommendation. Investing in junior listed issuers carries above-average risk and volatility, including potential total loss of capital.

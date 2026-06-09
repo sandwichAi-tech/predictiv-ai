@@ -101,7 +101,7 @@ const BBLCPressReleaseContent = () => {
           <strong className="text-foreground">Company Contact:</strong><br />
           Suman Pushparajah — Chief Executive Officer &amp; Director<br />
           416-388-8886<br />
-          <span className="text-foreground font-medium">IR:</span> Omnia Capital Partners
+          <span className="text-foreground font-medium">IR:</span> Investor Relations — Internal
         </p>
       </div>
     </div>

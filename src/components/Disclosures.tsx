@@ -33,7 +33,7 @@ const Disclosures = () => {
               <TabsContent value="general" className="text-muted-foreground text-sm leading-relaxed m-0">
                 <h3 className="font-semibold text-foreground mb-3">Important Information and Disclaimer</h3>
                 <p className="mb-4">
-                  This research material (the "Report") has been prepared by Omnia Capital Partners Ltd. (the "Publisher") for informational purposes only. This Report is not intended to be, and should not be construed as, an offer to sell or a solicitation of an offer to buy any securities of Predictiv AI Inc. (the "Company," "Predictiv AI") or any other securities discussed herein.
+                  This research material (the "Report") has been prepared by Predictiv AI Inc. for informational purposes only. This Report is not intended to be, and should not be construed as, an offer to sell or a solicitation of an offer to buy any securities of Predictiv AI Inc. (the "Company," "Predictiv AI") or any other securities discussed herein.
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">No Investment Advice</h4>
                 <p className="mb-4">
@@ -79,11 +79,11 @@ const Disclosures = () => {
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Section 17(b) Compensation Disclosure</h4>
                 <p className="mb-4">
-                  In accordance with Section 17(b) of the U.S. Securities Act of 1933, the Publisher discloses that <strong className="text-foreground">Omnia Capital Partners USA LLC has been paid US$1,500 by Predictiv AI Inc. as consideration for the creation, hosting and distribution of this landing page and related digital marketing materials.</strong> This compensation creates a material conflict of interest. Readers should consider this relationship when evaluating any content on this site.
+                  In accordance with Section 17(b) of the U.S. Securities Act of 1933, the Publisher discloses that <strong className="text-foreground">Predictiv AI Inc. (Investor Relations — Internal) has created and maintains this landing page and related digital marketing materials.</strong> Readers should consider this relationship when evaluating any content on this site.
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Additional Compensation Disclosure</h4>
                 <p className="mb-4">
-                  Omnia Capital Partners Ltd. has also been engaged and compensated by Predictiv AI Inc. for investor relations and capital markets advisory services. This further reinforces that the Publisher is not independent of the issuer.
+                  Investor relations and capital markets advisory services are managed internally by Predictiv AI Inc.
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Ownership Disclosure</h4>
                 <p className="mb-4">
@@ -118,7 +118,7 @@ const Disclosures = () => {
                   Depending on location, you may access, correct, delete, or port your data.
                 </p>
                 <p>
-                  Contact: privacy@omniacap.com
+                  Contact: privacy@predictiv.ai
                 </p>
               </TabsContent>
               
@@ -129,7 +129,7 @@ const Disclosures = () => {
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Intellectual Property</h4>
                 <p className="mb-4">
-                  All content is property of Omnia Capital Partners Ltd. and protected by copyright.
+                  All content is property of Predictiv AI Inc. and protected by copyright.
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Permitted Use</h4>
                 <p className="mb-4">

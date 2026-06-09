@@ -69,7 +69,7 @@ const Leadership = () => {
         {/* Alignment Note */}
         <div className="mt-6 bg-primary/5 border border-primary/20 rounded-lg p-4 text-center">
           <p className="text-sm text-muted-foreground">
-            <span className="text-primary font-semibold">Dual Listed</span> — CSE: PAI · FWB: 7IT · Investor Relations by Omnia Capital Partners
+            <span className="text-primary font-semibold">Dual Listed</span> — CSE: PAI · FWB: 7IT · Investor Relations — Internal
           </p>
         </div>
       </div>

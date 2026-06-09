@@ -33,8 +33,8 @@ const highlights = [
   },
   {
     icon: Users,
-    title: "IR by Omnia Capital Partners",
-    description: "Capital markets storytelling and investor outreach managed by a leading small-cap IR firm",
+    title: "Investor Relations — Internal",
+    description: "Capital markets storytelling and investor outreach managed internally",
   },
 ];
 
