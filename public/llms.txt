@@ -15,7 +15,9 @@ Predictiv AI is a Canadian vertical AI company building production-grade softwar
 A 51/49 joint venture between Predictiv AI's Shift Technologies and Arcasia Holdings (Pvt) Ltd, the family office led by Aravinda De Silva. The JV is designed to deploy Shift's AI-powered logistics platform directly inside Arcasia Holdings' South Asian operating ecosystem of logistics, e-commerce, distribution and infrastructure businesses.
 
 ## Compensation Disclosure (Section 17(b))
-This landing page and related digital marketing materials are created and maintained internally by Predictiv AI Inc. (Investor Relations — Internal).
+In accordance with Section 17(b) of the U.S. Securities Act of 1933, Predictiv AI Inc. (Investor Relations — Internal) has created and maintains this landing page and related digital marketing materials. Content on this site is promotional in nature, is not independent research, and should not be construed as investment advice or a recommendation to buy, sell, or hold any security.
+
+Omnia Capital Partners USA LLC was paid US$1,500 as a one-time fee for initial landing-page setup assistance. Omnia Capital Partners USA LLC is not engaged as a full-time investor relations provider. All ongoing investor relations and capital markets advisory services are managed internally by Predictiv AI Inc.
 
 ## Important
 This material is an issuer-paid communication for informational purposes only. It is not investment advice, and contains no price target, rating, or recommendation. Investing in junior listed issuers carries above-average risk and volatility, including potential total loss of capital.
