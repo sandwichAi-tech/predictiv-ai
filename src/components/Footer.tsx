@@ -64,7 +64,7 @@ const Footer = () => {
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
               <span className="text-muted-foreground">Investor Relations</span>
-              <span className="text-primary text-right font-semibold">Omnia Capital Partners</span>
+              <span className="text-primary text-right font-semibold">Internal</span>
             </div>
             <div className="flex justify-between gap-2 border-b border-border/50 pb-2">
               <span className="text-muted-foreground">CEO</span>
@@ -105,9 +105,8 @@ const Footer = () => {
           </p>
           <p className="text-xs text-muted-foreground leading-relaxed">
             In accordance with Section 17(b) of the U.S. Securities Act of 1933,
-            <strong className="text-foreground"> Omnia Capital Partners USA LLC has been paid US$1,500 by Predictiv AI Inc.</strong> as
-            consideration for the creation, hosting, and distribution of this landing page and related digital marketing
-            materials. This compensation creates a material conflict of interest. Content on this site is promotional in
+            <strong className="text-foreground"> Predictiv AI Inc. (Investor Relations — Internal)</strong> has created and maintains
+            this landing page and related digital marketing materials. Content on this site is promotional in
             nature, is not independent research, and should not be construed as investment advice or a recommendation to
             buy, sell, or hold any security.
           </p>
