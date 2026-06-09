@@ -15,8 +15,15 @@ const HEADLINES: Headline[] = [
   { ticker: "ACTIVE NOW", text: "Stocks to Watch: NDRA, SBFM, GOVX, HIVE, ANY Trading Actively NOW!" },
 ];
 
-const storyUrl = (h: Headline) =>
-  h.url ?? `https://news.google.com/search?q=${encodeURIComponent(`${h.ticker} ${h.text}`)}`;
+// Google News rejects long/punctuated search URLs, so fall back to a clean
+// ticker-only query when an item doesn't have a direct article URL.
+const storyUrl = (h: Headline) => {
+  if (h.url) return h.url;
+  // Use the ticker symbol after the colon (e.g. "NASDAQ: ANY" -> "ANY"),
+  // or the first token if there's no colon. Keeps the query short & valid.
+  const sym = h.ticker.split("·")[0].split(":").pop()?.trim() || h.ticker;
+  return `https://news.google.com/search?q=${encodeURIComponent(sym)}`;
+};
 
 const ROTATE_MS = 15_000;
 
