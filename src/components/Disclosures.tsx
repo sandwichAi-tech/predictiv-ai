@@ -79,11 +79,11 @@ const Disclosures = () => {
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Section 17(b) Compensation Disclosure</h4>
                 <p className="mb-4">
-                  In accordance with Section 17(b) of the U.S. Securities Act of 1933, the Publisher discloses that <strong className="text-foreground">Predictiv AI Inc. (Investor Relations — Internal) has created and maintains this landing page and related digital marketing materials.</strong> Readers should consider this relationship when evaluating any content on this site.
+                  In accordance with Section 17(b) of the U.S. Securities Act of 1933, <strong className="text-foreground">Predictiv AI Inc. (Investor Relations — Internal)</strong> has created and maintains this landing page and related digital marketing materials. Content on this site is promotional in nature, is not independent research, and should not be construed as investment advice or a recommendation to buy, sell, or hold any security.
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Additional Compensation Disclosure</h4>
                 <p className="mb-4">
-                  Investor relations and capital markets advisory services are managed internally by Predictiv AI Inc.
+                  Omnia Capital Partners USA LLC was paid US$1,500 as a one-time fee for initial landing-page setup assistance. Omnia Capital Partners USA LLC is not engaged as a full-time investor relations provider. All ongoing investor relations and capital markets advisory services are managed internally by Predictiv AI Inc.
                 </p>
                 <h4 className="font-semibold text-foreground mb-2">Ownership Disclosure</h4>
                 <p className="mb-4">
