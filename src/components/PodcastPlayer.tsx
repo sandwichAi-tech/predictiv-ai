@@ -201,7 +201,7 @@ const PodcastPlayer = () => {
                   WALL STREET DEAL ROOM
                 </h3>
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                  Deep Dive: Predictiv AI & the 94% Crash
+                  Deep Dive: Predictiv AI & Micro-Cap Survival Math
                 </h2>
                 
                 {/* Hosts */}
