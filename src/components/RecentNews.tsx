@@ -15,6 +15,18 @@ type Release = {
 
 const releases: Release[] = [
   {
+    id: "cardiocomm-collaboration",
+    date: "Jun 8, 2026",
+    tag: "Strategic Collaboration",
+    headline:
+      "CardioComm Solutions and Predictiv AI Enter into Strategic AI Collaboration",
+    summary:
+      "Predictiv AI signs strategic collaboration, joint development and IP agreement with CardioComm Solutions (TSXV: EKG) covering AI-enabled remote patient monitoring, automated ECG interpretation, clinical decision support and software as a medical device applications.",
+    body:
+      "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) and CardioComm Solutions, Inc. (TSXV: EKG) have entered into a strategic collaboration, joint development and intellectual property agreement establishing a framework to identify, assess and pursue jointly approved projects across healthcare software, medical software, artificial intelligence, automated analytics, remote patient monitoring, clinical decision support, biosignal interpretation, predictive analytics, workflow optimization and software as a medical device applications. Under the framework, Predictiv AI is expected to contribute capabilities in artificial intelligence, telemetry aggregation, data intelligence and predictive analytics, while CardioComm contributes its proprietary medical software, ECG management technologies, ISO 13485 / ISO 27001 quality and regulatory expertise, and commercialization experience across FDA and Health Canada-cleared products. The agreement preserves each company's existing IP and sets out procedures for ownership, protection and use of any jointly developed IP, with project-specific deliverables, budgets, timelines, regulatory activities and commercialization terms to be addressed through separately approved written project schedules. For any project involving regulated medical software or SaMD, CardioComm retains final authority over quality, regulatory, validation, cybersecurity and release matters.",
+    sourceUrl: "https://finance.yahoo.com/sectors/healthcare/articles/cardiocomm-solutions-predictiv-ai-enter-131100422.html",
+  },
+  {
     id: "prompt-xpress-contract",
     date: "Jun 4, 2026",
     tag: "Commercial Contract",
