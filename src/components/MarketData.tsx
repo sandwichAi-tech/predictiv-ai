@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Newspaper } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { supabase } from '@/integrations/supabase/client';
+
 
 declare global {
   interface Window {
@@ -288,81 +289,45 @@ const QuoteChip = ({ flag, exchange, symbol, widgetSymbol, volume, volumeLoading
   );
 };
 
+const LATEST_NEWS: NewsItem[] = [
+  {
+    title: "CardioComm Solutions and Predictiv AI Enter into Strategic AI Collaboration",
+    link: "https://finance.yahoo.com/sectors/healthcare/articles/cardiocomm-solutions-predictiv-ai-enter-131100422.html",
+    pubDate: "2026-06-08",
+    description: "",
+    source: "Yahoo Finance",
+  },
+  {
+    title: "Predictiv AI's Shift Technologies Secures Multi-Phase Commercial Contract with Prompt Xpress",
+    link: "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ais-shift-technologies-secures-multi-phase-commercial-contract-to-digi-1170799",
+    pubDate: "2026-06-04",
+    description: "",
+    source: "ACCESS Newswire",
+  },
+  {
+    title: "Predictiv AI Announces Strategic Healthcare Partnership and CloudRep.ai Integration with Clinicmaster",
+    link: "https://www.morningstar.com/news/accesswire/1170266msn/predictiv-ai-announces-strategic-healthcare-partnership-and-cloudrep-ai-integration-with-clinicmaster-following-successful-multi-clinic-pilot-deployments",
+    pubDate: "2026-05-26",
+    description: "",
+    source: "ACCESS Newswire",
+  },
+];
+
 const OTCNewsTimeline = () => {
-  const [news, setNews] = useState<NewsItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        setLoading(true);
-        const { data, error } = await supabase.functions.invoke('otc-markets-news');
-        
-        if (error) {
-          console.error('Error fetching news:', error);
-          setError('Unable to load news');
-          return;
-        }
-        
-        if (data?.news && Array.isArray(data.news)) {
-          setNews(data.news.slice(0, 3));
-        } else {
-          setNews([]);
-        }
-      } catch (err) {
-        console.error('Error:', err);
-        setError('Unable to load news');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNews();
-  }, []);
+  const news = LATEST_NEWS;
 
   const formatDate = (dateStr: string) => {
     try {
       const date = new Date(dateStr);
-      return date.toLocaleDateString('en-US', { 
-        month: 'short', 
+      return date.toLocaleDateString('en-US', {
+        month: 'short',
         day: 'numeric',
-        year: 'numeric'
+        year: 'numeric',
       });
     } catch {
       return dateStr;
     }
   };
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-full text-muted-foreground">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
-          <p className="text-sm">Loading news...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error || news.length === 0) {
-    return (
-      <div className="flex items-center justify-center h-full text-muted-foreground">
-        <div className="text-center p-4">
-          <Newspaper className="h-8 w-8 mx-auto mb-2 opacity-50" />
-          <p className="text-sm">No recent news available</p>
-          <a 
-            href="https://www.predictiv.ai/news" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-xs mt-2 inline-flex items-center gap-1 hover:underline text-primary"
-          >
-            View on Predictiv AI <ExternalLink className="h-3 w-3" />
-          </a>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <ScrollArea className="h-full">
@@ -375,7 +340,7 @@ const OTCNewsTimeline = () => {
             rel="noopener noreferrer"
             className="block p-3 rounded-lg transition-colors bg-muted/50 hover:bg-muted"
           >
-            <h4 className="text-sm font-medium leading-tight mb-1 line-clamp-2 text-foreground">
+            <h4 className="text-sm font-medium leading-tight mb-1 line-clamp-3 text-foreground">
               {item.title}
             </h4>
             <div className="flex items-center gap-2 mt-1">
@@ -390,14 +355,12 @@ const OTCNewsTimeline = () => {
             </div>
           </a>
         ))}
-        
-        <a 
-          href="https://www.predictiv.ai/news" 
-          target="_blank" 
-          rel="noopener noreferrer"
+
+        <a
+          href="#news"
           className="block text-center text-xs py-2 hover:underline text-primary"
         >
-          View all news on Predictiv AI →
+          View all recent news →
         </a>
       </div>
     </ScrollArea>
