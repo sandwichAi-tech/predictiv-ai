@@ -18,7 +18,7 @@ const catalysts = [
   {
     period: "2026",
     title: "Frankfurt (7IT) Institutional Outreach",
-    description: "European institutional investor outreach via Omnia Capital Partners following the dual listing",
+    description: "European institutional investor outreach managed internally following the dual listing",
     icon: Globe,
     status: "upcoming",
   },
