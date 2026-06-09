@@ -3,7 +3,7 @@ const BBLCReportContent = () => {
     <div className="document-content">
       {/* Cover */}
       <div className="text-center pb-8 border-b border-border">
-        <p className="text-sm text-primary font-mono mb-2">OMNIA CAPITAL PARTNERS LTD.</p>
+        <p className="text-sm text-primary font-mono mb-2">PREDICTIV AI INC.</p>
         <h1 className="text-3xl font-bold text-foreground mb-2">Predictiv AI Inc.</h1>
         <p className="text-lg text-muted-foreground mb-4">Institutional Deep Dive | May 2026</p>
         <div className="inline-flex flex-wrap items-center justify-center gap-2 bg-primary/10 border border-primary/30 px-4 py-2 rounded">
@@ -23,7 +23,7 @@ const BBLCReportContent = () => {
           software across <strong>fleet telematics, voice/chat automation, and real estate intelligence</strong>.
           The Company operates six commercial product lines — Shift, Shiftmatics, CloudRep, Housestack, Housefax,
           and Weather Telematics — under one corporate umbrella, listed on the CSE December 22, 2025 and dual-listed
-          on the Frankfurt Stock Exchange (7IT). IR is provided by Omnia Capital Partners.
+          on the Frankfurt Stock Exchange (7IT). Investor Relations is managed internally.
         </p>
         <p className="document-text">
           The Company trades at a current price of C$0.13 with a market cap of ~C$15.98M (118.3M shares O/S).
