@@ -1074,7 +1074,7 @@ export default function Admin() {
                   Site Traffic ↔ $PAI Combined Volume (CSE · OTC · FWB)
                 </h2>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Daily unique investors overlaid with $PAI combined trading volume across all three listings.
+                  Daily pageviews (all hits) and unique investors overlaid with $PAI combined trading volume across all three listings.
                 </p>
               </div>
               <div className="flex gap-3">
@@ -1094,6 +1094,7 @@ export default function Admin() {
             </div>
             <ChartContainer
               config={{
+                pageviews: { label: 'Total Pageviews (Hits)', color: 'hsl(199 89% 48%)' },
                 visitors: { label: 'Unique Visitors', color: 'hsl(142.1 76.2% 36.3%)' },
                 paiVolume: { label: '$PAI Volume', color: 'hsl(38 92% 50%)' },
               }}
@@ -1106,7 +1107,8 @@ export default function Admin() {
                 <ChartTooltip content={<ChartTooltipContent />} />
                 <Legend wrapperStyle={{ fontSize: 12 }} />
                 <Bar yAxisId="right" dataKey="paiVolume" fill="hsl(38 92% 50%)" fillOpacity={0.55} name="$PAI Combined Volume" />
-                <Line yAxisId="left" type="monotone" dataKey="visitors" stroke="hsl(142.1 76.2% 36.3%)" strokeWidth={2.5} dot={false} name="Unique Visitors" />
+                <Line yAxisId="left" type="monotone" dataKey="pageviews" stroke="hsl(199 89% 48%)" strokeWidth={2.5} dot={false} name="Total Pageviews (Hits)" />
+                <Line yAxisId="left" type="monotone" dataKey="visitors" stroke="hsl(142.1 76.2% 36.3%)" strokeWidth={2} strokeDasharray="4 3" dot={false} name="Unique Visitors" />
               </ComposedChart>
             </ChartContainer>
           </div>
