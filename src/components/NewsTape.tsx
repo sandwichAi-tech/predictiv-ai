@@ -3,16 +3,16 @@ import { useEffect, useState } from "react";
 type Headline = { ticker: string; text: string; url?: string };
 
 const HEADLINES: Headline[] = [
-  { ticker: "NASDAQ: ANY", text: "Sphere 3D Corp. Advances AI Infrastructure Power Platform Expansion Across Tennessee and Kentucky" },
-  { ticker: "NYSE: TOON", text: "Kartoon Studios Expands / Inks Deal w/ Mattel (NASDAQ: MAT) — Q1 +80% Y/Y · See More!" },
-  { ticker: "NASDAQ: NDRA", text: "ENDRA Life Sciences Reports MRI-Like Validation for TAEUS® Liver Imaging Device" },
-  { ticker: "NASDAQ: PRSO", text: "Peraso Enters Commercial Phase — Additional Order(s) Shipped · More Stocks Inside" },
-  { ticker: "TSXV: GMG · OTCQX: GMGMF", text: "Graphene Ltd Signs Energy-Saving Deals w/ Oil and Gas Majors · More Stocks Inside" },
-  { ticker: "OTCQB: ADMQ", text: "ADM Endeavors — Q1 +10.6% Y/Y Growth, Expanding Margins · More Stocks Inside" },
-  { ticker: "CSE: DOSE · OTCQB: RDTCF", text: "Rapid Dose Leading $5.21B Oral Thin Film Market — See Why" },
-  { ticker: "NYSE: TOON", text: "Kartoon Studios' CFO Sets 2026 Expectations — Listen Now" },
-  { ticker: "WATCHLIST", text: "Stocks Under $1: NXXT, TOON, VRAX, AIM, SBFM on Breakout Watch" },
-  { ticker: "ACTIVE NOW", text: "Stocks to Watch: NDRA, SBFM, GOVX, HIVE, ANY Trading Actively NOW!" },
+  { ticker: "NASDAQ: ANY", text: "Sphere 3D Corp. Advances AI Infrastructure Power Platform Expansion Across Tennessee and Kentucky", url: "https://www.globenewswire.com/news-release/2024/12/19/3000095/0/en/Sphere-3D-Corp-Advances-AI-Infrastructure-Power-Platform-Expansion-Across-Tennessee-and-Kentucky.html" },
+  { ticker: "NYSE: TOON", text: "Kartoon Studios Expands / Inks Deal w/ Mattel (NASDAQ: MAT) — Q1 +80% Y/Y · See More!", url: "https://investors.kartoonstudios.com/news-events/press-releases" },
+  { ticker: "NASDAQ: NDRA", text: "ENDRA Life Sciences Reports MRI-Like Validation for TAEUS® Liver Imaging Device", url: "https://ir.endrainc.com/news-releases" },
+  { ticker: "NASDAQ: PRSO", text: "Peraso Enters Commercial Phase — Additional Order(s) Shipped · More Stocks Inside", url: "https://investors.perasoinc.com/news-events/press-releases" },
+  { ticker: "TSXV: GMG · OTCQX: GMGMF", text: "Graphene Ltd Signs Energy-Saving Deals w/ Oil and Gas Majors · More Stocks Inside", url: "https://graphenemg.com/investors/news/" },
+  { ticker: "OTCQB: ADMQ", text: "ADM Endeavors — Q1 +10.6% Y/Y Growth, Expanding Margins · More Stocks Inside", url: "https://www.admendeavors.com/news" },
+  { ticker: "CSE: DOSE · OTCQB: RDTCF", text: "Rapid Dose Leading $5.21B Oral Thin Film Market — See Why", url: "https://rapid-dose.com/news/" },
+  { ticker: "NYSE: TOON", text: "Kartoon Studios' CFO Sets 2026 Expectations — Listen Now", url: "https://investors.kartoonstudios.com/news-events/press-releases" },
+  { ticker: "WATCHLIST", text: "Stocks Under $1: NXXT, TOON, VRAX, AIM, SBFM on Breakout Watch", url: "https://finance.yahoo.com/screener/predefined/most_actives_penny_stocks" },
+  { ticker: "ACTIVE NOW", text: "Stocks to Watch: NDRA, SBFM, GOVX, HIVE, ANY Trading Actively NOW!", url: "https://finance.yahoo.com/most-active" },
 ];
 
 // Google News rejects long/punctuated search URLs, so fall back to a clean
