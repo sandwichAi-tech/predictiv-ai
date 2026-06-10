@@ -1074,7 +1074,7 @@ export default function Admin() {
                   Site Traffic ↔ $PAI Combined Volume (CSE · OTC · FWB)
                 </h2>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Daily unique investors overlaid with $PAI combined trading volume across all three listings.
+                  Daily pageviews (all hits) and unique investors overlaid with $PAI combined trading volume across all three listings.
                 </p>
               </div>
               <div className="flex gap-3">
