@@ -943,8 +943,28 @@ export default function Admin() {
       </header>
 
       <main className="max-w-7xl mx-auto px-6 py-8">
-        <div className="bg-gradient-to-r from-emerald-500/10 via-card to-amber-500/10 border border-emerald-500/30 rounded-xl p-4 mb-4">
+        <div className="bg-gradient-to-r from-primary/15 via-card to-amber-500/10 border border-primary/30 rounded-xl p-4 mb-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="flex items-center gap-3 border-r border-border/40 pr-4">
+              <div className="w-2.5 h-2.5 bg-primary rounded-full animate-pulse shrink-0" />
+              <div className="min-w-0">
+                <div className="text-[10px] uppercase tracking-[0.18em] text-primary font-mono">Total Pageviews</div>
+                <div className="text-3xl font-bold font-mono text-foreground tabular-nums leading-tight">
+                  {(stats?.totalPageviews || 0).toLocaleString()}
+                </div>
+                <div className="text-[10px] text-muted-foreground font-mono">all page loads in range</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 border-r border-border/40 pr-4">
+              <div className="w-2.5 h-2.5 bg-amber-500 rounded-full animate-pulse shrink-0" />
+              <div className="min-w-0">
+                <div className="text-[10px] uppercase tracking-[0.18em] text-amber-500 font-mono">Total Hits</div>
+                <div className="text-3xl font-bold font-mono text-amber-500 tabular-nums leading-tight">
+                  {(stats?.totalHits || 0).toLocaleString()}
+                </div>
+                <div className="text-[10px] text-muted-foreground font-mono">every event (clicks, scrolls, plays)</div>
+              </div>
+            </div>
             <div className="flex items-center gap-3 border-r border-border/40 pr-4">
               <div className="relative shrink-0">
                 <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse" />
@@ -955,24 +975,7 @@ export default function Admin() {
                 <div className="text-2xl font-bold font-mono text-emerald-500 tabular-nums">
                   {stats?.liveVisitors || 0}<span className="text-xs font-normal text-muted-foreground ml-1">on site</span>
                 </div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 border-r border-border/40 pr-4">
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse shrink-0" />
-              <div className="min-w-0">
-                <div className="text-[10px] uppercase tracking-[0.18em] text-primary font-mono">Pageviews</div>
-                <div className="text-2xl font-bold font-mono text-foreground tabular-nums">
-                  {(stats?.totalPageviews || 0).toLocaleString()}
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 border-r border-border/40 pr-4">
-              <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse shrink-0" />
-              <div className="min-w-0">
-                <div className="text-[10px] uppercase tracking-[0.18em] text-amber-500 font-mono">All Events</div>
-                <div className="text-2xl font-bold font-mono text-amber-500 tabular-nums">
-                  {(stats?.totalHits || 0).toLocaleString()}
-                </div>
+                <div className="text-[10px] text-muted-foreground font-mono">unique right now</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -983,10 +986,12 @@ export default function Admin() {
                   {(stats?.totalRevisits || 0).toLocaleString()}
                   <span className="text-xs font-normal text-muted-foreground ml-1">visit-days</span>
                 </div>
+                <div className="text-[10px] text-muted-foreground font-mono">repeat visit-days</div>
               </div>
             </div>
           </div>
         </div>
+
 
         <div className="bg-card border rounded-xl p-4 mb-8">
           <div className="flex items-center justify-between mb-3">
