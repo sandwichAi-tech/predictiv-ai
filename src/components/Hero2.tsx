@@ -1,5 +1,4 @@
 import TrendingTickers from "./TrendingTickers";
-import NewsTape from "./NewsTape";
 
 interface Hero2Props {
   quote?: {
