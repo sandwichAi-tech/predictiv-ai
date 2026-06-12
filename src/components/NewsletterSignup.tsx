@@ -137,10 +137,10 @@ const NewsletterSignup = ({
             <CheckCircle className="w-7 h-7 text-accent-foreground" />
           </div>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-            You're on the list.
+            You've been added.
           </h2>
           <p className="text-foreground/70">
-            Research report and material-news alerts are on the way.
+            You're on the PAI institutional coverage list. Material news and catalyst updates will be sent here as they happen.
           </p>
         </div>
       </section>
