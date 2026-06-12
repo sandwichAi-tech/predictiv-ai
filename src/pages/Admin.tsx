@@ -38,7 +38,7 @@ interface LiveVisitor {
 }
 interface Subscriber {
   id: string; first_name: string; email: string; phone: string | null;
-  sms_opted_in: boolean; utm_source: string | null; created_at: string;
+  sms_opted_in: boolean; utm_source: string | null; source: string | null; created_at: string;
   hasViewedReport?: boolean; hasViewedTearsheet?: boolean;
 }
 
