@@ -153,23 +153,9 @@ serve(async (req: Request): Promise<Response> => {
       utm_campaign: utmCampaign,
     });
 
-    // Trigger welcome email via existing function
-    try {
-      const { error: welcomeError } = await supabaseAdmin.functions.invoke("send-welcome-email", {
-        body: {
-          subscriberId,
-          firstName: firstName.trim(),
-          email: email.trim().toLowerCase(),
-          phone: phone || null,
-          smsOptedIn: smsOptedIn && !!phone,
-        },
-      });
-      if (welcomeError) {
-        console.error("[newsletter-signup] Welcome email error:", welcomeError);
-      }
-    } catch (emailError) {
-      console.error("[newsletter-signup] Welcome email invocation error:", emailError);
-    }
+    // Welcome email intentionally disabled — collecting names only for now.
+    // To re-enable, restore the supabaseAdmin.functions.invoke("send-welcome-email", ...) call.
+
 
     return new Response(
       JSON.stringify({ 
