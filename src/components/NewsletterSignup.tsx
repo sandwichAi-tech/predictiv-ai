@@ -212,10 +212,10 @@ const NewsletterSignup = ({
               <CheckCircle className="w-6 h-6 text-accent" />
             </div>
             <DialogTitle className="font-serif text-2xl text-foreground leading-tight">
-              You're confirmed.
+              You've been added.
             </DialogTitle>
             <DialogDescription className="text-foreground/70 pt-1">
-              We've added <span className="font-mono text-accent">{submittedEmail}</span> to the PAI institutional coverage list.
+              <span className="font-mono text-accent">{submittedEmail}</span> is now on the PAI institutional coverage list. No need to look in your inbox — we're not sending a welcome email.
             </DialogDescription>
           </DialogHeader>
 
