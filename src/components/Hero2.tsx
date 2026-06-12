@@ -1,5 +1,3 @@
-import TrendingTickers from "./TrendingTickers";
-
 interface Hero2Props {
   quote?: {
     price?: number;
@@ -155,9 +153,6 @@ const Hero2 = ({ quote, priceLoading }: Hero2Props) => {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto mt-8">
-          <TrendingTickers />
-        </div>
       </div>
 
       <div className="absolute inset-x-0 bottom-0 h-px bg-accent/40" aria-hidden />
