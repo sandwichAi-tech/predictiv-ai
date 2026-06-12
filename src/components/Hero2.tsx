@@ -1,5 +1,4 @@
 import TrendingTickers from "./TrendingTickers";
-import NewsTape from "./NewsTape";
 
 interface Hero2Props {
   quote?: {
@@ -157,7 +156,6 @@ const Hero2 = ({ quote, priceLoading }: Hero2Props) => {
         </div>
 
         <div className="max-w-4xl mx-auto mt-8">
-          <NewsTape />
           <TrendingTickers />
         </div>
       </div>
