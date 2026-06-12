@@ -137,10 +137,10 @@ const NewsletterSignup = ({
             <CheckCircle className="w-7 h-7 text-accent-foreground" />
           </div>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-            You're on the list.
+            You've been added.
           </h2>
           <p className="text-foreground/70">
-            Research report and material-news alerts are on the way.
+            You're on the PAI institutional coverage list. Material news and catalyst updates will be sent here as they happen.
           </p>
         </div>
       </section>
@@ -212,22 +212,22 @@ const NewsletterSignup = ({
               <CheckCircle className="w-6 h-6 text-accent" />
             </div>
             <DialogTitle className="font-serif text-2xl text-foreground leading-tight">
-              You're confirmed.
+              You've been added.
             </DialogTitle>
             <DialogDescription className="text-foreground/70 pt-1">
-              We've added <span className="font-mono text-accent">{submittedEmail}</span> to the PAI institutional coverage list.
+              <span className="font-mono text-accent">{submittedEmail}</span> is now on the PAI institutional coverage list. No need to look in your inbox — we're not sending a welcome email.
             </DialogDescription>
           </DialogHeader>
 
           <div className="mt-2 space-y-3">
             <div className="flex items-start gap-3 p-3 rounded border border-border bg-background/40">
-              <FileText className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+              <CheckCircle className="w-4 h-4 text-accent mt-0.5 shrink-0" />
               <div>
                 <div className="font-mono text-[11px] tracking-[0.2em] uppercase text-foreground/60 mb-0.5">
-                  Research material
+                  You've been added
                 </div>
                 <div className="text-sm text-foreground/90">
-                  The full PAI research report PDF will arrive in your inbox shortly.
+                  <span className="font-mono text-accent">{submittedEmail}</span> is now on the PAI institutional coverage list.
                 </div>
               </div>
             </div>
@@ -235,10 +235,10 @@ const NewsletterSignup = ({
               <Newspaper className="w-4 h-4 text-accent mt-0.5 shrink-0" />
               <div>
                 <div className="font-mono text-[11px] tracking-[0.2em] uppercase text-foreground/60 mb-0.5">
-                  Material news
+                  What happens next
                 </div>
                 <div className="text-sm text-foreground/90">
-                  You'll be alerted to every CSE / FWB filing and Arcasia JV catalyst as they happen.
+                  You'll be alerted to every CSE / FWB filing, JV catalyst, and material news event as they happen. No welcome email — your next note from us will be the news itself.
                 </div>
               </div>
             </div>
