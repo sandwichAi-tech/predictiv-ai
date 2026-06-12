@@ -38,7 +38,7 @@ interface LiveVisitor {
 }
 interface Subscriber {
   id: string; first_name: string; email: string; phone: string | null;
-  sms_opted_in: boolean; utm_source: string | null; created_at: string;
+  sms_opted_in: boolean; utm_source: string | null; source: string | null; created_at: string;
   hasViewedReport?: boolean; hasViewedTearsheet?: boolean;
 }
 
@@ -1423,18 +1423,23 @@ export default function Admin() {
               {recentSignups.length === 0 ? (
                 <p className="text-muted-foreground text-sm">No signups yet</p>
               ) : recentSignups.map((sub) => (
-                <div key={sub.id} className="flex items-center justify-between p-3 bg-muted rounded-lg">
-                  <div>
-                    <div className="text-sm font-medium">{sub.first_name}</div>
-                    <div className="text-xs text-muted-foreground">{sub.email}</div>
+                <div key={sub.id} className="flex items-center justify-between p-3 bg-muted rounded-lg gap-3">
+                  <div className="min-w-0 flex-1">
+                    <div className="text-sm font-medium truncate">{sub.first_name}</div>
+                    <div className="text-xs text-muted-foreground truncate">{sub.email}</div>
+                    {sub.source && (
+                      <span className="inline-block mt-1 px-2 py-0.5 bg-primary/10 text-primary rounded text-[10px] font-mono uppercase tracking-wide">
+                        {sub.source}
+                      </span>
+                    )}
                   </div>
-                  <div className="text-right flex flex-col items-end gap-1">
-                    <div className="flex gap-1">
-                      {sub.hasViewedReport && <span className="px-2 py-0.5 bg-primary/20 text-primary rounded text-xs">📄 Report</span>}
-                      {sub.hasViewedTearsheet && <span className="px-2 py-0.5 bg-primary/20 text-primary rounded text-xs">📋 Tearsheet</span>}
+                  <div className="text-right flex flex-col items-end gap-1 shrink-0">
+                    <div className="flex gap-1 flex-wrap justify-end">
+                      {sub.hasViewedReport && <span className="px-2 py-0.5 bg-primary/20 text-primary rounded text-xs">📄</span>}
+                      {sub.hasViewedTearsheet && <span className="px-2 py-0.5 bg-primary/20 text-primary rounded text-xs">📋</span>}
                       {sub.sms_opted_in && <span className="px-2 py-0.5 bg-green-500/20 text-green-600 rounded text-xs">SMS</span>}
                     </div>
-                    <div className="text-xs text-muted-foreground">{new Date(sub.created_at).toLocaleDateString()}</div>
+                    <div className="text-xs text-muted-foreground">{new Date(sub.created_at).toLocaleString(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</div>
                   </div>
                 </div>
               ))}
