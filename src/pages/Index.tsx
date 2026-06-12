@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero";
+import Hero2 from "@/components/Hero2";
 import WhyNow from "@/components/WhyNow";
 import PodcastPlayer from "@/components/PodcastPlayer";
 import NewsletterSignup from "@/components/NewsletterSignup";
@@ -28,7 +28,7 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-[hsl(220_65%_3%)]">
       <div className="max-w-[1080px] mx-auto bg-background border-x border-t border-border shadow-[0_0_60px_-20px_rgba(0,0,0,0.8)]">
-        <Hero quote={paiQuote} priceLoading={loading} />
+        <Hero2 quote={paiQuote} priceLoading={loading} />
 
         <div className="border-t border-border"><MarketData quotes={quotes} quotesLoading={loading} /></div>
 
