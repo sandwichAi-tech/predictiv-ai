@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero";
+import Hero from "@/components/Hero2";
 import WhyNow from "@/components/WhyNow";
 import PodcastPlayer from "@/components/PodcastPlayer";
 import NewsletterSignup from "@/components/NewsletterSignup";
