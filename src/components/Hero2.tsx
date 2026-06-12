@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { validateEmail } from "@/lib/emailValidation";
-import { getVisitorId, getSessionId } from "@/lib/analytics";
+import { getVisitorId, getSessionId } from "@/lib/visitorIdentity";
 
 interface Hero2Props {
   quote?: {
