@@ -96,7 +96,7 @@ const releases: Release[] = [
       "Active deployment of the CloudRep.ai voice / chat / SMS agent platform expands into multiple verticals and international markets.",
     body:
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) reported continued progress in the deployment and expansion of its enterprise AI communications platform, CloudRep.ai, into multiple industries and international markets. CloudRep.ai is a multi-agent automation platform operating across voice, chat and SMS within a unified environment — supporting customer interactions, process automation and role-specific AI agents across healthcare, retail, real estate, travel and global enterprise channels.",
-    sourceUrl: "https://www.predictiv.ai/predictiv-ai-expands-active-deployment-of-cloudrep-ai-across-healthcare-retail-real-estate-travel-and-global-markets/",
+    sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-expands-active-deployment-122500216.html",
   },
   {
     id: "agoracom-vlp",
@@ -108,7 +108,7 @@ const releases: Release[] = [
       "12-month online marketing and IR agreement with AGORACOM, plus engagement of Venture Liquidity Partners to provide market making services for PAI.",
     body:
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that it has entered into a 12-month online marketing and investor relations agreement with AGORACOM, and engaged Venture Liquidity Partners to provide market making services in support of orderly trading in the Company's common shares. The programs are designed to broaden retail awareness, deepen the shareholder base and improve secondary market liquidity as the Company executes its multi-product Vertical AI strategy.",
-    sourceUrl: "https://www.predictiv.ai/predictiv-ai-launches-agoracom-marketing-program-and-engages-venture-liquidity-partners-for-market-making-2/",
+    sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-launches-agoracom-marketing-123000193.html",
   },
   {
     id: "asia-regional-office",
@@ -120,7 +120,7 @@ const releases: Release[] = [
       "Establishment of an Asia regional office to support business development and deployment across Asia, Africa and the Middle East.",
     body:
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced the establishment of an Asia regional office to support the Company's expansion across Asia, Africa and the Middle East. The regional presence provides on-the-ground capacity for business development, partnership execution and customer deployment for CloudRep.ai, Shift AI and the broader Vertical AI product suite across emerging high-growth corridors.",
-    sourceUrl: "https://www.predictiv.ai/predictiv-ai-establishes-asia-regional-office-to-support-expansion-across-asia-africa-and-the-middle-east/",
+    sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-establishes-asia-regional-143000127.html",
   },
   {
     id: "innovate-calgary-pilot",
@@ -132,7 +132,7 @@ const releases: Release[] = [
       "Market update on the flagship asset and fleet intelligence platform pilot conducted under Innovate Calgary's Soaring Higher Challenge alongside Calgary Airports and WestJet.",
     body:
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) provided a market update on its flagship asset and fleet intelligence platform pilot, conducted under Innovate Calgary's Soaring Higher Challenge with Calgary Airports and WestJet. The pilot exercises Predictiv's AI-driven asset and fleet intelligence stack in a live aviation environment, supporting the Company's broader move into hardware-enabled fleet systems via Shiftmatics.",
-    sourceUrl: "https://www.predictiv.ai/predictiv-ai-provides-pilot-update-from-innovate-calgarys-soaring-higher-challenge-with-calgary-airports-and-westjet/",
+    sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-provides-pilot-innovate-133000470.html",
   },
 ];
 
