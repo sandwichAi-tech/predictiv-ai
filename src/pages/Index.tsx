@@ -14,7 +14,7 @@ import TrustSignals from "@/components/TrustSignals";
 import Disclosures from "@/components/Disclosures";
 import Footer from "@/components/Footer";
 import ExitIntent from "@/components/ExitIntent";
-import LiveVisitorCountries from "@/components/LiveVisitorCountries";
+
 import { useStockQuotes } from "@/hooks/useStockQuotes";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { useReturnVisitor } from "@/hooks/useReturnVisitor";
@@ -28,7 +28,6 @@ const Index = () => {
 
   return (
     <main className="min-h-screen bg-[hsl(220_65%_3%)]">
-      <LiveVisitorCountries />
       <div className="max-w-[1080px] mx-auto bg-background border-x border-t border-border shadow-[0_0_60px_-20px_rgba(0,0,0,0.8)]">
         <Hero2 quote={paiQuote} priceLoading={loading} />
 
