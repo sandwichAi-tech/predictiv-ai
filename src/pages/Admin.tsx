@@ -32,7 +32,7 @@ interface DashboardStats {
 }
 interface LiveVisitor {
   id: string; session_id: string; visitor_id: string | null; subscriber_id: string | null;
-  device_type: string; utm_source: string | null; country: string | null;
+  device_type: string; utm_source: string | null; country: string | null; country_code: string | null;
   city: string | null; region: string | null; ip_address: string | null; last_seen: string;
   subscriber?: { first_name: string; email: string } | null;
 }
