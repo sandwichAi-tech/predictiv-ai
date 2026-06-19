@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -32,7 +32,7 @@ interface DashboardStats {
 }
 interface LiveVisitor {
   id: string; session_id: string; visitor_id: string | null; subscriber_id: string | null;
-  device_type: string; utm_source: string | null; country: string | null;
+  device_type: string; utm_source: string | null; country: string | null; country_code: string | null;
   city: string | null; region: string | null; ip_address: string | null; last_seen: string;
   subscriber?: { first_name: string; email: string } | null;
 }
@@ -1025,6 +1025,43 @@ export default function Admin() {
               ))}
             </div>
           )}
+
+          {/* Live visitor chips by country */}
+          {(() => {
+            const grouped = new Map<string, { country: string; code: string | null; count: number }>();
+            liveVisitors.forEach((v) => {
+              const key = v.country || 'Unknown';
+              const existing = grouped.get(key);
+              if (existing) {
+                existing.count += 1;
+              } else {
+                grouped.set(key, { country: key, code: v.country_code, count: 1 });
+              }
+            });
+            const sorted = Array.from(grouped.values()).sort((a, b) => b.count - a.count);
+            if (sorted.length === 0) return null;
+            return (
+              <div className="mt-3 pt-3 border-t border-border">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                  </span>
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-emerald-500 font-mono">Live Visitors</span>
+                  <span className="text-[10px] text-muted-foreground font-mono ml-1">{liveVisitors.length} on site</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {sorted.map((g) => (
+                    <div key={g.country} className="flex items-center gap-1.5 bg-background border rounded-full px-3 py-1.5" title={`${g.country}: ${g.count} visitor${g.count !== 1 ? 's' : ''}`}>
+                      <span className="text-base leading-none">{getCountryFlag(g.code)}</span>
+                      <span className="text-sm font-semibold text-foreground tabular-nums">{g.count}</span>
+                      <span className="text-[10px] text-muted-foreground uppercase">{g.country}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </div>
 
         {stats && viewMode === 'issuer' && (
