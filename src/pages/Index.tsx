@@ -14,6 +14,7 @@ import TrustSignals from "@/components/TrustSignals";
 import Disclosures from "@/components/Disclosures";
 import Footer from "@/components/Footer";
 import ExitIntent from "@/components/ExitIntent";
+import LiveVisitorCountries from "@/components/LiveVisitorCountries";
 import { useStockQuotes } from "@/hooks/useStockQuotes";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { useReturnVisitor } from "@/hooks/useReturnVisitor";
@@ -59,6 +60,7 @@ const Index = () => {
         <div className="border-t border-border"><InvestmentHighlights /></div>
         <div className="border-t border-border"><CatalystTimeline /></div>
         <div className="border-t border-border"><Divisions /></div>
+        <div className="border-t border-border"><LiveVisitorCountries /></div>
         <div className="border-t border-border"><Leadership /></div>
         <div className="border-t border-border"><CompetitiveLandscape /></div>
         <div className="border-t border-border"><RecentNews /></div>
