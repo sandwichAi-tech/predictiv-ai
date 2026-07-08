@@ -63,6 +63,18 @@ const releases: Release[] = [
     sourceUrl: "https://www.webdisclosure.com/press-release/predictiv-ai-inc-cve-pai-predictiv-ais-shift-technologies-enters-strategic-joint-venture-with-arcasia-holdings-pvt-ltd-to-deploy-ai-powered-logistics-platform-across-global-first-middle-and-last-mile-networks-GaxF7Yi0X1Y",
   },
   {
+    id: "options-grant-apr-2026",
+    date: "Apr 22, 2026",
+    tag: "Corporate Update",
+    headline: "Predictiv AI Announces a Grant of Options",
+    summary:
+      "Board grants 5,188,000 share purchase options at an exercise price of $0.15, with 2,205,000 options issued to Directors and Officers.",
+    body:
+      "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that its Board of Directors has granted 5,188,000 share purchase options, of which 2,205,000 have been issued to Directors and Officers. The Options carry an exercise price of $0.15 per common share, reflecting the recent closing price, and are being issued under the Company's stock option plan as part of ongoing efforts to align long-term incentives across the leadership team and key contributors advancing Predictiv's Vertical AI product suite.",
+    sourceUrl: "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ai-announces-a-grant-of-options-1160225",
+  },
+
+  {
     id: "shiftmatics-hardware",
     date: "Apr 14, 2026",
     tag: "Hardware Launch",
@@ -99,7 +111,20 @@ const releases: Release[] = [
     sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-expands-active-deployment-122500216.html",
   },
   {
+    id: "rzevski-advisor",
+    date: "Mar 19, 2026",
+    tag: "Advisory",
+    headline:
+      "Predictiv AI Appoints Multi-Agent Systems Pioneer Professor George Rzevski as Strategic Advisor",
+    summary:
+      "Professor George Rzevski — a globally recognized pioneer in multi-agent systems and swarm intelligence — joins Predictiv AI as Strategic Advisor to advance the Company's Swarm AI platforms.",
+    body:
+      "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced the appointment of Professor George Rzevski as Strategic Advisor to accelerate development of the Company's Swarm AI platforms across mobility, logistics and enterprise operations. Professor Rzevski is a globally recognized pioneer in multi-agent systems, complexity science and adaptive AI, with decades of applied research and industrial deployments spanning transportation, aerospace and supply chain. His engagement deepens Predictiv's scientific leadership as the Company scales its multi-agent orchestration stack underpinning CloudRep.ai, Shift AI and next-generation autonomous fleet systems.",
+    sourceUrl: "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ai-appoints-multi-agent-systems-pioneer-professor-georg-1149241",
+  },
+  {
     id: "agoracom-vlp",
+
     date: "Mar 18, 2026",
     tag: "Capital Markets",
     headline:
