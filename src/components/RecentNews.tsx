@@ -111,7 +111,20 @@ const releases: Release[] = [
     sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-expands-active-deployment-122500216.html",
   },
   {
+    id: "rzevski-advisor",
+    date: "Mar 19, 2026",
+    tag: "Advisory",
+    headline:
+      "Predictiv AI Appoints Multi-Agent Systems Pioneer Professor George Rzevski as Strategic Advisor",
+    summary:
+      "Professor George Rzevski — a globally recognized pioneer in multi-agent systems and swarm intelligence — joins Predictiv AI as Strategic Advisor to advance the Company's Swarm AI platforms.",
+    body:
+      "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced the appointment of Professor George Rzevski as Strategic Advisor to accelerate development of the Company's Swarm AI platforms across mobility, logistics and enterprise operations. Professor Rzevski is a globally recognized pioneer in multi-agent systems, complexity science and adaptive AI, with decades of applied research and industrial deployments spanning transportation, aerospace and supply chain. His engagement deepens Predictiv's scientific leadership as the Company scales its multi-agent orchestration stack underpinning CloudRep.ai, Shift AI and next-generation autonomous fleet systems.",
+    sourceUrl: "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ai-appoints-multi-agent-systems-pioneer-professor-georg-1149241",
+  },
+  {
     id: "agoracom-vlp",
+
     date: "Mar 18, 2026",
     tag: "Capital Markets",
     headline:
