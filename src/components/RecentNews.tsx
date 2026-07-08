@@ -51,8 +51,20 @@ const releases: Release[] = [
     sourceUrl: "https://www.morningstar.com/news/accesswire/1170266msn/predictiv-ai-announces-strategic-healthcare-partnership-and-cloudrep-ai-integration-with-clinicmaster-following-successful-multi-clinic-pilot-deployments",
   },
   {
+    id: "options-grant-apr-2026",
+    date: "Apr 22, 2026",
+    tag: "Corporate Update",
+    headline: "Predictiv AI Announces a Grant of Options",
+    summary:
+      "Board grants 5,188,000 share purchase options at an exercise price of $0.15, with 2,205,000 options issued to Directors and Officers.",
+    body:
+      "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that its Board of Directors has granted 5,188,000 share purchase options, of which 2,205,000 have been issued to Directors and Officers. The Options carry an exercise price of $0.15 per common share, reflecting the recent closing price, and are being issued under the Company's stock option plan as part of ongoing efforts to align long-term incentives across the leadership team and key contributors advancing Predictiv's Vertical AI product suite.",
+    sourceUrl: "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ai-announces-a-grant-of-options-1160225",
+  },
+  {
     id: "arcasia-jv",
     date: "Apr 28, 2026",
+
     tag: "Joint Venture",
     headline:
       "Predictiv AI's Shift Technologies Enters Strategic JV with Arcasia Holdings",
