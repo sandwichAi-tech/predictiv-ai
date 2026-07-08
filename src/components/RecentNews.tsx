@@ -51,6 +51,18 @@ const releases: Release[] = [
     sourceUrl: "https://www.morningstar.com/news/accesswire/1170266msn/predictiv-ai-announces-strategic-healthcare-partnership-and-cloudrep-ai-integration-with-clinicmaster-following-successful-multi-clinic-pilot-deployments",
   },
   {
+    id: "arcasia-jv",
+    date: "Apr 28, 2026",
+    tag: "Joint Venture",
+    headline:
+      "Predictiv AI's Shift Technologies Enters Strategic JV with Arcasia Holdings",
+    summary:
+      "Shift Technologies enters a strategic joint venture with Arcasia Holdings (Pvt) Ltd to deploy the AI-powered logistics platform across global first, middle and last-mile networks, anchored in Sri Lanka.",
+    body:
+      "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that its subsidiary Shift Technologies has entered into a strategic 51/49 joint venture with Arcasia Holdings (Pvt) Ltd to deploy the Shift AI logistics platform across global first, middle and last-mile networks. The JV is anchored by a Sri Lanka operating entity, with definitive agreements targeted for Q2 2026. The transaction structures Predictiv as the majority owner of the operating JV while leveraging Arcasia's regional distribution and on-the-ground execution across South Asia.",
+    sourceUrl: "https://www.webdisclosure.com/press-release/predictiv-ai-inc-cve-pai-predictiv-ais-shift-technologies-enters-strategic-joint-venture-with-arcasia-holdings-pvt-ltd-to-deploy-ai-powered-logistics-platform-across-global-first-middle-and-last-mile-networks-GaxF7Yi0X1Y",
+  },
+  {
     id: "options-grant-apr-2026",
     date: "Apr 22, 2026",
     tag: "Corporate Update",
@@ -61,19 +73,7 @@ const releases: Release[] = [
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that its Board of Directors has granted 5,188,000 share purchase options, of which 2,205,000 have been issued to Directors and Officers. The Options carry an exercise price of $0.15 per common share, reflecting the recent closing price, and are being issued under the Company's stock option plan as part of ongoing efforts to align long-term incentives across the leadership team and key contributors advancing Predictiv's Vertical AI product suite.",
     sourceUrl: "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ai-announces-a-grant-of-options-1160225",
   },
-  {
-    id: "arcasia-jv",
-    date: "Apr 28, 2026",
 
-    tag: "Joint Venture",
-    headline:
-      "Predictiv AI's Shift Technologies Enters Strategic JV with Arcasia Holdings",
-    summary:
-      "Shift Technologies enters a strategic joint venture with Arcasia Holdings (Pvt) Ltd to deploy the AI-powered logistics platform across global first, middle and last-mile networks, anchored in Sri Lanka.",
-    body:
-      "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that its subsidiary Shift Technologies has entered into a strategic 51/49 joint venture with Arcasia Holdings (Pvt) Ltd to deploy the Shift AI logistics platform across global first, middle and last-mile networks. The JV is anchored by a Sri Lanka operating entity, with definitive agreements targeted for Q2 2026. The transaction structures Predictiv as the majority owner of the operating JV while leveraging Arcasia's regional distribution and on-the-ground execution across South Asia.",
-    sourceUrl: "https://www.webdisclosure.com/press-release/predictiv-ai-inc-cve-pai-predictiv-ais-shift-technologies-enters-strategic-joint-venture-with-arcasia-holdings-pvt-ltd-to-deploy-ai-powered-logistics-platform-across-global-first-middle-and-last-mile-networks-GaxF7Yi0X1Y",
-  },
   {
     id: "shiftmatics-hardware",
     date: "Apr 14, 2026",
