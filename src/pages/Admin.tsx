@@ -446,7 +446,11 @@ export default function Admin() {
     const { data, error } = await supabase.rpc('get_traffic_breakdowns', {
       start_date: from.toISOString(), end_date: to.toISOString(), max_rows: 8,
     });
-    if (error || !data) { console.error('[fetchBreakdowns] RPC error:', error); return; }
+    if (error || !data) {
+      console.error('[fetchBreakdowns] RPC error:', error);
+      setSourceData([]); setDeviceData([]); setTopPages([]);
+      return;
+    }
     const rows = data as Array<{ dimension: string; label: string; visitors: number }>;
     const toItems = (dim: string): BreakdownItem[] => {
       const subset = rows.filter((r) => r.dimension === dim);
