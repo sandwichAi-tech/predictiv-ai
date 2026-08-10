@@ -478,6 +478,60 @@ export type Database = {
         }
         Relationships: []
       }
+      visitor_days: {
+        Row: {
+          day: string
+          events: number
+          pageviews: number
+          visitor_id: string
+        }
+        Insert: {
+          day: string
+          events?: number
+          pageviews?: number
+          visitor_id: string
+        }
+        Update: {
+          day?: string
+          events?: number
+          pageviews?: number
+          visitor_id?: string
+        }
+        Relationships: []
+      }
+      visitor_stats: {
+        Row: {
+          country: string | null
+          country_code: string | null
+          device_type: string | null
+          first_seen: string
+          first_source: string | null
+          last_seen: string
+          total_events: number
+          visitor_id: string
+        }
+        Insert: {
+          country?: string | null
+          country_code?: string | null
+          device_type?: string | null
+          first_seen?: string
+          first_source?: string | null
+          last_seen?: string
+          total_events?: number
+          visitor_id: string
+        }
+        Update: {
+          country?: string | null
+          country_code?: string | null
+          device_type?: string | null
+          first_seen?: string
+          first_source?: string | null
+          last_seen?: string
+          total_events?: number
+          visitor_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -568,6 +622,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      norm_country: { Args: { c: string }; Returns: string }
     }
     Enums: {
       app_role: "admin" | "moderator" | "user"
