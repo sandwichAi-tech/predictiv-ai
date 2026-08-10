@@ -427,7 +427,7 @@ export default function Admin() {
     const { data, error } = await supabase.rpc('get_country_breakdown', {
       start_date: from.toISOString(), end_date: to.toISOString(), max_rows: 25,
     });
-    if (error) { console.error('[fetchCountryData] RPC error:', error); return; }
+    if (error) { console.error('[fetchCountryData] RPC error:', error); setCountryData([]); return; }
     if (!data || data.length === 0) { setCountryData([]); return; }
     const totalVisitors = Number((data[0] as { total_visitors: number }).total_visitors) || 0;
     const countryStats: CountryData[] = (data as Array<{ country: string; country_code: string | null; visitors: number }>)
