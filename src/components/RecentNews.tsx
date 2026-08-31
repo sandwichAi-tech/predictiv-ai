@@ -71,7 +71,7 @@ const releases: Release[] = [
       "Shift AI signs multi-phase contract to digitize and scale middle-mile and last-mile logistics for Prompt Xpress, one of Sri Lanka's largest couriers — first commercial deployment under the Arcasia JV.",
     body:
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that its subsidiary, Shift Technologies Inc. (\"Shift AI\"), has secured a multi-phase commercial contract with Prompt Xpress, one of the largest courier and logistics networks in Sri Lanka. The agreement covers the deployment of Shift AI's transport intelligence platform to digitize and scale Prompt Xpress's middle-mile and last-mile operations. This is the first major commercial deployment executed under the previously announced Shift × Arcasia Holdings joint venture, validating both the JV deployment model and Shift AI's logistics platform in live enterprise operations.",
-    sourceUrl: "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ais-shift-technologies-secures-multi-phase-commercial-contract-to-digi-1170799",
+    sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ais-shift-technologies-secures-123000096.html",
   },
   {
     id: "clinicmaster-partnership",
@@ -83,7 +83,7 @@ const releases: Release[] = [
       "Strategic partnership and reseller agreement with ADDATech Systems integrates CloudRep.ai with the Clinicmaster EMR platform following successful multi-clinic pilot deployments.",
     body:
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced a strategic healthcare partnership and reseller agreement with ADDATech Systems Inc., the company behind the Clinicmaster EMR platform, integrating CloudRep.ai's multi-agent voice, chat and SMS automation natively into Clinicmaster-powered clinics. The integration follows the successful completion of multi-clinic pilot deployments and supports patient intake, scheduling, recalls and front-desk workflows. The partnership establishes a repeatable commercial channel for CloudRep across the healthcare vertical and validates the platform's performance in live clinical environments.",
-    sourceUrl: "https://www.morningstar.com/news/accesswire/1170266msn/predictiv-ai-announces-strategic-healthcare-partnership-and-cloudrep-ai-integration-with-clinicmaster-following-successful-multi-clinic-pilot-deployments",
+    sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-announces-strategic-healthcare-123000163.html",
   },
   {
     id: "arcasia-jv",
@@ -95,7 +95,7 @@ const releases: Release[] = [
       "Shift Technologies enters a strategic joint venture with Arcasia Holdings (Pvt) Ltd to deploy the AI-powered logistics platform across global first, middle and last-mile networks, anchored in Sri Lanka.",
     body:
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that its subsidiary Shift Technologies has entered into a strategic 51/49 joint venture with Arcasia Holdings (Pvt) Ltd to deploy the Shift AI logistics platform across global first, middle and last-mile networks. The JV is anchored by a Sri Lanka operating entity, with definitive agreements targeted for Q2 2026. The transaction structures Predictiv as the majority owner of the operating JV while leveraging Arcasia's regional distribution and on-the-ground execution across South Asia.",
-    sourceUrl: "https://www.webdisclosure.com/press-release/predictiv-ai-inc-cve-pai-predictiv-ais-shift-technologies-enters-strategic-joint-venture-with-arcasia-holdings-pvt-ltd-to-deploy-ai-powered-logistics-platform-across-global-first-middle-and-last-mile-networks-GaxF7Yi0X1Y",
+    sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ais-shift-technologies-enters-123000144.html",
   },
   {
     id: "options-grant-apr-2026",
@@ -106,7 +106,7 @@ const releases: Release[] = [
       "Board grants 5,188,000 share purchase options at an exercise price of $0.15, with 2,205,000 options issued to Directors and Officers.",
     body:
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that its Board of Directors has granted 5,188,000 share purchase options, of which 2,205,000 have been issued to Directors and Officers. The Options carry an exercise price of $0.15 per common share, reflecting the recent closing price, and are being issued under the Company's stock option plan as part of ongoing efforts to align long-term incentives across the leadership team and key contributors advancing Predictiv's Vertical AI product suite.",
-    sourceUrl: "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ai-announces-a-grant-of-options-1160225",
+    sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-announces-grant-options-011500900.html",
   },
 
   {
@@ -119,7 +119,7 @@ const releases: Release[] = [
       "Phase 1 of the Shiftmatics hardware platform complete; first client device order received and in progress — foundation for edge AI and autonomous fleet systems.",
     body:
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced the completion of Phase 1 of its Shiftmatics hardware platform and the receipt of its first client order. The milestone marks the Company's expansion into hardware-enabled AI infrastructure — combining edge AI, real-time intelligence and automation as the foundation for autonomous fleet systems. Devices are now in production for the initial customer, establishing the commercial baseline for Shiftmatics' hardware revenue stream and a clear pathway toward fleet-wide deployment.",
-    sourceUrl: "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ai-expands-into-hardware-with-shiftmatics-platform-and-1157372",
+    sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-expands-hardware-shiftmatics-123000443.html",
   },
   {
     id: "clinical-ai-patent",
@@ -131,7 +131,7 @@ const releases: Release[] = [
       "Launch of a Clinical AI Reasoning Platform — an extension of CloudRep.ai — alongside a patent filing covering domain-specific clinical AI model training and structured clinical reasoning outputs.",
     body:
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced the introduction of its Clinical AI Reasoning Platform, an extension of CloudRep.ai aimed at enhancing medical decision-making, and the filing of a patent application covering its method for training domain-specific clinical AI models and generating structured clinical reasoning outputs. The platform leverages Predictiv's custom small language models tuned for clinical workflows, deepening the Company's intellectual property position in vertical AI for healthcare.",
-    sourceUrl: "https://www.finanzwire.com/press-release/predictiv-ai-inc-cve-pai-predictiv-ai-introduces-clinical-ai-reasoning-platform-files-patent-for-domain-specific-clinical-ai-methodology-FB8jniridz8",
+    sourceUrl: "https://finance.yahoo.com/sectors/healthcare/articles/predictiv-ai-introduces-clinical-ai-124500426.html",
   },
   {
     id: "cloudrep-expansion",
@@ -155,7 +155,7 @@ const releases: Release[] = [
       "Professor George Rzevski — a globally recognized pioneer in multi-agent systems and swarm intelligence — joins Predictiv AI as Strategic Advisor to advance the Company's Swarm AI platforms.",
     body:
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced the appointment of Professor George Rzevski as Strategic Advisor to accelerate development of the Company's Swarm AI platforms across mobility, logistics and enterprise operations. Professor Rzevski is a globally recognized pioneer in multi-agent systems, complexity science and adaptive AI, with decades of applied research and industrial deployments spanning transportation, aerospace and supply chain. His engagement deepens Predictiv's scientific leadership as the Company scales its multi-agent orchestration stack underpinning CloudRep.ai, Shift AI and next-generation autonomous fleet systems.",
-    sourceUrl: "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ai-appoints-multi-agent-systems-pioneer-professor-georg-1149241",
+    sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-appoints-multi-agent-125000842.html",
   },
   {
     id: "agoracom-vlp",
