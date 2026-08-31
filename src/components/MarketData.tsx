@@ -291,27 +291,28 @@ const QuoteChip = ({ flag, exchange, symbol, widgetSymbol, volume, volumeLoading
 
 const LATEST_NEWS: NewsItem[] = [
   {
-    title: "CardioComm Solutions and Predictiv AI Enter into Strategic AI Collaboration",
-    link: "https://finance.yahoo.com/sectors/healthcare/articles/cardiocomm-solutions-predictiv-ai-enter-131100422.html",
-    pubDate: "2026-06-08",
+    title: "Predictiv AI Provides Corporate Overview of Vertical AI Deployments Across Logistics, Healthcare and Aviation",
+    link: "https://www.eqs-news.com/news/corporate/predictiv-ai-inc-the-ai-company-working-where-the-real-money-is-made/301e3711-49c1-4256-b6f5-4fe401dd01fe",
+    pubDate: "2026-08-26T12:00:00",
+    description: "",
+    source: "EQS-News",
+  },
+  {
+    title: "Predictiv AI Announces Debt Settlement and Provides Additional Details of Previously Announced Consulting Agreement with Aktien Media Inc.",
+    link: "https://www.financialcontent.com/article/accwirecq-2026-8-13-predictiv-ai-announces-debt-settlement-and-provides-additional-details-of-previously-announced-consulting-agreement-with-aktien-media-inc",
+    pubDate: "2026-08-13T12:00:00",
+    description: "",
+    source: "ACCESS Newswire",
+  },
+  {
+    title: "Predictiv AI Inc. Hires Aktien Media for Internet Advertising Services",
+    link: "https://ca.finance.yahoo.com/news/predictiv-ai-inc-hires-aktien-123000465.html",
+    pubDate: "2026-08-06T12:00:00",
     description: "",
     source: "Yahoo Finance",
   },
-  {
-    title: "Predictiv AI's Shift Technologies Secures Multi-Phase Commercial Contract with Prompt Xpress",
-    link: "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ais-shift-technologies-secures-multi-phase-commercial-contract-to-digi-1170799",
-    pubDate: "2026-06-04",
-    description: "",
-    source: "ACCESS Newswire",
-  },
-  {
-    title: "Predictiv AI Announces Strategic Healthcare Partnership and CloudRep.ai Integration with Clinicmaster",
-    link: "https://www.morningstar.com/news/accesswire/1170266msn/predictiv-ai-announces-strategic-healthcare-partnership-and-cloudrep-ai-integration-with-clinicmaster-following-successful-multi-clinic-pilot-deployments",
-    pubDate: "2026-05-26",
-    description: "",
-    source: "ACCESS Newswire",
-  },
 ];
+
 
 const OTCNewsTimeline = () => {
   const news = LATEST_NEWS;
