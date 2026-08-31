@@ -1,3 +1,4 @@
+import SiteHeader from "@/components/SiteHeader";
 import Hero2 from "@/components/Hero2";
 import WhyNow from "@/components/WhyNow";
 import PodcastPlayer from "@/components/PodcastPlayer";
