@@ -15,6 +15,41 @@ type Release = {
 
 const releases: Release[] = [
   {
+    id: "vertical-ai-overview-aug-2026",
+    date: "Aug 26, 2026",
+    tag: "Corporate Update",
+    headline:
+      "Predictiv AI Provides Corporate Overview of Vertical AI Deployments Across Logistics, Healthcare and Aviation",
+    summary:
+      "Company overview outlining the current deployment status of its four operating brands — Shift AI, CloudRep AI, CloudMD AI and TireGPT — across logistics, healthcare, aviation, public sector and retail channels.",
+    body:
+      "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) issued a corporate overview summarizing the current deployment status of its vertical AI product lines. The Company operates four brands: Shift AI (fleet and logistics intelligence), CloudRep AI (voice, SMS and chat automation), CloudMD AI (healthcare AI) and TireGPT (tire marketplace). The update recaps the April 2026 Shift Technologies joint venture with Arcasia Holdings for deployment of its transportation management platform across first, middle and last-mile networks, and the resulting multi-phase Prompt Xpress contract in Sri Lanka integrating the Shift TMS together with Shiftmatics hardware. On the healthcare side, the May 2026 reseller agreement with ADDATech Systems provides CloudRep AI distribution into the Clinicmaster network, described as serving more than 15,000 healthcare professionals across over 1,500 clinics, following completed multi-clinic pilots and production integration testing. In aviation, Shift AI's asset and fleet intelligence platform was deployed in live operations under Innovate Calgary's Soaring Higher Challenge with Calgary International Airport and WestJet, and the Company notes a completed paid proof of concept with Air Canada at Toronto Pearson. Shift AI was also awarded a fleet management software contract by the United Nations Development Programme in Africa through a competitive RFP process. Additional named commercial relationships include Tire Warehouse.ca, TrailTire Auto Centers, PhysioMed, Anytime Fitness and Expedia TAAP, alongside ongoing municipal pilots. This announcement was distributed via EQS-News; the issuer is solely responsible for its content, and it references paid German-language market awareness coverage.",
+    sourceUrl: "https://www.eqs-news.com/news/corporate/predictiv-ai-inc-the-ai-company-working-where-the-real-money-is-made/301e3711-49c1-4256-b6f5-4fe401dd01fe",
+  },
+  {
+    id: "debt-settlement-aug-2026",
+    date: "Aug 13, 2026",
+    tag: "Corporate Update",
+    headline:
+      "Predictiv AI Announces Debt Settlement and Provides Additional Details of Previously Announced Consulting Agreement with Aktien Media Inc.",
+    summary:
+      "Company announces a debt settlement and discloses additional terms of its previously announced consulting and market awareness agreement with Aktien Media Inc.",
+    body:
+      "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced a debt settlement and provided additional details regarding the previously announced consulting services agreement with Aktien Media Inc. The disclosure sets out further particulars of the engagement's scope, term and consideration for internet advertising and market awareness services, together with the terms of the debt settlement. Full particulars are contained in the Company's news release filed via ACCESS Newswire.",
+    sourceUrl: "https://www.financialcontent.com/article/accwirecq-2026-8-13-predictiv-ai-announces-debt-settlement-and-provides-additional-details-of-previously-announced-consulting-agreement-with-aktien-media-inc",
+  },
+  {
+    id: "aktien-media-engagement",
+    date: "Aug 6, 2026",
+    tag: "Capital Markets",
+    headline: "Predictiv AI Inc. Hires Aktien Media for Internet Advertising Services",
+    summary:
+      "Company engages Aktien Media Inc. under a three-month consulting services agreement to provide internet advertising and market awareness services, primarily targeting German-speaking investors.",
+    body:
+      "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that it has engaged Aktien Media Inc. to provide internet advertising and market awareness services. The parties entered into a three-month consulting services agreement covering online advertising and distribution of Company information, with an emphasis on the German-speaking market where the Company's shares trade on the Frankfurt Stock Exchange under the symbol 7IT. Aktien Media is an arm's length third-party service provider engaged for market awareness purposes only and does not provide investment advice.",
+    sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-inc-hires-aktien-123000465.html",
+  },
+  {
     id: "cardiocomm-collaboration",
     date: "Jun 8, 2026",
     tag: "Strategic Collaboration",
