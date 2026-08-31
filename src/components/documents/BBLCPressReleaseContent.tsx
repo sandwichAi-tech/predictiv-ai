@@ -78,7 +78,7 @@ const BBLCPressReleaseContent = () => {
         <p className="text-xs text-muted-foreground mt-3">
           Source:{" "}
           <a
-            href="https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/predictiv-ais-shift-technologies-secures-multi-phase-commercial-contract-to-digi-1170799"
+            href="https://ca.finance.yahoo.com/news/predictiv-ais-shift-technologies-secures-123000096.html"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary hover:underline"
@@ -111,7 +111,7 @@ const BBLCPressReleaseContent = () => {
         <p className="text-xs text-muted-foreground mt-3">
           Source:{" "}
           <a
-            href="https://www.morningstar.com/news/accesswire/1170266msn/predictiv-ai-announces-strategic-healthcare-partnership-and-cloudrep-ai-integration-with-clinicmaster-following-successful-multi-clinic-pilot-deployments"
+            href="https://ca.finance.yahoo.com/news/predictiv-ai-announces-strategic-healthcare-123000163.html"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary hover:underline"
