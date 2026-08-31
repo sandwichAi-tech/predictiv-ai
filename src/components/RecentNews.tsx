@@ -49,7 +49,7 @@ const releases: Release[] = [
       "Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that it has engaged Aktien Media Inc. to provide internet advertising and market awareness services. The parties entered into a three-month consulting services agreement covering online advertising and distribution of Company information, with an emphasis on the German-speaking market where the Company's shares trade on the Frankfurt Stock Exchange under the symbol 7IT. Aktien Media is an arm's length third-party service provider engaged for market awareness purposes only and does not provide investment advice.",
     sourceUrl: "https://ca.finance.yahoo.com/news/predictiv-ai-inc-hires-aktien-123000465.html",
   },
-
+  {
     id: "cardiocomm-collaboration",
     date: "Jun 8, 2026",
     tag: "Strategic Collaboration",
