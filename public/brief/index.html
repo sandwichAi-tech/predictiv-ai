@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predictiv AI Inc. (CSE: PAI) &middot; Investor Brief</title>
+<meta name="description" content="Pre-qualified Government of Canada AI supplier. Live 600+ vehicle logistics deployment. Investor brief on Predictiv AI (CSE: PAI / FWB: 7IT).">
+
+<style>
+  :root {
+    --forest: #0B1F17;
+    --forest-deep: #061510;
+    --navy: #0A1628;
+    --gold: #B8960C;
+    --gold-soft: #D4B84A;
+    --slate: #A8B4C0;
+    --sand: #E8DCC8;
+    --paper: #FFFFFF;
+    --paper-tint: #F7F8FA;
+    --ink: #1A1F2A;
+    --ink-soft: #4A5262;
+    --ink-mute: #7A8290;
+    --rule: #E3E7EC;
+    --up: #2E7D4F;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    font-family: Calibri, 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  h1, h2, h3, .serif { font-family: Georgia, 'Times New Roman', serif; font-weight: 700; color: var(--navy); letter-spacing: -0.015em; }
+
+  .container { max-width: 1216px; margin: 0 auto; padding: 0 32px; }
+  @media (max-width: 640px) { .container { padding: 0 20px; } }
+
+  /* ---------- Ticker strip ---------- */
+  .strip {
+    background: var(--forest-deep);
+    color: var(--slate);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+  .strip .container { display: flex; align-items: center; gap: 14px; height: 32px; }
+  .strip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); display: inline-block; }
+  .strip b { color: #fff; font-weight: 700; }
+
+  /* ---------- Nav ---------- */
+  .nav { background: var(--forest); color: #fff; border-bottom: 1px solid rgba(184,150,12,0.25); }
+  .nav .container { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+  .brand { font-family: Georgia, serif; font-size: 20px; letter-spacing: 0.02em; color: #fff; }
+  .brand span { color: var(--gold); font-style: italic; }
+  .nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--sand); }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    padding: 10px 20px; border-radius: 999px;
+    font-size: 14px; font-weight: 700;
+  }
+  .nav-cta:hover { background: var(--gold-soft); }
+  @media (max-width: 760px) { .nav-links { display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 56px 0 48px; border-bottom: 1px solid var(--rule); }
+  .hero .container { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: start; }
+  @media (max-width: 900px) { .hero .container { grid-template-columns: 1fr; gap: 32px; } }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--gold); margin-bottom: 14px; }
+  .hero h1 { font-size: 58px; line-height: 1.02; margin-bottom: 10px; }
+  @media (max-width: 640px) { .hero h1 { font-size: 40px; } }
+  .hero .tickers { font-size: 14px; font-weight: 700; color: var(--ink-soft); letter-spacing: 0.02em; margin-bottom: 22px; }
+  .hero .tickers span { color: var(--ink-mute); margin: 0 8px; font-weight: 400; }
+  .hero-lede { font-size: 19px; line-height: 1.5; color: var(--ink-soft); max-width: 560px; margin-bottom: 26px; }
+  .hero-lede b { color: var(--navy); }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 22px; border-radius: 6px;
+    font-size: 15px; font-weight: 700; border: 1px solid transparent;
+  }
+  .btn-solid { background: var(--navy); color: #fff; }
+  .btn-solid:hover { background: #142644; }
+  .btn-gold { background: var(--gold); color: var(--navy); }
+  .btn-gold:hover { background: var(--gold-soft); }
+  .btn-line { background: #fff; color: var(--navy); border-color: #C9D0D8; }
+  .btn-line:hover { border-color: var(--navy); }
+
+  /* Quote card */
+  .quote {
+    border: 1px solid var(--rule); border-radius: 12px; background: #fff;
+    box-shadow: 0 8px 30px rgba(10,22,40,0.06); padding: 24px 26px;
+  }
+  .quote-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .quote-sym { display: flex; align-items: baseline; gap: 10px; }
+  .quote-sym small { font-size: 11px; letter-spacing: 0.16em; color: var(--ink-mute); font-weight: 700; }
+  .quote-sym b { font-family: Georgia, serif; font-size: 28px; color: var(--navy); }
+  .pill { font-size: 11px; letter-spacing: 0.12em; font-weight: 700; color: var(--ink-mute); border: 1px solid var(--rule); border-radius: 999px; padding: 5px 12px; }
+  .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; margin-bottom: 18px; }
+  .quote-grid div small { display: block; font-size: 11px; letter-spacing: 0.12em; font-weight: 700; color: var(--ink-mute); margin-bottom: 4px; }
+  .quote-grid div b { font-size: 15px; color: var(--navy); }
+  .quote-foot { border-top: 1px solid var(--rule); padding-top: 14px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-mute); }
+  .quote-foot a { color: var(--navy); font-weight: 700; }
+  .quote-foot a:hover { color: var(--gold); }
+
+  /* ---------- Sub nav ---------- */
+  .subnav { border-bottom: 1px solid var(--rule); background: #fff; position: sticky; top: 0; z-index: 5; }
+  .subnav .container { display: flex; gap: 6px; overflow-x: auto; }
+  .subnav a { padding: 16px 14px; font-size: 14px; font-weight: 600; color: var(--ink-soft); border-bottom: 2px solid transparent; white-space: nowrap; }
+  .subnav a:hover, .subnav a.on { color: var(--navy); border-color: var(--gold); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 72px 0; }
+  section + section { border-top: 1px solid var(--rule); }
+  .sec-head { max-width: 720px; margin-bottom: 36px; }
+  .sec-head h2 { font-size: 40px; line-height: 1.1; margin-bottom: 14px; }
+  @media (max-width: 640px) { .sec-head h2 { font-size: 30px; } }
+  .sec-head p { font-size: 18px; color: var(--ink-soft); }
+
+  /* At a glance grid */
+  .glance { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; }
+  @media (max-width: 900px) { .glance { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .glance { grid-template-columns: 1fr; } }
+  .glance > div { padding: 26px 24px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: #fff; }
+  .glance .ic { width: 38px; height: 38px; border-radius: 8px; background: #F3EFE0; color: var(--gold); display: grid; place-items: center; margin-bottom: 18px; }
+  .glance small { display: block; font-size: 11px; letter-spacing: 0.14em; font-weight: 700; color: var(--ink-mute); margin-bottom: 6px; }
+  .glance b { font-size: 16px; color: var(--navy); line-height: 1.35; }
+
+  /* ---------- Latest updates (articles) ---------- */
+  .updates { background: var(--paper-tint); }
+  .article-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; }
+  @media (max-width: 900px) { .article-grid { grid-template-columns: 1fr; } }
+  .article {
+    background: #fff; border: 1px solid var(--rule); border-radius: 12px;
+    padding: 30px 32px; display: flex; flex-direction: column; position: relative;
+  }
+  .article.lead { border-top: 4px solid var(--gold); }
+  .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 12px; }
+  .tag { padding: 4px 11px; border-radius: 4px; font-weight: 700; letter-spacing: 0.1em; font-size: 11px; background: var(--navy); color: var(--gold); }
+  .tag.green { background: #E6F1EA; color: var(--up); }
+  .tag.slate { background: #EDF0F3; color: var(--ink-soft); }
+  .article-meta time { color: var(--ink-mute); font-weight: 600; }
+  .article h3 { font-size: 26px; line-height: 1.2; margin-bottom: 12px; }
+  .article.lead h3 { font-size: 32px; }
+  @media (max-width: 640px) { .article.lead h3 { font-size: 26px; } }
+  .article p { font-size: 16px; color: var(--ink-soft); margin-bottom: 18px; }
+  .article p b { color: var(--navy); }
+  .article .kpis { display: flex; gap: 28px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid var(--rule); margin-top: auto; }
+  .kpi b { display: block; font-family: Georgia, serif; font-size: 26px; color: var(--navy); line-height: 1; }
+  .kpi small { display: block; font-size: 11px; letter-spacing: 0.12em; font-weight: 700; color: var(--ink-mute); margin-top: 6px; }
+  .article .more { margin-top: 18px; font-size: 14px; font-weight: 700; color: var(--navy); }
+  .article .more:hover { color: var(--gold); }
+  .side-stack { display: flex; flex-direction: column; gap: 22px; }
+  .side-stack .article { padding: 24px 26px; }
+  .side-stack .article h3 { font-size: 20px; }
+  .side-stack .article p { font-size: 15px; margin-bottom: 0; }
+
+  /* ---------- Why it matters (dark) ---------- */
+  .why { background: var(--forest); color: #fff; border-top: 3px solid var(--gold); }
+  .why .eyebrow { color: var(--gold); }
+  .why h2 { color: #fff; }
+  .why .sec-head p { color: var(--sand); }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 800px) { .why-grid { grid-template-columns: 1fr; } }
+  .why-card { padding: 26px 26px; background: rgba(255,255,255,0.04); border: 1px solid rgba(168,180,192,0.18); border-radius: 10px; }
+  .why-card b { display: block; font-family: Georgia, serif; font-size: 40px; color: var(--gold); line-height: 1; margin-bottom: 12px; }
+  .why-card p { font-size: 15px; color: var(--sand); line-height: 1.5; }
+  .why-card small { display: block; margin-top: 10px; font-size: 12px; color: var(--slate); }
+
+  /* ---------- Platforms ---------- */
+  .plat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 800px) { .plat-grid { grid-template-columns: 1fr; } }
+  .plat { border: 1px solid var(--rule); border-radius: 12px; padding: 26px; }
+  .plat small { font-size: 11px; letter-spacing: 0.14em; font-weight: 700; color: var(--gold); display: block; margin-bottom: 10px; }
+  .plat h3 { font-size: 22px; margin-bottom: 8px; }
+  .plat p { font-size: 15px; color: var(--ink-soft); }
+
+  /* ---------- Toolkit ---------- */
+  .tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 800px) { .tool-grid { grid-template-columns: 1fr; } }
+  .tool { border: 1px solid var(--rule); border-radius: 12px; padding: 26px; display: block; }
+  .tool:hover { border-color: var(--navy); }
+  .tool.dark { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .tool small { font-size: 11px; letter-spacing: 0.14em; font-weight: 700; color: var(--gold); display: block; margin-bottom: 14px; }
+  .tool h3 { font-size: 22px; margin-bottom: 8px; }
+  .tool.dark h3 { color: #fff; }
+  .tool p { font-size: 15px; color: var(--ink-soft); }
+  .tool.dark p { color: var(--sand); }
+
+  /* ---------- Issuer resources ---------- */
+  .issuer { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--rule); display: flex; align-items: center; gap: 8px 22px; flex-wrap: wrap; }
+  .issuer small { font-size: 11px; letter-spacing: 0.14em; font-weight: 700; color: var(--ink-mute); margin-right: 6px; }
+  .issuer a { font-size: 15px; font-weight: 700; color: var(--navy); padding-bottom: 2px; border-bottom: 1px solid var(--rule); }
+  .issuer a:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* ---------- Closing CTA ---------- */
+  .close { background: var(--forest-deep); color: #fff; text-align: center; padding: 64px 0; border-top: 3px solid var(--gold); }
+  .close h2 { color: #fff; font-size: 36px; margin-bottom: 12px; }
+  .close p { color: var(--sand); font-size: 17px; max-width: 520px; margin: 0 auto 28px; }
+  .close .btn-row { justify-content: center; }
+  .close .btn-line { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
+  .close .btn-line:hover { border-color: var(--gold); color: var(--gold); }
+  .close .sym { margin-top: 34px; font-family: Georgia, serif; font-style: italic; font-size: 20px; color: var(--gold); }
+  .close .sym span { color: var(--ink-mute); margin: 0 12px; font-style: normal; }
+
+  /* ---------- Disclosure ---------- */
+  .disc { padding: 40px 0 52px; background: #fff; }
+  .disc-box { border: 1px solid var(--rule); border-radius: 12px; padding: 26px 30px; font-size: 13px; line-height: 1.6; color: var(--ink-soft); }
+  .disc-box h3 { font-size: 15px; margin-bottom: 8px; }
+  .disc-box p + p { margin-top: 10px; }
+  .disc-box a { color: var(--gold); font-weight: 700; }
+  .disc-foot { margin-top: 18px; font-size: 12px; color: var(--ink-mute); text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- Ticker strip -->
+<div class="strip">
+  <div class="container">
+    <span class="dot"></span>
+    <span><b>CSE: PAI</b></span>
+    <span>Predictiv AI &middot; Vertical AI Solutions</span>
+  </div>
+</div>
+
+<!-- Nav -->
+<div class="nav">
+  <div class="container">
+    <a class="brand" href="https://73-76.com" target="_blank" rel="noopener">Predictiv <span>AI</span> Brief</a>
+    <nav class="nav-links">
+      <a href="https://73-76.com" target="_blank" rel="noopener">Updates</a>
+      <a href="https://73-76.com" target="_blank" rel="noopener">Why now</a>
+      <a href="https://predictiv.ai" target="_blank" rel="noopener">Platforms</a>
+      <a href="https://predictiv.ai/investors" target="_blank" rel="noopener">Investor toolkit</a>
+    </nav>
+    <a class="nav-cta" href="https://73-76.com" target="_blank" rel="noopener">Read the deep dive</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="hero" id="top">
+  <div class="container">
+    <div>
+      <div class="eyebrow">INVESTOR BRIEF &middot; SEPTEMBER 2026</div>
+      <h1>Predictiv AI</h1>
+      <div class="tickers">CSE: PAI <span>&middot;</span> FWB: 7IT</div>
+      <p class="hero-lede">
+        A Toronto-headquartered enterprise AI company now <b>pre-qualified as a Government of Canada AI supplier</b> across all three bands, with a <b>600+ vehicle logistics platform completed</b> for one of Sri Lanka's largest courier networks.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-gold" href="https://73-76.com" target="_blank" rel="noopener">Read the full deep dive</a>
+      </div>
+    </div>
+
+    <div class="quote">
+      <div class="quote-top">
+        <div class="quote-sym"><small>CSE</small><b>PAI</b></div>
+        <span class="pill">LIVE QUOTE VIA EXCHANGE</span>
+      </div>
+      <div class="quote-grid">
+        <div><small>PRIMARY LISTING</small><b>Canadian Securities Exchange</b></div>
+        <div><small>SECONDARY LISTING</small><b>Frankfurt Stock Exchange (7IT)</b></div>
+        <div><small>CURRENCY</small><b>CAD</b></div>
+        <div><small>HEADQUARTERS</small><b>North York, Ontario</b></div>
+        <div><small>LATEST FILING</small><b>Q1 2026 results</b></div>
+        <div><small>CONTINUOUS DISCLOSURE</small><b>SEDAR+</b></div>
+      </div>
+      <div class="quote-foot">
+        <span>Price and volume: refer to your broker or the exchange.</span>
+        <a href="https://73-76.com" target="_blank" rel="noopener">View chart on 73-76.com</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sub nav -->
+<div class="subnav">
+  <div class="container">
+    <a class="on" href="https://predictiv.ai/investors" target="_blank" rel="noopener">Overview</a>
+    <a href="https://73-76.com" target="_blank" rel="noopener">Latest updates</a>
+    <a href="https://predictiv.ai/investors/stock" target="_blank" rel="noopener">Stock</a>
+    <a href="https://predictiv.ai/investors/financials" target="_blank" rel="noopener">Financials</a>
+    <a href="https://predictiv.ai/investors/governance" target="_blank" rel="noopener">Governance</a>
+    <a href="https://predictiv.ai/investors/contact" target="_blank" rel="noopener">Contact IR</a>
+  </div>
+</div>
+
+<!-- At a glance -->
+<section id="glance">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">AT A GLANCE</div>
+      <h2>A publicly listed enterprise AI company.</h2>
+      <p>Predictiv AI Inc. builds purpose-built AI platforms for transportation, communications, and real estate, pairing vertical software with proprietary models for enterprise and public-sector customers.</p>
+    </div>
+    <div class="glance">
+      <div>
+        <div class="ic">&#9679;</div>
+        <small>FEDERAL STATUS</small>
+        <b>Pre-qualified Government of Canada AI supplier, 3 of 3 bands</b>
+      </div>
+      <div>
+        <div class="ic">&#9679;</div>
+        <small>LIVE DEPLOYMENT</small>
+        <b>600+ vehicles, 98 branches, 6 regional hubs (Prompt Xpress)</b>
+      </div>
+      <div>
+        <div class="ic">&#9679;</div>
+        <small>CORPORATE STATUS</small>
+        <b>RTO consolidation completed in 2025</b>
+      </div>
+      <div>
+        <div class="ic">&#9679;</div>
+        <small>NEXT MILESTONE</small>
+        <b>Asia regional office expansion, 2026</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest updates -->
+<section class="updates" id="updates">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">LATEST UPDATES</div>
+      <h2>Two material developments this quarter.</h2>
+      <p>Both drawn from the Company's public announcements. Verify against continuous disclosure on SEDAR+.</p>
+    </div>
+
+    <div class="article-grid">
+      <article class="article lead">
+        <div class="article-meta">
+          <span class="tag">FEDERAL CREDENTIAL</span>
+          <time>September 2026</time>
+        </div>
+        <h3>Pre-qualified as a Government of Canada AI supplier under all three bands.</h3>
+        <p>
+          Predictiv AI has been added to the Government of Canada's List of Interested AI Suppliers under all three supplier bands. Federal departments can now engage the Company directly on eligible work <b>without a full open competitive procurement</b>. The qualification spans the full platform: SHIFT AI (fleet), CloudRep (voice), and CloudMD (clinical).
+        </p>
+        <div class="kpis">
+          <div class="kpi"><b>C$37.5M</b><small>PER-CONTRACT CAPACITY</small></div>
+          <div class="kpi"><b>3 / 3</b><small>BANDS QUALIFIED</small></div>
+          <div class="kpi"><b>Direct</b><small>PROCUREMENT PATH</small></div>
+        </div>
+        <a class="more" href="https://73-76.com" target="_blank" rel="noopener">What supplier status means for the pipeline</a>
+      </article>
+
+      <div class="side-stack">
+        <article class="article">
+          <div class="article-meta">
+            <span class="tag green">PLATFORM LIVE</span>
+            <time>Recent</time>
+          </div>
+          <h3>Logistics platform completed for Prompt Xpress: 600+ vehicles.</h3>
+          <p>
+            SHIFT AI deployment spans the operator's full national footprint in Sri Lanka. Revenue accrues on a <b>per-package transaction fee</b> as the rollout scales. Signed under the Arcasia Holdings joint venture.
+          </p>
+          <div class="kpis">
+            <div class="kpi"><b>600+</b><small>VEHICLES</small></div>
+            <div class="kpi"><b>98</b><small>BRANCHES</small></div>
+            <div class="kpi"><b>6</b><small>HUBS</small></div>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article-meta">
+            <span class="tag slate">FILING</span>
+            <time>2026</time>
+          </div>
+          <h3>Q1 2026 financial results filed.</h3>
+          <p>MD&amp;A, statements, and management commentary on operational milestones are available on SEDAR+.</p>
+          <a class="more" href="https://sedarplus.ca" target="_blank" rel="noopener">View on SEDAR+</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why now -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">WHY THIS, RIGHT NOW</div>
+      <h2>Federal supplier status arrived in the quarter Ottawa moved capital toward Canadian AI.</h2>
+      <p>Public policy context, not a forecast. Canadian AI operators pre-qualified for direct federal engagement are positioned to be considered as departments deploy new programs.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <b>C$7.5B</b>
+        <p>Federal trade-war emergency support package.</p>
+        <small>Announced Aug 25, 2026</small>
+      </div>
+      <div class="why-card">
+        <b>C$27.6B</b>
+        <p>Canadian counter-tariffs on US imports.</p>
+        <small>Effective Sep 8, 2026</small>
+      </div>
+      <div class="why-card">
+        <b>C$1.7B</b>
+        <p>Dedicated Canadian AI adoption financing.</p>
+        <small>Federal program allocation</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Platforms -->
+<section id="platforms">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">PLATFORMS</div>
+      <h2>Three vertical platforms, one federal qualification.</h2>
+      <p>The Government of Canada supplier listing covers every product line below.</p>
+    </div>
+    <div class="plat-grid">
+      <div class="plat">
+        <small>TRANSPORTATION</small>
+        <h3>SHIFT AI</h3>
+        <p>Fleet and logistics management. Live at national scale with Prompt Xpress; per-package transaction fee model.</p>
+      </div>
+      <div class="plat">
+        <small>COMMUNICATIONS</small>
+        <h3>CloudRep</h3>
+        <p>Voice AI for customer engagement and service operations.</p>
+      </div>
+      <div class="plat">
+        <small>HEALTHCARE</small>
+        <h3>CloudMD</h3>
+        <p>Clinical AI platform for care delivery and administrative workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Investor toolkit -->
+<section id="toolkit">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">INVESTOR TOOLKIT</div>
+      <h2>Quick links for shareholders.</h2>
+      <p>Everything an investor or analyst needs, in one place.</p>
+    </div>
+    <div class="tool-grid">
+      <a class="tool dark" href="https://73-76.com" target="_blank" rel="noopener">
+        <small>DEEP DIVE</small>
+        <h3>Full analysis and catalyst tracking.</h3>
+        <p>Independent brief covering platforms, procurement pathway, and every material update at 73-76.com.</p>
+      </a>
+      <a class="tool" href="https://73-76.com" target="_blank" rel="noopener">
+        <small>STOCK INFORMATION</small>
+        <h3>Live quote and chart.</h3>
+        <p>Interactive chart and exchange data for CSE: PAI.</p>
+      </a>
+      <a class="tool" href="https://sedarplus.ca" target="_blank" rel="noopener">
+        <small>FINANCIAL REPORTS</small>
+        <h3>Filings on SEDAR+.</h3>
+        <p>Quarterly and annual statements, MD&amp;A, and audited financials.</p>
+      </a>
+    </div>
+    <div class="issuer">
+      <small>COMPANY INVESTOR RELATIONS</small>
+      <a href="https://predictiv.ai/investors" target="_blank" rel="noopener">Overview</a>
+      <a href="https://predictiv.ai/investors/stock" target="_blank" rel="noopener">Stock</a>
+      <a href="https://predictiv.ai/investors/financials" target="_blank" rel="noopener">Financials</a>
+      <a href="https://predictiv.ai/investors/presentations" target="_blank" rel="noopener">Presentations</a>
+      <a href="https://predictiv.ai/investors/governance" target="_blank" rel="noopener">Governance</a>
+      <a href="https://predictiv.ai/investors/agm" target="_blank" rel="noopener">AGM</a>
+      <a href="https://predictiv.ai/investors/contact" target="_blank" rel="noopener">Contact IR</a>
+    </div>
+  </div>
+</section>
+
+<!-- Closing CTA -->
+<div class="close">
+  <div class="container">
+    <h2>Read the full story before the next filing.</h2>
+    <p>Deep dive, catalyst calendar, and every material update, in one place.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="https://73-76.com" target="_blank" rel="noopener">Visit 73-76.com</a>
+    </div>
+    <div class="sym">CSE: PAI <span>&middot;</span> FWB: 7IT</div>
+  </div>
+</div>
+
+<!-- Disclosure (sender to complete) -->
+<div class="disc" id="disclosure">
+  <div class="container">
+    <div class="disc-box">
+      <h3>Important information</h3>
+      <p>[DISTRIBUTOR: insert your compensated-communication disclosure here, including who prepared and distributed this communication and the compensation received from Predictiv AI Inc.]</p>
+      <p>This is not investment advice, not an offer to sell, and not a solicitation of an offer to buy any security. Micro-cap securities carry substantial risk, including potential loss of principal. Certain statements reflect the Company's public disclosure and may constitute forward-looking information; actual results may differ materially. Investors should verify all data against Predictiv AI Inc.'s continuous disclosure on <a href="https://sedarplus.ca" target="_blank" rel="noopener">SEDAR+</a> before making any decision.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
