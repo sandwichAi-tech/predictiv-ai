@@ -259,21 +259,22 @@ const RecentNews = () => {
       </div>
 
       <Dialog open={!!active} onOpenChange={(o) => !o && setOpenId(null)}>
-        <DialogContent className="max-w-2xl bg-card">
+        <DialogContent className="max-w-2xl w-[calc(100vw-2rem)] max-h-[85vh] overflow-y-auto overscroll-contain bg-card">
           <DialogHeader>
-            <div className="flex items-center gap-3 mb-2">
+            <div className="flex flex-wrap items-center gap-3 mb-2 pr-8">
               <span className="font-mono text-[10px] tracking-[0.18em] uppercase px-2 py-1 bg-accent/15 text-accent rounded">
                 {active?.tag}
               </span>
               <span className="font-mono text-xs text-muted-foreground">{active?.date}</span>
             </div>
-            <DialogTitle className="font-serif text-2xl text-foreground leading-tight text-left">
+            <DialogTitle className="font-serif text-xl md:text-2xl text-foreground leading-tight text-left break-words">
               {active?.headline}
             </DialogTitle>
           </DialogHeader>
-          <p className="font-serif text-base text-foreground leading-relaxed">
+          <p className="font-serif text-[15px] md:text-base text-foreground leading-relaxed break-words">
             {active?.body}
           </p>
+
           {active?.sourceUrl && (
             <a
               href={active.sourceUrl}
