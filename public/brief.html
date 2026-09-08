@@ -215,6 +215,30 @@
   .disc-box p + p { margin-top: 10px; }
   .disc-box a { color: var(--gold); font-weight: 700; }
   .disc-foot { margin-top: 18px; font-size: 12px; color: var(--ink-mute); text-align: center; }
+
+  /* ---------- Release modal ---------- */
+  .pr-open { display:inline-flex; align-items:center; gap:8px; font-family:Georgia,serif; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; background:#B8960C; color:#0B1F17; border:0; border-radius:3px; padding:9px 16px; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease; box-shadow:0 10px 26px -14px rgba(184,150,12,0.9); }
+  .pr-open:hover { transform:translateY(-1px); box-shadow:0 14px 32px -12px rgba(184,150,12,0.95); }
+  .pr-overlay { position:fixed; inset:0; background:rgba(6,16,12,0.82); backdrop-filter:blur(6px); z-index:9998; display:none; align-items:center; justify-content:center; padding:18px; }
+  .pr-overlay.is-open { display:flex; }
+  .pr-modal { position:relative; width:100%; max-width:780px; max-height:88vh; display:flex; flex-direction:column; background:#fff; border:1px solid rgba(184,150,12,0.5); border-radius:14px; overflow:hidden; box-shadow:0 50px 120px -40px rgba(0,0,0,0.75); }
+  .pr-modal::before { content:""; display:block; height:4px; background:linear-gradient(90deg, rgba(184,150,12,0.35), #B8960C, rgba(184,150,12,0.35)); }
+  .pr-head { padding:22px 30px 18px; border-bottom:1px solid var(--rule); background:#FBF9F4; }
+  .pr-kicker { font-family:Georgia,serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#8A6F08; margin-bottom:10px; }
+  .pr-head h2 { font-size:23px; line-height:1.25; margin:0 0 8px; }
+  .pr-sub { font-style:italic; font-size:14px; color:var(--ink-soft); margin:0; }
+  .pr-body { overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; padding:24px 30px 28px; }
+  .pr-body p { font-size:15px; line-height:1.7; color:var(--ink-soft); margin:0 0 14px; }
+  .pr-body h3 { font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#8A6F08; margin:22px 0 10px; }
+  .pr-body blockquote { margin:0 0 16px; padding-left:16px; border-left:2px solid rgba(184,150,12,0.7); font-style:italic; }
+  .pr-body blockquote small { display:block; font-style:normal; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); margin-top:8px; }
+  .pr-fine { font-size:11.5px; line-height:1.6; color:var(--ink-mute); }
+  .pr-foot { padding:14px 30px; border-top:1px solid var(--rule); background:#FBF9F4; display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; }
+  .pr-foot span { font-family:Georgia,serif; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); }
+  .pr-close { background:transparent; border:1px solid rgba(184,150,12,0.5); color:#8A6F08; font-family:Georgia,serif; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; border-radius:3px; padding:8px 14px; cursor:pointer; }
+  .pr-close:hover { border-color:#B8960C; color:#B8960C; }
+  .pr-x { position:absolute; top:14px; right:16px; background:transparent; border:0; font-size:22px; line-height:1; color:var(--ink-mute); cursor:pointer; }
+  @media (max-width: 640px) { .pr-head, .pr-body, .pr-foot { padding-left:18px; padding-right:18px; } .pr-head h2 { font-size:19px; } }
 </style>
 </head>
 <body>
@@ -250,6 +274,7 @@
       <b style="color:#fff;">Predictiv AI qualifies across all three bands of the Government of Canada Artificial Intelligence Source List</b>
       &nbsp;&mdash;&nbsp;Band 3 permits eligible requirements up to C$37.5M before taxes.
     </span>
+    <button class="pr-open" type="button" data-pr-open>Read the full release &rarr;</button>
   </div>
 </div>
 
@@ -264,6 +289,7 @@
       </p>
       <div class="btn-row">
         <a class="btn btn-gold" href="https://73-76.com" target="_blank" rel="noopener">Read the full deep dive</a>
+        <button class="pr-open" type="button" data-pr-open>Read the Sept 9 release &rarr;</button>
       </div>
     </div>
 
@@ -508,5 +534,48 @@
   </div>
 </div>
 
+
+<!-- Full release modal -->
+<div class="pr-overlay" id="prOverlay" role="dialog" aria-modal="true" aria-labelledby="prTitle">
+  <div class="pr-modal">
+    <button class="pr-x" type="button" aria-label="Close" data-pr-close>&times;</button>
+    <div class="pr-head">
+      <div class="pr-kicker">News Release &middot; September 9, 2026 &middot; CSE: PAI &middot; FWB: 7IT</div>
+      <h2 id="prTitle">Predictiv AI Qualifies Across All Three Bands of Government of Canada Artificial Intelligence Source List</h2>
+      <p class="pr-sub">Qualification enables Predictiv AI to participate in streamlined federal AI procurement opportunities across Bands 1, 2 and 3.</p>
+    </div>
+    <div class="pr-body">
+      <p>TORONTO, ON / September 9, 2026 / Predictiv AI Inc. (FWB: 7IT) (CSE: PAI) (the &ldquo;Company&rdquo; or &ldquo;Predictiv AI&rdquo;) is pleased to announce that Public Services and Procurement Canada (PSPC) has accepted the Company&rsquo;s qualification to the Government of Canada&rsquo;s Artificial Intelligence Source List. In formal notification dated August 26, 2026, PSPC confirmed that Predictiv AI is qualified to participate in subsequent opportunities solicited under Bands 1, 2 and 3.</p>
+      <p>Predictiv AI is now eligible to participate in subsequent opportunities solicited under the AI Source List across Bands 1, 2 and 3. Band 3 is the highest supplier band under the program and permits eligible requirements of up to $37,500,000 before taxes. Qualification provides access to compete for eligible federal AI procurement opportunities and does not constitute a contract award or guarantee future revenue.</p>
+      <p>The qualification provides Predictiv AI with a federal procurement pathway through which the Company can pursue opportunities leveraging its capabilities across SHIFT AI, CloudRep.ai and CloudMD. The Company believes this can shorten the path to participating in eligible federal procurement opportunities and support broader public-sector business development.</p>
+      <h3>Expanding Predictiv AI&rsquo;s Government Procurement Channel</h3>
+      <p>The Government of Canada is one of the country&rsquo;s largest technology purchasers, and pre-qualified supplier status provides qualifying companies access to procurement opportunities issued under the AI Source List. Predictiv AI&rsquo;s qualification follows the Company&rsquo;s continued build-out of enterprise-grade AI infrastructure across fleet intelligence, communications and healthcare, and its active pursuit of provincial, municipal and airport authority customers across Canada.</p>
+      <p>The qualification also aligns with Predictiv AI&rsquo;s commitment to supporting Canadian data sovereignty and strengthening Canada&rsquo;s domestic AI capabilities. The Company is focused on developing secure, enterprise-grade AI solutions and infrastructure designed to meet Canadian privacy, security and data-governance requirements. Predictiv AI intends to contribute to Canada&rsquo;s growing AI ecosystem by helping governments and Canadian organizations adopt advanced AI technologies while maintaining appropriate control over how their data is managed, processed and protected.</p>
+      <blockquote>&ldquo;Qualification across all three bands of the Government of Canada&rsquo;s Artificial Intelligence Source List is an important milestone for Predictiv AI. It gives us access to a significant federal procurement channel and strengthens our ability to compete for opportunities where secure, enterprise-grade AI can improve government operations. We see this as a meaningful extension of the public-sector strategy we are already advancing across municipal, provincial and other government markets.&rdquo;<small>Suman Pushparajah, Chief Executive Officer</small></blockquote>
+      <blockquote>&ldquo;Canadian data sovereignty is becoming increasingly important as governments and enterprises accelerate the adoption of artificial intelligence. Organizations need the benefits of advanced AI without giving up control over where sensitive data resides, how it is processed or how it is governed. Predictiv AI is building its technology with that requirement in mind. Through SHIFT AI, CloudRep.ai and CloudMD, our objective is to deliver Canadian-controlled AI capabilities that meet demanding privacy, security and governance requirements while helping strengthen Canada&rsquo;s domestic AI ecosystem.&rdquo;<small>Suman Pushparajah, Chief Executive Officer</small></blockquote>
+      <h3>About Predictiv AI Inc.</h3>
+      <p>Predictiv AI Inc. is a Canadian artificial intelligence company developing vertical AI applications for defined industries. The Company&rsquo;s products address fleet operations and communications, including fleet management software, AI-based agents for voice, chat and SMS, and tools designed to support structured operational workflows. For more information, please visit <a href="https://www.predictiv.ai" target="_blank" rel="noopener">www.predictiv.ai</a>.</p>
+      <h3>Forward-Looking Statements</h3>
+      <p class="pr-fine">This news release includes forward looking statements that are subject to assumptions, risks and uncertainties. Statements in this news release which are not purely historical are forward looking statements, including without limitation any statements concerning the expected future operating performance of the Company&rsquo;s business. Although the Company believes that any forward-looking statements in this news release are reasonable, there can be no assurance that any such forward looking statements will prove to be accurate. The Company cautions readers that all forward looking statements are based on assumptions none of which can be assured and are subject to certain risks and uncertainties that could cause actual events or results to differ materially from those indicated in the forward-looking statements. Readers are advised to rely on their own evaluation of such risks and uncertainties and should not place undue reliance on forward-looking statements. The forward-looking statements and information contained in this news release are made as of the date hereof and no undertaking is given to update publicly or revise any forward-looking statements or information, whether as a result of new information, future events or otherwise, unless so required by applicable securities laws or the CSE.</p>
+    </div>
+    <div class="pr-foot">
+      <span>Issuer-Paid Communication &middot; Not Investment Advice</span>
+      <button class="pr-close" type="button" data-pr-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var overlay = document.getElementById('prOverlay');
+  if (!overlay) return;
+  function open() { overlay.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function close() { overlay.classList.remove('is-open'); document.body.style.overflow = ''; }
+  document.querySelectorAll('[data-pr-open]').forEach(function (b) { b.addEventListener('click', open); });
+  document.querySelectorAll('[data-pr-close]').forEach(function (b) { b.addEventListener('click', close); });
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+</script>
 </body>
 </html>
