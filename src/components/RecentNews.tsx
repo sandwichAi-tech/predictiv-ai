@@ -15,6 +15,17 @@ type Release = {
 
 const releases: Release[] = [
   {
+    id: "goc-ai-source-list-sep-2026",
+    date: "Sep 9, 2026",
+    tag: "Just Released",
+    headline:
+      "Predictiv AI Qualifies Across All Three Bands of Government of Canada Artificial Intelligence Source List",
+    summary:
+      "Public Services and Procurement Canada has accepted Predictiv AI's qualification to the Government of Canada's Artificial Intelligence Source List under Bands 1, 2 and 3 — Band 3 permitting eligible requirements of up to C$37,500,000 before taxes.",
+    body:
+      "TORONTO, ON / September 9, 2026 — Predictiv AI Inc. (CSE: PAI · FWB: 7IT) announced that Public Services and Procurement Canada (PSPC) has accepted the Company's qualification to the Government of Canada's Artificial Intelligence Source List. In formal notification dated August 26, 2026, PSPC confirmed that Predictiv AI is qualified to participate in subsequent opportunities solicited under Bands 1, 2 and 3. Band 3 is the highest supplier band under the program and permits eligible requirements of up to $37,500,000 before taxes. Qualification provides access to compete for eligible federal AI procurement opportunities and does not constitute a contract award or guarantee future revenue. The qualification provides a federal procurement pathway through which the Company can pursue opportunities leveraging its capabilities across SHIFT AI, CloudRep.ai and CloudMD, and follows Predictiv AI's continued build-out of enterprise-grade AI infrastructure across fleet intelligence, communications and healthcare, alongside its active pursuit of provincial, municipal and airport authority customers across Canada. \"Qualification across all three bands of the Government of Canada's Artificial Intelligence Source List is an important milestone for Predictiv AI,\" said Suman Pushparajah, Chief Executive Officer. \"It gives us access to a significant federal procurement channel and strengthens our ability to compete for opportunities where secure, enterprise-grade AI can improve government operations.\" Pushparajah added that Canadian data sovereignty is becoming increasingly important as governments and enterprises accelerate AI adoption, and that Predictiv AI is building secure, enterprise-grade solutions designed to meet Canadian privacy, security and data-governance requirements. This release includes forward-looking statements subject to assumptions, risks and uncertainties; readers should not place undue reliance on them.",
+  },
+  {
     id: "vertical-ai-overview-aug-2026",
     date: "Aug 26, 2026",
     tag: "Corporate Update",

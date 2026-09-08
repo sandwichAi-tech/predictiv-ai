@@ -291,6 +291,13 @@ const QuoteChip = ({ flag, exchange, symbol, widgetSymbol, volume, volumeLoading
 
 const LATEST_NEWS: NewsItem[] = [
   {
+    title: "JUST RELEASED — Predictiv AI Qualifies Across All Three Bands of Government of Canada Artificial Intelligence Source List",
+    link: "https://73-76.com/#news",
+    pubDate: "2026-09-09T12:00:00",
+    description: "",
+    source: "Company Release",
+  },
+  {
     title: "Predictiv AI Provides Corporate Overview of Vertical AI Deployments Across Logistics, Healthcare and Aviation",
     link: "https://www.eqs-news.com/news/corporate/predictiv-ai-inc-the-ai-company-working-where-the-real-money-is-made/301e3711-49c1-4256-b6f5-4fe401dd01fe",
     pubDate: "2026-08-26T12:00:00",
