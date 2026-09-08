@@ -1,5 +1,6 @@
 import SiteHeader from "@/components/SiteHeader";
 import Hero2 from "@/components/Hero2";
+import FeaturedRelease from "@/components/FeaturedRelease";
 import WhyNow from "@/components/WhyNow";
 import PodcastPlayer from "@/components/PodcastPlayer";
 import NewsletterSignup from "@/components/NewsletterSignup";
@@ -32,6 +33,8 @@ const Index = () => {
       <SiteHeader quote={paiQuote} priceLoading={loading} />
       <div className="max-w-[1080px] mx-auto bg-background border-x border-t border-border shadow-[0_0_60px_-20px_rgba(0,0,0,0.8)]">
         <Hero2 quote={paiQuote} priceLoading={loading} />
+
+        <div className="border-t border-border"><FeaturedRelease /></div>
 
         <div id="market-data" className="border-t border-border scroll-mt-16"><MarketData quotes={quotes} quotesLoading={loading} /></div>
 
