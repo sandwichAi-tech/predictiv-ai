@@ -18,6 +18,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, BarChart, Bar, Cell, Comp
 import { Globe, MessageCircle } from 'lucide-react';
 import SocialPulse from '@/components/admin/SocialPulse';
 import AdminChat from '@/components/admin/AdminChat';
+import BriefTraffic from '@/components/admin/BriefTraffic';
 
 interface TrendData { date: string; dateLabel: string; pageviews: number; visitors: number; }
 interface CountryData { country: string; countryCode: string | null; visitors: number; percentage: number; }
