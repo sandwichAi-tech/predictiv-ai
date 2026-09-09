@@ -567,9 +567,108 @@
 
 <script>
 (function () {
+  var ENDPOINT = 'https://wmkwmfmqbgpuoeknzigi.supabase.co/functions/v1/track-analytics';
+
+  function uuid() {
+    try { return crypto.randomUUID(); } catch (e) {
+      return 'x' + Date.now() + Math.random().toString(16).slice(2);
+    }
+  }
+  function vid() {
+    var v = null;
+    try { v = localStorage.getItem('_vid'); if (!v) { v = uuid(); localStorage.setItem('_vid', v); } } catch (e) { v = uuid(); }
+    return v;
+  }
+  function sid() {
+    var s = null;
+    try { s = sessionStorage.getItem('_sid'); if (!s) { s = uuid(); sessionStorage.setItem('_sid', s); } } catch (e) { s = uuid(); }
+    return s;
+  }
+  function device() {
+    var ua = navigator.userAgent;
+    if (/tablet|ipad|playbook|silk/i.test(ua)) return 'tablet';
+    if (/mobile|iphone|ipod|android|blackberry|opera mini|iemobile/i.test(ua)) return 'mobile';
+    return 'desktop';
+  }
+  function briefUrl() {
+    try {
+      var loc = window.parent !== window ? window.parent.location : window.location;
+      return loc.origin + '/brief' + (loc.search || '');
+    } catch (e) {
+      return window.location.origin + '/brief' + window.location.search;
+    }
+  }
+  function params() {
+    var url = briefUrl();
+    var q = url.indexOf('?') > -1 ? new URLSearchParams(url.slice(url.indexOf('?'))) : new URLSearchParams();
+    return {
+      utm_source: q.get('utm_source'),
+      utm_medium: q.get('utm_medium'),
+      utm_campaign: q.get('utm_campaign')
+    };
+  }
+  function track(eventType, data) {
+    var utm = params();
+    var body = JSON.stringify({
+      event_type: eventType,
+      session_id: sid(),
+      visitor_id: vid(),
+      page_url: briefUrl(),
+      referrer: document.referrer || null,
+      user_agent: navigator.userAgent,
+      device_type: device(),
+      utm_source: utm.utm_source,
+      utm_medium: utm.utm_medium,
+      utm_campaign: utm.utm_campaign,
+      event_data: Object.assign({ surface: 'brief' }, data || {})
+    });
+    try {
+      fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
+    } catch (e) { /* no-op */ }
+  }
+  window.__briefTrack = track;
+
+  track('pageview', { path: '/brief' });
+  track('brief_view', {});
+
+  // Scroll depth milestones
+  var marks = [25, 50, 75, 100], hit = {};
+  window.addEventListener('scroll', function () {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (h <= 0) return;
+    var pct = Math.min(100, Math.round((window.scrollY / h) * 100));
+    marks.forEach(function (m) {
+      if (pct >= m && !hit[m]) { hit[m] = 1; track('brief_scroll_depth', { depth: m }); }
+    });
+  }, { passive: true });
+
+  // Time on brief
+  var start = Date.now(), sent = false;
+  function sendDwell() {
+    if (sent) return; sent = true;
+    track('brief_dwell', { seconds: Math.round((Date.now() - start) / 1000) });
+  }
+  window.addEventListener('pagehide', sendDwell);
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') sendDwell(); });
+
+  // Click tracking on links / CTAs
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    track('brief_click', {
+      label: (a.textContent || '').trim().slice(0, 80),
+      href: a.getAttribute('href'),
+      cta: a.classList.contains('btn') || a.classList.contains('nav-cta') || a.classList.contains('tool')
+    });
+  }, true);
+
   var overlay = document.getElementById('prOverlay');
   if (!overlay) return;
-  function open() { overlay.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function open() {
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    track('brief_release_open', { press_release_id: 'goc-ai-source-list-sep-2026' });
+  }
   function close() { overlay.classList.remove('is-open'); document.body.style.overflow = ''; }
   document.querySelectorAll('[data-pr-open]').forEach(function (b) { b.addEventListener('click', open); });
   document.querySelectorAll('[data-pr-close]').forEach(function (b) { b.addEventListener('click', close); });
