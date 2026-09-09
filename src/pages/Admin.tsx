@@ -18,6 +18,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, BarChart, Bar, Cell, Comp
 import { Globe, MessageCircle } from 'lucide-react';
 import SocialPulse from '@/components/admin/SocialPulse';
 import AdminChat from '@/components/admin/AdminChat';
+import BriefTraffic from '@/components/admin/BriefTraffic';
 
 interface TrendData { date: string; dateLabel: string; pageviews: number; visitors: number; }
 interface CountryData { country: string; countryCode: string | null; visitors: number; percentage: number; }
@@ -1401,6 +1402,10 @@ export default function Admin() {
             </div>
           ))}
         </div>
+
+        <BriefTraffic from={getDateRange().from} to={getDateRange().to} />
+
+
 
         {stats && (
           <div className="bg-card rounded-xl border p-6 mb-8">
