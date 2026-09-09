@@ -1402,6 +1402,10 @@ export default function Admin() {
           ))}
         </div>
 
+        <BriefTraffic from={getDateRange().from} to={getDateRange().to} />
+
+
+
         {stats && (
           <div className="bg-card rounded-xl border p-6 mb-8">
             <h2 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
