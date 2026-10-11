@@ -225,7 +225,10 @@ const trackPRView = async (prId: string) => {
 };
 
 const RecentNews = () => {
-  const [openId, setOpenId] = useState<string | null>(null);
+  const [openId, setOpenId] = useState<string | null>(() => {
+    const releaseId = new URLSearchParams(window.location.search).get("release");
+    return releases.some((release) => release.id === releaseId) ? releaseId : null;
+  });
   const active = releases.find((r) => r.id === openId) ?? null;
 
   return (
