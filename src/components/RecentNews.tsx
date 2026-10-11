@@ -1,4 +1,6 @@
 import { useState } from "react";
+import LatestReleaseBody from "@/components/LatestReleaseBody";
+import { latestRelease } from "@/data/latestRelease";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { supabase } from "@/integrations/supabase/client";
 import { getSessionId, getSubscriberId, getVisitorId } from "@/lib/visitorIdentity";
@@ -14,10 +16,11 @@ type Release = {
 };
 
 const releases: Release[] = [
+  { ...latestRelease, tag: "Just Released", body: latestRelease.summary },
   {
     id: "goc-ai-source-list-sep-2026",
     date: "Sep 9, 2026",
-    tag: "Just Released",
+    tag: "Federal Procurement",
     headline:
       "Predictiv AI Qualifies Across All Three Bands of Government of Canada Artificial Intelligence Source List",
     summary:
@@ -282,9 +285,9 @@ const RecentNews = () => {
               {active?.headline}
             </DialogTitle>
           </DialogHeader>
-          <p className="font-serif text-[15px] md:text-base text-foreground leading-relaxed break-words">
-            {active?.body}
-          </p>
+          {active?.id === latestRelease.id ? <LatestReleaseBody /> : (
+            <p className="font-serif text-[15px] md:text-base text-foreground leading-relaxed break-words">{active?.body}</p>
+          )}
 
           {active?.sourceUrl && (
             <a

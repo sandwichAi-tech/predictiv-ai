@@ -1,3 +1,4 @@
+import { latestRelease } from "@/data/latestRelease";
 import { useEffect, useRef, useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -290,8 +291,9 @@ const QuoteChip = ({ flag, exchange, symbol, widgetSymbol, volume, volumeLoading
 };
 
 const LATEST_NEWS: NewsItem[] = [
+  { title: "JUST RELEASED — " + latestRelease.headline, link: "/?release=" + latestRelease.id + "#news", pubDate: latestRelease.isoDate, description: latestRelease.summary, source: "Company Release" },
   {
-    title: "JUST RELEASED — Predictiv AI Qualifies Across All Three Bands of Government of Canada Artificial Intelligence Source List",
+    title: "Predictiv AI Qualifies Across All Three Bands of Government of Canada Artificial Intelligence Source List",
     link: "https://73-76.com/#news",
     pubDate: "2026-09-09T12:00:00",
     description: "",
