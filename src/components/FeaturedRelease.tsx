@@ -87,14 +87,6 @@ const FeaturedRelease = () => {
             <LatestReleaseBody />
           </div>
 
-            <div className="pt-4 border-t border-border">
-              <h4 className="font-mono text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-2">
-                Forward-Looking Statements
-              </h4>
-              <p className="text-[11.5px] text-muted-foreground leading-relaxed">{FORWARD_LOOKING}</p>
-            </div>
-          </div>
-
           <div className="px-5 md:px-9 shrink-0 py-4 border-t border-border bg-background/60 flex flex-wrap items-center justify-between gap-3">
             <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
               Issuer-Paid Communication · Not Investment Advice

@@ -1,4 +1,5 @@
 export const latestRelease = {
+  "sourceUrl": "https://www.eqs-news.com/news/corporate/predictiv-ais-shift-ai-completes-aws-foundational-technical-review-and-expands-aviation-visibility-through-aws-solutions-library/0d601d20-cfea-4a88-b191-ffeb07decdc6",
   "id": "shift-ai-aws-ftr-oct-2026",
   "date": "Oct 8, 2026",
   "isoDate": "2026-10-08T12:00:00",
