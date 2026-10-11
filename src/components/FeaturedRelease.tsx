@@ -95,6 +95,7 @@ const FeaturedRelease = () => {
               Issuer-Paid Communication · Not Investment Advice
             </span>
             <Button
+              variant="outline"
               onClick={() => setOpen(false)}
               className="font-mono text-[10px] tracking-[0.2em] uppercase text-accent border border-accent/40 hover:border-accent rounded-sm px-3 py-2 transition-colors"
             >
