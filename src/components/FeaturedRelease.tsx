@@ -85,6 +85,9 @@ const FeaturedRelease = () => {
 
           <div className="overflow-y-auto overscroll-contain px-5 md:px-9 py-6 min-h-0 flex-1 space-y-4">
             <LatestReleaseBody />
+            <Button asChild variant="outline">
+              <a href={latestRelease.sourceUrl} target="_blank" rel="noopener noreferrer">View Original Release ↗</a>
+            </Button>
           </div>
 
           <div className="px-5 md:px-9 shrink-0 py-4 border-t border-border bg-background/60 flex flex-wrap items-center justify-between gap-3">
